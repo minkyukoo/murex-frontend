@@ -20,7 +20,7 @@ export default defineNuxtConfig ({
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~assets/css/main.css'
+    '~assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -59,7 +59,13 @@ export default defineNuxtConfig ({
       }
     ],
   ],
-
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {},
+    injectPosition: 0,
+  },
   styleResources: {
     scss: [
       '~assets/scss/mixins.scss',
