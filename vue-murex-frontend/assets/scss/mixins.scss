@@ -2,3 +2,17 @@
   border: solid 2x black;
   border-radius: 10px;
 }
+@mixin dflex-align-center {
+  display: flex;
+  align-items: center;
+}
+@mixin dflex-align-justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin diflex-align-justify-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
