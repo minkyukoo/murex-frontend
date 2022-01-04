@@ -1,16 +1,21 @@
 <template>
   <div class="header">
-    <div class="left-panel">
-      <router-link to="/">
-        <img src="../assets/images/site-logo.svg" alt="Logo" />
-      </router-link>
-    </div>
-    <div class="right-panel">
-      <ul class="nav-wrap">
-        <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
-          <NuxtLink :to="item.to" class="nav-link">{{item.label}}</NuxtLink>
-        </li>
-      </ul>
+    <div class="container">
+      <div class="header-wrap">
+        <div class="left-panel">
+          <router-link to="/">
+            <img src="../assets/images/site-logo.svg" alt="Logo" />
+          </router-link>
+        </div>
+        <div class="right-panel">
+          <ul class="nav-wrap">
+            <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
+              <NuxtLink :to="item.to" class="nav-link">{{ item.label }}</NuxtLink>
+            </li>
+          </ul>
+          <LanguageInput />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -19,7 +24,7 @@
 export default {
   name: "NuxtHeader",
   data() {
-    return{
+    return {
       menu: [
         { label: "Our Founders", to: "/founders" },
         { label: "Our Team", to: "/team" },
@@ -34,13 +39,27 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  @include dflex-align-justify-between;
   background: $white;
-  padding: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  .right-panel {
-    .nav-wrap {
+  .header-wrap {
+    @include dflex-align-justify-between;
+    height: 80px;
+    .right-panel {
       @include dflex-align-center;
+      .nav-wrap {
+        @include dflex-align-center;
+        .nav-item {
+          .nav-link {
+            font-family: $default-font;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: $black-1;
+            padding: 0 30px;
+          }
+        }
+      }
     }
   }
 }

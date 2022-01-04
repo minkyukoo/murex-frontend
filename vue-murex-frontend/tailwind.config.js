@@ -19,19 +19,13 @@ module.exports = {
         lg: '38px',
         xl: '48px',
         '2xl': '48px',
+        '3xl': '48px',
       },
     },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
-      'purple': '#3f3cbb',
-      'midnight': '#121063',
-      'metal': '#565584',
-      'tahiti': '#3ab7bf',
-      'silver': '#ecebff',
-      'bubble-gum': '#ff77e9',
-      'bermuda': '#78dcca',
     },
     screens: {
       'sm': '640px',
@@ -48,6 +42,9 @@ module.exports = {
 
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
+
+      '3xl': '1824px',
+      // => @media (min-width: 1824px) { ... }
     }
   },
   variants: {

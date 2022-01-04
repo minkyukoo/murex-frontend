@@ -1,7 +1,9 @@
 import { defineNuxtConfig } from '@nuxt/bridge';
 import i18n from './config/i18n.js';
 export default defineNuxtConfig ({
+  loading: '@/components/LoadingBar.vue',
   // Global page headers: https://go.nuxtjs.dev/config-head
+
   head: {
     title: 'vue-nuxt-pro',
     htmlAttrs: {
@@ -14,7 +16,15 @@ export default defineNuxtConfig ({
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css',
+      },
     ]
   },
 
@@ -44,15 +54,15 @@ export default defineNuxtConfig ({
         locales: [
           {
             code: 'en',
-            name: 'English'
+            name: 'EN'
           },
           {
             code: 'fr',
-            name: 'Français'
+            name: 'FR'
           },
           {
             code: 'kr',
-            name: 'Korean'
+            name: 'KO'
           }
         ],
         vueI18n: i18n
@@ -68,8 +78,9 @@ export default defineNuxtConfig ({
   },
   styleResources: {
     scss: [
+      '~assets/scss/general.scss',
+      '~assets/scss/variables.scss',
       '~assets/scss/mixins.scss',
-      '~assets/scss/variables.scss'
     ]
   },
 
