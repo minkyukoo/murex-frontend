@@ -33,7 +33,7 @@ export default {
         { label: "Contact", to: "/contact" },
       ]
     }
-  }
+  },
 }
 </script>
 

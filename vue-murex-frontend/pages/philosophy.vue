@@ -1,6 +1,6 @@
 <template>
   <div class="philosophy">
-    <h1>philosophy</h1>
+    <h1>philosophy -- {{$route.path}}</h1>
   </div>
 </template>
 
