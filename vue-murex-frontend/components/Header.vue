@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  background: $white;
+  // background: $white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   .header-wrap {
     @include dflex-align-justify-between;
