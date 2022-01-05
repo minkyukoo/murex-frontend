@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div :class="`header ${bgClass}`">
     <div class="container">
       <div class="header-wrap">
         <div class="left-panel">
@@ -23,6 +23,9 @@
 <script>
 export default {
   name: "NuxtHeader",
+  props:{
+    bgClass: String,
+  },
   data() {
     return {
       menu: [
