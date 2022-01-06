@@ -3,14 +3,23 @@
     <div class="container">
       <div class="header-wrap">
         <div class="left-panel">
-          <router-link to="/">
+          <router-link to="/" v-if="bgClass === 'bg-transparent'">
+            <img src="../assets/images/site-logo-white.svg" alt="Logo" />
+          </router-link>
+          <router-link to="/" v-else>
             <img src="../assets/images/site-logo.svg" alt="Logo" />
           </router-link>
         </div>
         <div class="right-panel">
           <ul class="nav-wrap">
-            <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
-              <NuxtLink :to="item.to" class="nav-link">{{ item.label }}</NuxtLink>
+            <li
+              class="nav-item"
+              v-for="(item, i) of menu"
+              :key="item.label || i"
+            >
+              <NuxtLink :to="item.to" class="nav-link">{{
+                item.label
+              }}</NuxtLink>
             </li>
           </ul>
           <LanguageInput />
@@ -23,7 +32,7 @@
 <script>
 export default {
   name: "NuxtHeader",
-  props:{
+  props: {
     bgClass: String,
   },
   data() {
@@ -34,16 +43,16 @@ export default {
         { label: "Philosophy", to: "/philosophy" },
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
-      ]
-    }
+      ],
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
 .header {
   // background: $white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ 
   .header-wrap {
     @include dflex-align-justify-between;
     height: 80px;
@@ -60,6 +69,30 @@ export default {
             line-height: 24px;
             color: $black-1;
             padding: 0 30px;
+          }
+        }
+      }
+    }
+  }
+  &.bg-white{
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  &.bg-transparent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    .right-panel {
+      .lang-dropdown {
+        select {
+          color: $white;
+        }
+      }
+      .nav-wrap {
+        .nav-item {
+          .nav-link {
+            color: $white;
           }
         }
       }

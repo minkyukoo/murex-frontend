@@ -1,5 +1,7 @@
 <template>
+<no-ssr placeholder="Loading...">
   <Banner />
+</no-ssr>
 </template>
 
 <script>
