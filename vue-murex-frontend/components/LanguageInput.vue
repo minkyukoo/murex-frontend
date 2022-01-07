@@ -13,3 +13,11 @@
 <script>
 export default {}
 </script>
+
+<style lang="scss" scoped>
+.lang-dropdown{
+  select{
+    background-color: transparent;
+  }
+}
+</style>
