@@ -20,6 +20,7 @@ module.exports = {
         xl: '48px',
         '2xl': '48px',
         '3xl': '48px',
+        'custom-16': '16px',
       },
     },
     colors: {
