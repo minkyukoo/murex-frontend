@@ -1,7 +1,7 @@
 import { defineNuxtConfig } from '@nuxt/bridge';
 import i18n from './config/i18n.js';
 export default defineNuxtConfig ({
-  loading: '@/components/LoadingBar.vue',
+  loading: '~/components/LoadingBar.vue',
   // Global page headers: https://go.nuxtjs.dev/config-head
 
   head: {
