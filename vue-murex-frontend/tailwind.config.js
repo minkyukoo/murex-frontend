@@ -12,6 +12,12 @@ module.exports = {
     extend: {
 
     },
+    fluidContainer: {
+      'default': {
+        maxWidth: '100%', // defaults to null (no max width)
+        padding: '48px', // defaults to '15px'
+      },
+    },
     container: {
       padding: {
         DEFAULT: '48px',
