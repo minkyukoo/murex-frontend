@@ -13,13 +13,52 @@
               <li class="inf-item">
                 <p class="label">
                   <i class></i>
+                  <span>Adress</span>
                 </p>
-                <p class="cont"></p>
+                <p class="cont">서울시 강남구 도산대로45길 18-6, 2층</p>
+              </li>
+              <li class="inf-item">
+                <p class="label">
+                  <i class></i>
+                  <span>Call</span>
+                </p>
+                <p class="cont">+82 2-585-1116</p>
+              </li>
+              <li class="inf-item">
+                <p class="label">
+                  <i class></i>
+                  <span>Fax</span>
+                </p>
+                <p class="cont">+82 2-546-8238</p>
+              </li>
+              <li class="inf-item">
+                <p class="label">
+                  <i class></i>
+                  <span>E-mail</span>
+                </p>
+                <p class="cont">we@murexpartners.com</p>
               </li>
             </ul>
           </div>
           <div class="col-auto w-1/2 right-panel">
             <h2 class="heading-2">How to come</h2>
+            <p class="cont-p">압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향</p>
+            <ul class="inf-cont">
+              <li class="inf-item">
+                <p class="label">
+                  <i class></i>
+                  <span>지하철 이용 시</span>
+                </p>
+                <p class="cont">압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향</p>
+              </li>
+              <li class="inf-item">
+                <p class="label">
+                  <i class></i>
+                  <span>버스 이용시</span>
+                </p>
+                <p class="cont">도산공원사거리 정류장(23-155)에서 하차</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -48,4 +87,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact-us-cont {
+  padding: 80px 0 100px 0;
+}
 </style>
