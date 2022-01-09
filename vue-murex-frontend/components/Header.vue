@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   // background: $white;
- 
+
   .header-wrap {
     @include dflex-align-justify-between;
     height: 80px;
@@ -74,8 +74,8 @@ export default {
       }
     }
   }
-  &.bg-white{
- box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  &.bg-white {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   &.bg-transparent {
     position: absolute;
