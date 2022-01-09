@@ -48,3 +48,19 @@
   line-height: 21px;
   color: $grey-2;
 }
+@mixin black-text-1 {
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 150%;
+  color: $black-1;
+}
+@mixin black-text-2 {
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  color: $black-3;
+}

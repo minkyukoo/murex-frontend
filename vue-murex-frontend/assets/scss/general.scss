@@ -8,7 +8,11 @@ body,html {
   margin: 0 auto;
 }
 .divider-1 {
-  border: 1px solid $grey-1;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: $grey-1;
+  // border: 1px solid $grey-1;
 }
 .heading-1 {
   @include heading-1;

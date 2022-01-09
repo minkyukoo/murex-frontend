@@ -11,52 +11,54 @@
             <h2 class="heading-2">Information</h2>
             <ul class="inf-cont">
               <li class="inf-item">
-                <p class="label">
-                  <i class></i>
-                  <span>Adress</span>
-                </p>
-                <p class="cont">서울시 강남구 도산대로45길 18-6, 2층</p>
+                <i class="icon-location-pin"></i>
+                <div class="inf-item-cont">
+                  <p class="label">Adress</p>
+                  <p class="cont">서울시 강남구 도산대로45길 18-6, 2층</p>
+                </div>
               </li>
               <li class="inf-item">
-                <p class="label">
-                  <i class></i>
-                  <span>Call</span>
-                </p>
-                <p class="cont">+82 2-585-1116</p>
+                <i class="icon-call"></i>
+                <div class="inf-item-cont">
+                  <p class="label">Call</p>
+                  <p class="cont">+82 2-585-1116</p>
+                </div>
               </li>
               <li class="inf-item">
-                <p class="label">
-                  <i class></i>
-                  <span>Fax</span>
-                </p>
-                <p class="cont">+82 2-546-8238</p>
+                <i class="icon-fax"></i>
+                <div class="inf-item-cont">
+                  <p class="label">Fax</p>
+                  <p class="cont">+82 2-546-8238</p>
+                </div>
               </li>
               <li class="inf-item">
-                <p class="label">
-                  <i class></i>
-                  <span>E-mail</span>
-                </p>
-                <p class="cont">we@murexpartners.com</p>
+                <i class="icon-mail"></i>
+                <div class="inf-item-cont">
+                  <p class="label">E-mail</p>
+                  <p class="cont">we@murexpartners.com</p>
+                </div>
               </li>
             </ul>
           </div>
           <div class="col-auto w-1/2 right-panel">
             <h2 class="heading-2">How to come</h2>
-            <p class="cont-p">압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향</p>
             <ul class="inf-cont">
               <li class="inf-item">
-                <p class="label">
-                  <i class></i>
-                  <span>지하철 이용 시</span>
-                </p>
-                <p class="cont">압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향</p>
+                <p class="cont">뮤렉스 파트너스에 오시는 방법을 안내해 드립니다.</p>
               </li>
               <li class="inf-item">
-                <p class="label">
-                  <i class></i>
-                  <span>버스 이용시</span>
-                </p>
-                <p class="cont">도산공원사거리 정류장(23-155)에서 하차</p>
+                <i class="icon-train"></i>
+                <div class="inf-item-cont">
+                  <p class="label">지하철 이용 시</p>
+                  <p class="cont">압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향</p>
+                </div>
+              </li>
+              <li class="inf-item">
+               <i class="icon-bus"></i>
+                <div class="inf-item-cont">
+                  <p class="label">버스 이용시</p>
+                  <p class="cont">도산공원사거리 정류장(23-155)에서 하차</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -89,5 +91,25 @@ export default {
 <style lang="scss" scoped>
 .contact-us-cont {
   padding: 80px 0 100px 0;
+  .inf-cont {
+    margin-top: 40px;
+    .inf-item {
+      display: flex;
+      margin-bottom: 29px;
+      i {
+        margin-right: 7px;
+      }
+      .label {
+        @include black-text-1;
+        margin-bottom: 7px;
+      }
+      .cont {
+        @include black-text-2;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 </style>
