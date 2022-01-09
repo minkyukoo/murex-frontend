@@ -10,6 +10,10 @@
           <div class="col-auto w-1/2 left-panel">
             <h2 class="heading-2">Information</h2>
             <ul class="inf-cont">
+
+              <ContactInfoItem iconClass="icon-location-pin" label="Adress" cont="서울시 강남구 도산대로45길 18-6, 2층" />
+
+
               <li class="inf-item">
                 <i class="icon-location-pin"></i>
                 <div class="inf-item-cont">
@@ -77,12 +81,16 @@
 </template>
 
 <script>
+import ContactInfoItemVue from "../components/ContactInfoItem.vue";
 import TopHeading from "../components/TopHeading.vue";
 export default {
   name: "contact",
   data() {
     return {
       pageHeading: "Contact",
+      contactInformation: {
+
+      }
     };
   },
 };

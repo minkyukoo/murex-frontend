@@ -1,10 +1,10 @@
-@mixin border-black-2-10 {
-  border: solid 2x black;
-  border-radius: 10px;
-}
 @mixin dflex-align-center {
   display: flex;
   align-items: center;
+}
+@mixin dflex-align-end {
+  display: flex;
+  align-items: flex-end;
 }
 @mixin dflex-align-justify-center {
   display: flex;
@@ -63,4 +63,21 @@
   font-size: 14px;
   line-height: 150%;
   color: $black-3;
+}
+@mixin white-text-1 {
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  color: $white;
+}
+@mixin white-text-2 {
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: $white;
 }
