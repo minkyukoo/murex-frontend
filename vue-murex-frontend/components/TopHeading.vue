@@ -1,6 +1,6 @@
 <template>
   <div class="top-heading">
-    <h1>{{heading}}</h1>
+    <h1 class="heading-1">{{ heading }}</h1>
   </div>
 </template>
 
@@ -9,13 +9,14 @@ export default {
   name: "TopHeading",
   props: {
     heading: String,
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .top-heading {
   @include dflex-align-justify-center;
-  border: 1px solid red;
+  // border: 1px solid red;
+  padding: 100px 0;
 }
 </style>
