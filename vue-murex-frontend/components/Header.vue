@@ -12,14 +12,12 @@
         </div>
         <div class="right-panel">
           <ul class="nav-wrap">
-            <li
-              class="nav-item"
-              v-for="(item, i) of menu"
-              :key="item.label || i"
-            >
-              <NuxtLink :to="item.to" class="nav-link">{{
-                item.label
-              }}</NuxtLink>
+            <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
+              <NuxtLink :to="item.to" class="nav-link">
+                {{
+                  item.label
+                }}
+              </NuxtLink>
             </li>
           </ul>
           <LanguageInput />

@@ -1,6 +1,8 @@
 <template>
   <div v-if="show">
     <carousel
+      :easing="easeinout"
+      :autoplayTimeout="4000"
       :perPage="1"
       :autoplay="slide"
       :loop="true"
@@ -16,7 +18,7 @@
           }"
         >
           <div class="container">
-            <div class="">
+            <div class>
               <h2>{{ slide.title }}</h2>
               <h6>{{ slide.subtext }}</h6>
             </div>
@@ -30,7 +32,8 @@
                 </div>
                 <div>
                   <h5>
-                    <span>{{ slide.id }}</span> / <span>0{{ arr.length }}</span>
+                    <span>{{ slide.id }}</span> /
+                    <span>0{{ arr.length }}</span>
                   </h5>
                 </div>
               </div>
@@ -86,10 +89,12 @@ export default {
   },
   mounted() {
     this.show = true;
+    console.log(this.slide);
   },
   methods: {
     pauseSlide() {
       this.slide = !this.slide;
+      console.log(this.slide);
     }
   }
 };
@@ -154,7 +159,7 @@ export default {
     appearance: none;
   }
   progress[value]::-webkit-progress-bar {
-    background-color: #666666;;
+    background-color: #666666;
     border-radius: 5px;
   }
   progress[value]::-webkit-progress-value {

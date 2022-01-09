@@ -40,3 +40,11 @@
   line-height: 100%;
   color: $black-1;
 }
+@mixin grey-text-1 {
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: $grey-2;
+}
