@@ -55,6 +55,7 @@ import ContactInfoItemVue from "../components/ContactInfoItem.vue";
 import TopHeading from "../components/TopHeading.vue";
 export default {
   name: "contact",
+  components: { TopHeading, ContactInfoItemVue},
   data() {
     return {
       pageHeading: "Contact",
