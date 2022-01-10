@@ -61,6 +61,56 @@ export default {
             ln: "https://linkedin.com",
           }
         },
+        {
+          id: 5,
+          name: "김세진",
+          designation: "수석",
+          image: "team-05.jpg",
+          sns_links: {
+            fb: "https://facebook.com",
+            ln: "https://linkedin.com",
+          }
+        },
+        {
+          id: 6,
+          name: "김세호",
+          designation: "이사",
+          image: "team-06.jpg",
+          sns_links: {
+            fb: "https://facebook.com",
+            ln: "https://linkedin.com",
+          }
+        },
+        {
+          id: 7,
+          name: "이은영",
+          designation: "경영기획실장",
+          image: "team-07.jpg",
+          sns_links: {
+            fb: "https://facebook.com",
+            ln: "https://linkedin.com",
+          }
+        },
+        {
+          id: 8,
+          name: "김윤나",
+          designation: "사원",
+          image: "team-08.jpg",
+          sns_links: {
+            fb: "https://facebook.com",
+            ln: "https://linkedin.com",
+          }
+        },
+        {
+          id: 9,
+          name: "신지혜",
+          designation: "사원",
+          image: "team-09.jpg",
+          sns_links: {
+            fb: "https://facebook.com",
+            ln: "https://linkedin.com",
+          }
+        },
       ]
     };
   },
