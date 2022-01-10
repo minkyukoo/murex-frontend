@@ -6,6 +6,7 @@
       :loop="true"
       :autoplayHoverPause="false"
       :paginationEnabled="false"
+      @page-change="FindPageNumber"
     >
       <slide v-for="(slide, index) in arr" :key="index">
         <div
@@ -20,34 +21,31 @@
               <h2>{{ slide.title }}</h2>
               <h6>{{ slide.subtext }}</h6>
             </div>
-            <div class="Banner-state">
-              <div class="flex items-center">
-                <div @click="pauseSlide">
-                  <img src="../assets/images/play.svg" alt="img" />
-                </div>
-                <div class="px-4 pb-2">
-                  <progress id="file" :value="slide.value" max="100"></progress>
-                </div>
-                <div>
-                  <h5>
-                    <span>{{ slide.id }}</span> / <span>0{{ arr.length }}</span>
-                  </h5>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </slide>
     </carousel>
+    <BannerState
+      :slideNumber="this.number"
+      :TotalSlides="this.arr.length"
+      :progressValue="this.progressValue"
+      v-on:PauseIt="pauseSlide"
+    />
   </div>
 </template>
 
 <script>
+import BannerState from "./BannerState.vue";
 export default {
+  components: {
+    BannerState,
+  },
   data() {
     return {
       show: false,
       slide: true,
+      number: "01",
+      progressValue: null,
       arr: [
         {
           id: "01",
@@ -55,7 +53,7 @@ export default {
           subtext:
             "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
           image: "banner-img.png",
-          value: "25"
+          value: "25",
         },
         {
           id: "02",
@@ -63,7 +61,7 @@ export default {
           subtext:
             "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
           image: "banner-img.png",
-          value: "50"
+          value: "50",
         },
         {
           id: "03",
@@ -71,7 +69,7 @@ export default {
           subtext:
             "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
           image: "banner-img.png",
-          value: "75"
+          value: "75",
         },
         {
           id: "04",
@@ -79,8 +77,9 @@ export default {
           subtext:
             "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
           image: "banner-img.png",
-          value: "100"
+          value: "100",
         },
+        
       ],
     };
   },
@@ -90,8 +89,13 @@ export default {
   methods: {
     pauseSlide() {
       this.slide = !this.slide;
-    }
-  }
+    },
+    FindPageNumber(currentPage) {
+      console.log(`page changed to ${currentPage}`);
+      this.number = `0${currentPage + 1}`;
+      this.progressValue = (this.number / this.arr.length) * 100;
+    },
+  },
 };
 </script>
 
@@ -137,29 +141,6 @@ export default {
     color: #ffffff;
     position: relative;
     z-index: 4;
-  }
-  .Banner-state {
-    position: absolute;
-    bottom: 10%;
-    color: $white;
-  }
-  progress {
-    vertical-align: baseline;
-    min-width: 400px;
-    color: white;
-    height: 2px;
-  }
-  progress[value] {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-  progress[value]::-webkit-progress-bar {
-    background-color: #666666;;
-    border-radius: 5px;
-  }
-  progress[value]::-webkit-progress-value {
-    background-color: #ffffff;
-    height: 2px;
   }
 }
 </style>
