@@ -1,6 +1,8 @@
 <template>
   <div v-if="show">
     <carousel
+      :easing="easeinout"
+      :autoplayTimeout="4000"
       :perPage="1"
       :autoplay="slide"
       :loop="true"
@@ -17,7 +19,7 @@
           }"
         >
           <div class="container">
-            <div class="">
+            <div class>
               <h2>{{ slide.title }}</h2>
               <h6>{{ slide.subtext }}</h6>
             </div>
@@ -85,6 +87,7 @@ export default {
   },
   mounted() {
     this.show = true;
+    console.log(this.slide);
   },
   methods: {
     pauseSlide() {
