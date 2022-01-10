@@ -1,7 +1,7 @@
 <template>
-<no-ssr placeholder="Loading...">
+<client-only placeholder="Loading...">
   <Banner />
-</no-ssr>
+</client-only>
 </template>
 
 <script>
