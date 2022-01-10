@@ -88,6 +88,7 @@ export default {
   mounted() {
     this.show = true;
     console.log(this.slide);
+    this.progressValue = (this.number / this.arr.length) * 100;
   },
   methods: {
     pauseSlide() {
