@@ -1,5 +1,5 @@
 <template>
-<client-only placeholder="Loading...">
+<client-only>
   <Banner />
 </client-only>
 </template>

@@ -4,23 +4,62 @@
       <div class="header-wrap">
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
-            <img src="../assets/images/site-logo-white.svg" alt="Logo" />
+            <img
+              src="../assets/images/site-logo-white.svg"
+              class="logo"
+              alt="Logo"
+            />
           </router-link>
           <router-link to="/" v-else>
-            <img src="../assets/images/site-logo.svg" alt="Logo" />
+            <img src="../assets/images/site-logo.svg" class="logo" alt="Logo" />
           </router-link>
         </div>
         <div class="right-panel">
-          <ul class="nav-wrap">
-            <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
-              <NuxtLink :to="item.to" class="nav-link">
-                {{
-                  item.label
-                }}
-              </NuxtLink>
-            </li>
-          </ul>
-          <LanguageInput />
+          <div v-if="mobileView">
+            <button type="button" @click="mobileToggle">
+              <i
+                :class="
+                  bgClass === 'bg-transparent'
+                    ? 'icon-menu'
+                    : 'icon-menu-violet-bg'
+                "
+              ></i>
+            </button>
+          </div>
+          <div class="flex jc-center" v-if="!mobileView">
+            <ul class="nav-wrap">
+              <li
+                class="nav-item"
+                v-for="(item, i) of menu"
+                :key="item.label || i"
+              >
+                <NuxtLink :to="item.to" class="nav-link">
+                  {{ item.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+            <LanguageInput />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Mobile-dropdown" v-if="mobileMenu">
+      <div class="text-right p-5">
+        <button type="button" @click="mobileToggle">
+          <i class="icon-cross"></i>
+        </button>
+      </div>
+      <ul>
+        <li v-for="(item, i) of menu" :key="item.label || i" @click="closeMenu">
+          <NuxtLink :to="item.to" class="nav-link">
+            {{ item.label }}
+          </NuxtLink>
+        </li>
+      </ul>
+      <div class="lang-select">
+        <div class="elements">
+          <span class="active">KO</span>
+          <span>EN</span>
         </div>
       </div>
     </div>
@@ -42,7 +81,30 @@ export default {
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
       ],
+      // width: document.documentElement.clientWidth,
+      mobileView: false,
+      mobileMenu: false,
     };
+  },
+  created() {
+    this.getDimensions();
+  },
+  mounted() {
+    window.addEventListener("resize", this.getDimensions);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.getDimensions);
+  },
+  methods: {
+    getDimensions() {
+      this.mobileView = window.innerWidth <= 990;
+    },
+    mobileToggle() {
+      this.mobileMenu = !this.mobileMenu;
+    },
+    closeMenu() {
+      this.mobileMenu = false;
+    },
   },
 };
 </script>
@@ -50,7 +112,10 @@ export default {
 <style lang="scss" scoped>
 .header {
   // background: $white;
-
+  .logo {
+    width: calc(100px + 3vw);
+    height: auto;
+  }
   .header-wrap {
     @include dflex-align-justify-between;
     height: 80px;
@@ -67,6 +132,9 @@ export default {
             line-height: 24px;
             color: $black-1;
             padding: 0 30px;
+            @media screen and (max-width: 1024px) {
+              padding: 0 12px;
+            }
           }
         }
       }
@@ -91,6 +159,45 @@ export default {
         .nav-item {
           .nav-link {
             color: $white;
+          }
+        }
+      }
+    }
+  }
+  .Mobile-dropdown {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $white;
+    ul {
+      padding: 30px;
+      margin-bottom: 10px;
+      li {
+        margin-bottom: 30px;
+        font-weight: 500;
+        font-size: 16px;
+        color: $black-1;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .lang-select {
+      padding: 0px 30px 30px;
+      .elements {
+        padding: 40px 0 0;
+        border-top: 1px solid $grey-3;
+        span {
+          font-weight: normal;
+          font-size: 16px;
+          display: inline-block;
+          margin-right: 16px;
+          color: $grey-4;
+          cursor: pointer;
+          &.active {
+            color: $black-1;
           }
         }
       }
