@@ -63,6 +63,7 @@ progress {
   min-width: 400px;
   color: white;
   height: 2px;
+
   @media screen and (max-width: 765px) {
     min-width: 280px;
   }
@@ -81,5 +82,6 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   background-color: #ffffff;
   height: 2px;
+  transition : width 3s ease;
 }
 </style>
