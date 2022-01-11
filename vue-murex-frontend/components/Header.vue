@@ -5,7 +5,6 @@
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
             <img src="../assets/images/site-logo-white.svg" alt="Logo" />
-          <p>The window width and height are respectively {{width}}, {{height}}</p>
           </router-link>
           <router-link to="/" v-else>
             <img src="../assets/images/site-logo.svg" alt="Logo" />
@@ -43,22 +42,8 @@ export default {
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
       ],
-      width: document.documentElement.clientWidth,
-      height: document.documentElement.clientHeight
     };
   },
-  mounted() {
-    window.addEventListener('resize', this.getDimensions);
-  },
-  unmounted() {
-    window.removeEventListener('resize', this.getDimensions);
-  },
-  methods: {
-    getDimensions() {
-      this.width = document.documentElement.clientWidth;
-      this.height = document.documentElement.clientHeight;
-    }
-  }
 };
 </script>
 
