@@ -133,11 +133,12 @@ export default {
 .slider-item {
   h2 {
     font-weight: 600;
-    font-size: calc(40px + 2vw);
+    font-size: calc(19px + 3vw);
     line-height: 112.5%;
     color: #ffffff;
     position: relative;
     z-index: 4;
+    margin-bottom: 20px;
   }
   h6 {
     font-weight: normal;
@@ -147,6 +148,9 @@ export default {
     color: #ffffff;
     position: relative;
     z-index: 4;
+    @media screen and (max-width: 765px) {
+      width: 100%;
+    }
   }
 }
 </style>

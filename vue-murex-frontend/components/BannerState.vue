@@ -63,6 +63,12 @@ progress {
   min-width: 400px;
   color: white;
   height: 2px;
+  @media screen and (max-width: 765px) {
+    min-width: 280px;
+  }
+  @media screen and (max-width: 560px) {
+    min-width: 180px;
+  }
 }
 progress[value] {
   -webkit-appearance: none;
