@@ -1,6 +1,8 @@
 <template>
   <div class="home-layout">
-    <Header bgClass="bg-transparent" />
+    <client-only placeholder="loading...">
+      <Header bgClass="bg-transparent" />
+    </client-only>
     <div class="main-body">
       <Nuxt />
     </div>

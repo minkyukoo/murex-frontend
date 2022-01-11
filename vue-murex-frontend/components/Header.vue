@@ -5,7 +5,7 @@
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
             <img src="../assets/images/site-logo-white.svg" alt="Logo" />
-            {{width}}
+          <p>The window width and height are respectively {{width}}, {{height}}</p>
           </router-link>
           <router-link to="/" v-else>
             <img src="../assets/images/site-logo.svg" alt="Logo" />
@@ -52,47 +52,22 @@ export default {
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
       ],
-      mobileView: false,
       width: document.documentElement.clientWidth,
+      mobileView: false,
     };
   },
-  // created() {
-  //   // window.addEventListener("resize", this.handleResize);
-  //   this.handleView();
-  // },
-  // destroyed() {
-  //   window.removeEventListener("resize", this.handleResize);
-  // },
-   mounted: function () {
-    this.$nextTick(function () {
-      this.onResize();
-    })
-    window.addEventListener('resize', this.onResize)
+  mounted() {
+    window.addEventListener('resize', this.getDimensions);
   },
   unmounted() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('resize', this.getDimensions);
   },
   methods: {
-    // handleView() {
-    //   if (process.client) {
-    //     let width = window.innerWidth;
-    //     console.log(width)
-    //   } else {
-    //     console.log("not client")
-    //   }
-    //   // console.log(this.mobileView);
-    // },
-    // getDimensions() {
-    //   this.width = document.documentElement.clientWidth;
-    //   // this.height = document.documentElement.clientHeight;
-    // },
-    onResize() {
-      console.log('Resized')
+    getDimensions() {
+      this.width = document.documentElement.clientWidth;
+      
     }
-    // handleResize() {
-    //   this.windowSize = window.innerWidth;
-    // },
-  },
+  }
 };
 </script>
 

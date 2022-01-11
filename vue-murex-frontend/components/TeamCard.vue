@@ -1,5 +1,7 @@
 <template>
-  <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}">
+  <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
+  <div class="team-item">
+    <img :src="`${require('../assets/images/'+bgImage)}`" :alt="`${name}`"/>
     <div class="team-desc">
       <div class="team-desc-cont">
         <p class="name">{{ name }}</p>
@@ -33,11 +35,14 @@ export default {
 <style lang="scss" scoped>
 .team-item {
     @include dflex-align-end;
-    width: 480px;
+    width: 25%;
     min-height: 480px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    img {
+      width: 100%;
+    }
     .team-desc {
       display: flex;
       justify-content: space-between;

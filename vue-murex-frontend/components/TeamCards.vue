@@ -120,5 +120,6 @@ export default {
 <style lang="scss" scoped>
 .teams-wrap {
   @include dflex-align-end;
+  flex-wrap: wrap;
 }
 </style>
