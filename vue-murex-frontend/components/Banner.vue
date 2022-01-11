@@ -1,7 +1,7 @@
 <template>
   <div v-if="show">
     <carousel
-      :easing="easeinout"
+      
       :autoplayTimeout="4000"
       :perPage="1"
       :autoplay="slide"
@@ -46,6 +46,7 @@ export default {
     return {
       show: false,
       slide: true,
+      pauseIcon: true,
       number: "01",
       progressValue: null,
       arr: [
@@ -93,6 +94,7 @@ export default {
   methods: {
     pauseSlide() {
       this.slide = !this.slide;
+      this.pauseIcon = !this.pauseIcon;
     },
     FindPageNumber(currentPage) {
       console.log(`page changed to ${currentPage}`);

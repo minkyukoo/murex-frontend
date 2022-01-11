@@ -5,22 +5,32 @@
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
             <img src="../assets/images/site-logo-white.svg" alt="Logo" />
+            {{width}}
           </router-link>
           <router-link to="/" v-else>
             <img src="../assets/images/site-logo.svg" alt="Logo" />
           </router-link>
         </div>
         <div class="right-panel">
-          <ul class="nav-wrap">
-            <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
-              <NuxtLink :to="item.to" class="nav-link">
-                {{
-                  item.label
-                }}
-              </NuxtLink>
-            </li>
-          </ul>
-          <LanguageInput />
+          <div v-if="mobileView">
+            <button type="button" class="">
+              <i class="icon-menu"></i>
+            </button>
+          </div>
+          <div class="flex jc-center" v-if="!mobileView">
+            <ul class="nav-wrap">
+              <li
+                class="nav-item"
+                v-for="(item, i) of menu"
+                :key="item.label || i"
+              >
+                <NuxtLink :to="item.to" class="nav-link">
+                  {{ item.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+            <LanguageInput />
+          </div>
         </div>
       </div>
     </div>
@@ -42,7 +52,46 @@ export default {
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
       ],
+      mobileView: false,
+      width: document.documentElement.clientWidth,
     };
+  },
+  // created() {
+  //   // window.addEventListener("resize", this.handleResize);
+  //   this.handleView();
+  // },
+  // destroyed() {
+  //   window.removeEventListener("resize", this.handleResize);
+  // },
+   mounted: function () {
+    this.$nextTick(function () {
+      this.onResize();
+    })
+    window.addEventListener('resize', this.onResize)
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.onResize);
+  },
+  methods: {
+    // handleView() {
+    //   if (process.client) {
+    //     let width = window.innerWidth;
+    //     console.log(width)
+    //   } else {
+    //     console.log("not client")
+    //   }
+    //   // console.log(this.mobileView);
+    // },
+    // getDimensions() {
+    //   this.width = document.documentElement.clientWidth;
+    //   // this.height = document.documentElement.clientHeight;
+    // },
+    onResize() {
+      console.log('Resized')
+    }
+    // handleResize() {
+    //   this.windowSize = window.innerWidth;
+    // },
   },
 };
 </script>
