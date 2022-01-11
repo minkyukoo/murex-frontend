@@ -1,6 +1,8 @@
 <template>
   <div class="default-layout">
-    <Header bgClass="bg-white" />
+    <client-only placeholder="loading...">
+      <Header bgClass="bg-white" />
+    </client-only>
     <div class="main-body">
       <Nuxt />
     </div>

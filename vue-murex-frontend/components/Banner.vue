@@ -1,8 +1,8 @@
 <template>
   <div v-if="show">
     <carousel
-      :easing="easeinout"
-      :autoplayTimeout="4000"
+      easing="ease-in-out"
+      :autoplayTimeout="6000"
       :perPage="1"
       :autoplay="slide"
       :loop="true"
@@ -81,7 +81,7 @@ export default {
           image: "banner-img.png",
           value: "100",
         },
-        
+
       ],
     };
   },

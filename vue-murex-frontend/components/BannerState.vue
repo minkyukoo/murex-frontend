@@ -2,9 +2,9 @@
   <div class="container">
     <div class="Banner-state">
       <div class="flex items-center">
-        <div @click="pauseSlide">
+        <button type="button" @click="pauseSlide">
           <img src="../assets/images/play.svg" alt="img" />
-        </div>
+        </button>
         <div class="px-4 pb-2">
           <progress id="file" :value="progressValue" max="100"></progress>
         </div>
