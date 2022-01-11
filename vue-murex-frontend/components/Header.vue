@@ -132,6 +132,9 @@ export default {
             line-height: 24px;
             color: $black-1;
             padding: 0 30px;
+            @media screen and (max-width: 1024px) {
+              padding: 0 12px;
+            }
           }
         }
       }
