@@ -26,7 +26,7 @@ export default {
           id: 1,
           name: "이범석",
           designation: "CEO / Co-Founder",
-          image: "team-01.jpg",
+          image: "Advisory1.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -36,7 +36,7 @@ export default {
           id: 2,
           name: "강동민",
           designation: "부사장 / Co-Founder",
-          image: "team-02.jpg",
+          image: "Advisory2.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -46,7 +46,7 @@ export default {
           id: 3,
           name: "오지성",
           designation: "부사장 / Co-Founder",
-          image: "team-03.jpg",
+          image: "Advisory3.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -56,7 +56,7 @@ export default {
           id: 4,
           name: "박진영",
           designation: "수석",
-          image: "team-04.jpg",
+          image: "Advisory4.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -66,47 +66,7 @@ export default {
           id: 5,
           name: "김세진",
           designation: "수석",
-          image: "team-05.jpg",
-          sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
-          }
-        },
-        {
-          id: 6,
-          name: "김세호",
-          designation: "이사",
-          image: "team-06.jpg",
-          sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
-          }
-        },
-        {
-          id: 7,
-          name: "이은영",
-          designation: "경영기획실장",
-          image: "team-07.jpg",
-          sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
-          }
-        },
-        {
-          id: 8,
-          name: "김윤나",
-          designation: "사원",
-          image: "team-08.jpg",
-          sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
-          }
-        },
-        {
-          id: 9,
-          name: "신지혜",
-          designation: "사원",
-          image: "team-09.jpg",
+          image: "Advisory5.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
