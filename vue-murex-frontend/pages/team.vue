@@ -108,12 +108,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fluidContainer {
-  padding: 0 36px;
-  @media screen and (max-width: 767px) {
-    padding: 0;
-  }
-}
+
 .team-modal-header {
   margin-bottom: calc(10px + 2.5vw);
   .name {

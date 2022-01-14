@@ -8,10 +8,10 @@
         <p class="designation">{{ designation }}</p>
       </div>
       <div class="sns-links">
-        <nuxt-link class="sns-link" :to="`${snsLnLink}`">
+        <nuxt-link class="sns-link" :to="`${snsLnLink}`" v-if="snsLnLink">
           <i class="icon-ln"></i>
         </nuxt-link>
-        <nuxt-link class="sns-link" :to="`${snsFbLink}`">
+        <nuxt-link class="sns-link" :to="`${snsFbLink}`" v-if="snsFbLink">
           <i class="icon-fb"></i>
         </nuxt-link>
       </div>
@@ -55,8 +55,9 @@ export default {
       bottom: 0;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       width: 100%;
-      padding: 39px 43px 39px 28px;
+      padding: 25px 5px 25px 25px;
       @media screen and (max-width: 767px) {
         padding: 15px;
       }
@@ -64,6 +65,7 @@ export default {
         .name {
           @include white-text-1;
           margin-bottom: 4px;
+          
         }
         .designation {
           @include white-text-2;
@@ -71,7 +73,9 @@ export default {
       }
       .sns-links {
         .sns-link {
+          display: inline-block;
           margin-right: 12px;
+          vertical-align: middle;
           &:last-child {
             margin-right: 0;
           }
