@@ -24,8 +24,8 @@ export default {
       teams: [
         {
           id: 1,
-          name: "이범석",
-          designation: "CEO / Co-Founder",
+          name: "김택동",
+          designation: "벤처파트너 / 레이크투자자문 대표이사",
           image: "Advisory1.png",
           sns_links: {
             fb: "https://facebook.com",

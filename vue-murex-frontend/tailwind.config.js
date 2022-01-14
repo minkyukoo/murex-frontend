@@ -32,6 +32,8 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
+      primary: "#57195C",
+      'grey-1': "#BDBDBD",
     },
     screens: {
       sm: "640px",
@@ -56,5 +58,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // require('@tailwindcss/forms'),
+  ],
 };
