@@ -1,10 +1,10 @@
 <template>
   <div class="contact">
+    <div class="container">
+      <TopHeading :heading="pageHeading" />
+    </div>
+    <div class="divider-1"></div>
     <div class="fluidContainer">
-      <div class="container">
-        <TopHeading :heading="pageHeading" />
-      </div>
-      <div class="divider-1"></div>
       <div class="container">
         <div class="contact-us-cont flex">
           <div class="col-auto w-1/2 left-panel">
@@ -24,7 +24,9 @@
             <h2 class="heading-2">How to come</h2>
             <ul class="inf-cont">
               <li class="inf-item">
-                <p class="cont">뮤렉스 파트너스에 오시는 방법을 안내해 드립니다.</p>
+                <p class="cont">
+                  뮤렉스 파트너스에 오시는 방법을 안내해 드립니다.
+                </p>
               </li>
               <ContactInfoItem
                 v-for="(item, i) of contactToCome"
@@ -55,50 +57,50 @@ import ContactInfoItemVue from "../components/ContactInfoItem.vue";
 import TopHeading from "../components/TopHeading.vue";
 export default {
   name: "contact",
-  components: { TopHeading, ContactInfoItemVue},
+  components: { TopHeading, ContactInfoItemVue },
   data() {
     return {
       pageHeading: "Contact",
       contactInformation: [
         {
-          iconClass: 'icon-location-pin',
-          label: 'Adress',
-          cont: '서울시 강남구 도산대로45길 18-6, 2층',
-          linkType: 'text'
+          iconClass: "icon-location-pin",
+          label: "Adress",
+          cont: "서울시 강남구 도산대로45길 18-6, 2층",
+          linkType: "text",
         },
         {
-          iconClass: 'icon-call',
-          label: 'Call',
-          cont: '+82 2-585-1116',
-          linkType: 'tel'
+          iconClass: "icon-call",
+          label: "Call",
+          cont: "+82 2-585-1116",
+          linkType: "tel",
         },
         {
-          iconClass: 'icon-fax',
-          label: 'Fax',
-          cont: '+82 2-546-8238',
-          linkType: 'text'
+          iconClass: "icon-fax",
+          label: "Fax",
+          cont: "+82 2-546-8238",
+          linkType: "text",
         },
         {
-          iconClass: 'icon-mail',
-          label: 'E-mail',
-          cont: 'we@murexpartners.com',
-          linkType: 'mail'
+          iconClass: "icon-mail",
+          label: "E-mail",
+          cont: "we@murexpartners.com",
+          linkType: "mail",
         },
       ],
       contactToCome: [
         {
-          iconClass: 'icon-train',
-          label: '지하철 이용 시',
-          cont: '압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향',
-          linkType: 'text'
+          iconClass: "icon-train",
+          label: "지하철 이용 시",
+          cont: "압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향",
+          linkType: "text",
         },
         {
-          iconClass: 'icon-bus',
-          label: '버스 이용시',
-          cont: '도산공원사거리 정류장(23-155)에서 하차',
-          linkType: 'text'
-        }
-      ]
+          iconClass: "icon-bus",
+          label: "버스 이용시",
+          cont: "도산공원사거리 정류장(23-155)에서 하차",
+          linkType: "text",
+        },
+      ],
     };
   },
 };

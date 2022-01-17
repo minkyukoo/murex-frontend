@@ -1,6 +1,6 @@
 <template>
   <div class="flex mb-10">
-    <div class="filters">All</div>
+    <div class="filters" role="button">All</div>
     <div class="filters dropdown">
       <h4 class="dropdown-opener" @click="openSector">Sector</h4>
       <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']">
@@ -14,11 +14,16 @@
           v-for="(item, index) of sectors"
           :key="index"
         >
-          <input type="checkbox" :id="`sector-${item.id}`" />
-          <label :for="`sector-${item.id}`">{{ item.name }}</label>
+          <label class="custom-checkbox"
+            >{{ item.name }}
+            <input type="checkbox" :value="item.name" v-model="item.selected" @change="filterIt" />
+            <span class="checkmark"></span>
+          </label>
         </div>
         <div>
-          <h5 class="clear-filter">Clear Filter</h5>
+          <button class="clear-filter" @click="clearSectors">
+            Clear Filter
+          </button>
         </div>
       </div>
     </div>
@@ -30,16 +35,17 @@
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
           id="sector-1"
         /> -->
-        <div
-          class="dropdown-item"
-          v-for="(item, index) of status"
-          :key="index"
-        >
-          <input type="checkbox" :id="`sector-${item.id}`" />
-          <label :for="`sector-${item.id}`">{{ item.name }}</label>
+        <div class="dropdown-item" v-for="(item, index) of status" :key="index">
+          <label class="custom-checkbox"
+            >{{ item.name }}
+            <input type="checkbox" :value="item.name" v-model="item.selected" />
+            <span class="checkmark"></span>
+          </label>
         </div>
         <div>
-          <h5 class="clear-filter">Clear Filter</h5>
+          <button class="clear-filter" @click="clearStatus">
+            Clear Filter
+          </button>
         </div>
       </div>
     </div>
@@ -55,40 +61,59 @@ export default {
         {
           id: "01",
           name: "Consumer",
+          selected: false,
         },
         {
           id: "02",
           name: "Enterprise",
+          selected: false,
         },
         {
           id: "03",
           name: "Healthcare",
+          selected: false,
         },
         {
           id: "04",
           name: "Crypto",
+          selected: false,
         },
       ],
       status: [
         {
           id: "01",
           name: "Current",
+          selected: false,
         },
         {
           id: "02",
           name: "Alumni",
+          selected: false,
         },
       ],
       sectorState: false,
       statusState: false,
+      check: false,
     };
   },
   methods: {
     openSector() {
       this.sectorState = !this.sectorState;
+      this.statusState = false;
     },
     openState() {
-        this.statusState = !this.statusState;
+      this.statusState = !this.statusState;
+      this.sectorState = false;
+    },
+    clearSectors() {
+      this.sectors.forEach((item) => (item.selected = false));
+      console.log("Sector cleared");
+    },
+    clearStatus() {
+      this.status.forEach((i) => (i.selected = false));
+    },
+    filterIt (event) {
+      console.log(event.target.value)
     }
   },
 };
