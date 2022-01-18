@@ -5,6 +5,10 @@
   <h1 class="title">{{ $t('message') }}</h1>
   <!-- <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
   <nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link> -->
+  <div class="bg-midnight text-tahiti">
+  <!-- ... -->
+  cascas
+</div>
   <LanguageInput/>
 </div>
 </template>

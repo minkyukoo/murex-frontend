@@ -1,7 +1,9 @@
 import { defineNuxtConfig } from '@nuxt/bridge';
 import i18n from './config/i18n.js';
-export default defineNuxtConfig ({
+export default defineNuxtConfig({
+  loading: '~/components/LoadingBar.vue',
   // Global page headers: https://go.nuxtjs.dev/config-head
+
   head: {
     title: 'vue-nuxt-pro',
     htmlAttrs: {
@@ -14,17 +16,26 @@ export default defineNuxtConfig ({
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css',
+      },
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~assets/css/main.css'
+    '~assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~plugins/vue-carousel', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,26 +55,34 @@ export default defineNuxtConfig ({
         locales: [
           {
             code: 'en',
-            name: 'English'
+            name: 'EN'
           },
           {
             code: 'fr',
-            name: 'Français'
+            name: 'FR'
           },
           {
             code: 'kr',
-            name: 'Korean'
+            name: 'KO'
           }
         ],
         vueI18n: i18n
       }
     ],
   ],
-
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {},
+    injectPosition: 0,
+  },
   styleResources: {
     scss: [
+      '~assets/scss/general.scss',
+      '~assets/scss/icons.scss',
+      '~assets/scss/variables.scss',
       '~assets/scss/mixins.scss',
-      '~assets/scss/variables.scss'
     ]
   },
 
