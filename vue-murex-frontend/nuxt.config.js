@@ -1,6 +1,10 @@
 import { defineNuxtConfig } from '@nuxt/bridge';
 import i18n from './config/i18n.js';
 export default defineNuxtConfig({
+  target: 'server',
+  nitro: {
+    preset: 'server'
+  },
   loading: '~/components/LoadingBar.vue',
   // Global page headers: https://go.nuxtjs.dev/config-head
 
