@@ -11,11 +11,13 @@
   "dependencies": {
     "@nuxtjs/i18n": "^7.2.0",
     "core-js": "^3.19.3",
+    "node-sass": "^7.0.1",
     "nuxi": "^0.10.1",
     "nuxi-edge": "^3.0.0-27338323.1e98259",
     "nuxt": "^2.15.8",
     "nuxt-edge": "latest",
     "nuxt-i18n": "^6.28.1",
+    "tailwindcss": "^2.2.16",
     "vue": "^2.6.14",
     "vue-carousel": "^0.18.0",
     "vue-nuxt-pro": "file:",
@@ -30,6 +32,6 @@
     "autoprefixer": "^10.4.1",
     "postcss": "^8.4.5",
     "sass": "^1.45.1",
-    "sass-loader": "^10.2.0"
+    "sass-loader": "^7.0.1"
   }
 }
