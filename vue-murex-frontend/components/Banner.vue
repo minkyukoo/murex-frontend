@@ -30,7 +30,7 @@
     </carousel>
     <BannerState
       :slideNumber="this.number"
-      :TotalSlides="this.arr.length"
+      :TotalSlides="this.bannerArr.length"
       :progressValue="this.progressValue"
       v-on:PauseIt="pauseSlide"
     />
@@ -52,46 +52,13 @@ export default {
       progressValue: null,
       bannerArr: [],
       mobileView: false,
-      arr: [
-        {
-          id: "01",
-          title: "Reinvent Venture Capital1",
-          subtext:
-            "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
-          image: "banner-img.png",
-          value: "25",
-        },
-        {
-          id: "02",
-          title: "Reinvent Venture Capital2",
-          subtext:
-            "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
-          image: "banner-img.png",
-          value: "50",
-        },
-        {
-          id: "03",
-          title: "Reinvent Venture Capital3",
-          subtext:
-            "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
-          image: "banner-img.png",
-          value: "75",
-        },
-        {
-          id: "04",
-          title: "Reinvent Venture Capital4",
-          subtext:
-            "뮤렉스파트너스는 새로운 밴처캐피탈입니다.벤처캐피탈의 혁신을 꿈꾸는 젊은 벤처캐피탈 리스트들이 만나는 회사입니다.창업자와 함께 일하고 자본시장에 새로운 흐름을 만듭니다.",
-          image: "banner-img.png",
-          value: "100",
-        },
-      ],
+     
     };
   },
   mounted() {
     this.show = true;
     console.log(this.slide);
-    this.progressValue = (this.number / this.arr.length) * 100;
+    this.progressValue = (this.number / this.bannerArr.length) * 100;
     this.getBanner();
     window.addEventListener("resize", this.getDimensions);
   },
@@ -109,7 +76,7 @@ export default {
     FindPageNumber(currentPage) {
       console.log(`page changed to ${currentPage}`);
       this.number = `0${currentPage + 1}`;
-      this.progressValue = (this.number / this.arr.length) * 100;
+      this.progressValue = (this.number / this.bannerArr.length) * 100;
     },
     async getBanner() {
       const BannerItem = await this.$axios.$get("getbannerlist");
