@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .footer {
   @include dflex-align-justify-center;
-  border: 1px solid $grey-1;
+  border-top: 1px solid $grey-1;
   height: 60px;
   overflow: hidden;
   p {

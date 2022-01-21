@@ -35,7 +35,8 @@ export default defineNuxtConfig({
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~plugins/vue-carousel', mode: 'client' }
+    { src: '~plugins/vue-carousel', mode: 'client' },
+    { src: '~plugins/jw-vue-pagination', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -89,7 +90,23 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/i18n',
+    '@nuxtjs/axios',
   ],
+  axios: {
+    baseURL: 'http://murex-backend.dvconsulting.org/api/', // Used as fallback if no runtime config is provided
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      browserBaseURL: process.env.BROWSER_BASE_URL
+    }
+  },
+
+  privateRuntimeConfig: {
+    axios: {
+      baseURL: process.env.BASE_URL
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

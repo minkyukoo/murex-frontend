@@ -8,8 +8,10 @@
     "start": "nuxi preview"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/i18n": "^7.2.0",
     "core-js": "^3.19.3",
+    "jw-vue-pagination": "^1.0.3",
     "nuxi": "^0.10.1",
     "nuxi-edge": "^3.0.0-27338323.1e98259",
     "nuxt-edge": "latest",

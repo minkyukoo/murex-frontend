@@ -1,6 +1,8 @@
 <template>
   <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
-    <div class="Add-founder">
+
+    <!-- <div>{{$nuxt.$route.path}}</div> -->
+    <!-- <div class="Add-founder">
       <img src="../assets/images/founder-logo.png" alt="img" class="logo" />
       <div class="Adding">
         <div>
@@ -9,7 +11,7 @@
         </div>
         <img src="../assets/icons/Plus.svg" />
       </div>
-    </div>
+    </div> -->
     <TeamCard
       v-for="(team, i) of teams"
       :key="team.id || i + 1"
@@ -30,8 +32,18 @@ export default {
     return {
       pageHeading: "Our Team",
       teams: [
+        // {
+        //   id: 1,
+        //   name: "하이메디",
+        //   designation: "이정주, 서돈교",
+        //   image: "founder-logo.png",
+        //   sns_links: {
+        //     fb: "https://facebook.com",
+        //     ln: "https://linkedin.com",
+        //   },
+        // },
         {
-          id: 1,
+          id: 2,
           name: "이범석",
           designation: "CEO / Co-Founder",
           image: "team-01.jpg",
@@ -41,7 +53,7 @@ export default {
           },
         },
         {
-          id: 2,
+          id: 3,
           name: "강동민",
           designation: "부사장 / Co-Founder",
           image: "team-02.jpg",
@@ -51,7 +63,7 @@ export default {
           },
         },
         {
-          id: 3,
+          id: 4,
           name: "오지성",
           designation: "부사장 / Co-Founder",
           image: "team-03.jpg",
@@ -61,7 +73,7 @@ export default {
           },
         },
         {
-          id: 4,
+          id: 5,
           name: "박진영",
           designation: "수석",
           image: "team-04.jpg",
@@ -71,7 +83,7 @@ export default {
           },
         },
         {
-          id: 5,
+          id: 6,
           name: "김세진",
           designation: "수석",
           image: "team-05.jpg",
@@ -81,7 +93,7 @@ export default {
           },
         },
         {
-          id: 6,
+          id: 7,
           name: "김세호",
           designation: "이사",
           image: "team-06.jpg",
@@ -91,7 +103,7 @@ export default {
           },
         },
         {
-          id: 7,
+          id: 8,
           name: "이은영",
           designation: "경영기획실장",
           image: "team-07.jpg",
@@ -101,7 +113,7 @@ export default {
           },
         },
         {
-          id: 8,
+          id: 9,
           name: "김윤나",
           designation: "사원",
           image: "team-08.jpg",
@@ -111,7 +123,7 @@ export default {
           },
         },
         {
-          id: 9,
+          id: 10,
           name: "신지혜",
           designation: "사원",
           image: "team-09.jpg",

@@ -10,20 +10,21 @@
       :paginationEnabled="false"
       @page-change="FindPageNumber"
     >
-      <slide v-for="(slide, index) in arr" :key="index">
+      <slide v-for="(slide, index) in bannerArr" :key="index">
         <div
           class="slider-item"
           :style="{
-            backgroundImage: `url(${require('../assets/images/' +
-              slide.image)})`,
+            backgroundImage: `url(${
+              mobileView ? slide.mob_image : slide.pc_image
+            })`,
           }"
         >
-          <div class="container">
+          <!-- <div class="container">
             <div class>
               <h2>{{ slide.title }}</h2>
               <h6>{{ slide.subtext }}</h6>
             </div>
-          </div>
+          </div> -->
         </div>
       </slide>
     </carousel>
@@ -49,6 +50,8 @@ export default {
       pauseIcon: true,
       number: "01",
       progressValue: null,
+      bannerArr: [],
+      mobileView: false,
       arr: [
         {
           id: "01",
@@ -82,7 +85,6 @@ export default {
           image: "banner-img.png",
           value: "100",
         },
-
       ],
     };
   },
@@ -90,8 +92,16 @@ export default {
     this.show = true;
     console.log(this.slide);
     this.progressValue = (this.number / this.arr.length) * 100;
+    this.getBanner();
+    window.addEventListener("resize", this.getDimensions);
+  },
+  unmounted() {
+    window.removeEventListener("resize", this.getDimensions);
   },
   methods: {
+    getDimensions() {
+      this.mobileView = window.innerWidth <= 567;
+    },
     pauseSlide() {
       this.slide = !this.slide;
       this.pauseIcon = !this.pauseIcon;
@@ -100,6 +110,11 @@ export default {
       console.log(`page changed to ${currentPage}`);
       this.number = `0${currentPage + 1}`;
       this.progressValue = (this.number / this.arr.length) * 100;
+    },
+    async getBanner() {
+      const BannerItem = await this.$axios.$get("getbannerlist");
+      console.log("Items", BannerItem.data);
+      this.bannerArr = BannerItem.data;
     },
   },
 };

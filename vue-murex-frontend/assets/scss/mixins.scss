@@ -21,6 +21,11 @@
   align-items: center;
   justify-content: space-between;
 }
+@mixin  dflex-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 // Heading
 @mixin heading-1 {
