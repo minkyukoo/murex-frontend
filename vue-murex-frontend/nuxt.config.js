@@ -1,4 +1,5 @@
 import i18n from "./config/i18n.js";
+import webpack from 'webpack';
 export default {
   target: 'server',
   server: {
@@ -32,7 +33,16 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~assets/css/main.css"],
+  css: [
+    // 'css', 'pcss', 'postcss', 'scss', 'sass',
+    // css
+    '~/assets/css/main.css',
+    '~/assets/css/tailwind.css',
+    // scss
+    // '~/assets/scss/variables.scss',
+    // '~/assets/scss/_mixins.scss',
+    '~/assets/scss/general.scss',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -46,10 +56,10 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/style-resources",
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/style-resources',
     [
-      "nuxt-i18n",
+      'nuxt-i18n',
       {
         vueI18nLoader: true,
         defaultLocale: "en",
@@ -72,18 +82,17 @@ export default {
     ],
   ],
   tailwindcss: {
-    cssPath: "~/assets/css/tailwind.css",
-    configPath: "tailwind.config.js",
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
     exposeConfig: false,
     config: {},
     injectPosition: 0,
   },
   styleResources: {
     scss: [
-      "~assets/scss/general.scss",
-      "~assets/scss/icons.scss",
-      "~assets/scss/variables.scss",
-      "~assets/scss/mixins.scss",
+      '~/assets/scss/general.scss',
+      '~/assets/scss/variables.scss',
+      '~/assets/scss/mixins.scss',
     ],
   },
 
@@ -110,7 +119,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-
+    plugins: [
+      new webpack.ProvidePlugin({
+        // global modules
+        $: 'jquery',
+        _: 'lodash',
+        rules: [
+          {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          },
+        ],
+      })
+    ],
     loaders: {
       sass: {
         implementation: require("sass"),
