@@ -18,6 +18,7 @@
     ></jw-pagination> -->
     <pagination
       :totalRecords="paginationState.totalRecords"
+      :resetPageNo="paginationState.resetPageNo"
       v-on:setNumber="pageElement($event)"
     />
   </div>

@@ -7,15 +7,19 @@
         :itemList="contentList"
         :paginationState="pagination"
         v-on:setPage="PageElement($event)"
+        v-if="contentList.length > 0"
       />
+      <content-empty v-else-if="contentList.length == 0" />
     </div>
   </div>
 </template>
 
 <script>
+import ContentEmpty from "../components/ContentEmpty.vue";
 import ContentWrapper from "../components/ContentWrapper.vue";
+
 export default {
-  components: { ContentWrapper },
+  components: { ContentWrapper, ContentEmpty },
   name: "contents",
   data() {
     return {
@@ -24,7 +28,8 @@ export default {
       pagination: {
         totalRecords: 4,
         perPage: 10,
-        pageNo: 0,
+        pageNo: "0",
+        resetPageNo: 1,
       },
     };
   },
@@ -36,7 +41,8 @@ export default {
   methods: {
     SetType(event) {
       this.tabState = event;
-      // this.pagination.pageNo = 0;
+      this.pagination.resetPageNo = 0;
+      this.pagination.pageNo = "0";
       this.getContent();
     },
     PageElement(event) {
