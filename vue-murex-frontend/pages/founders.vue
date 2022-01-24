@@ -32,5 +32,6 @@ import FounderCards from "../components/FounderCards.vue";
 <style lang="scss" scoped>
   .founders{
     background: #E5E5E5;
+    padding-bottom: calc(60px + 2vw);
   }
 </style>

@@ -4,6 +4,7 @@
       v-for="(team, i) of teams"
       :key="team.id || i + 1"
       :bgImage="team.image"
+      :imgOnHover="team.imgOnHover"
       :name="team.name"
       :designation="team.designation"
       :snsFbLink="team.sns_links.fb"
@@ -27,6 +28,7 @@ export default {
           name: "김택동",
           designation: "벤처파트너 / 레이크투자자문 대표이사",
           image: "Advisory1.png",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -37,6 +39,7 @@ export default {
           name: "강동민",
           designation: "부사장 / Co-Founder",
           image: "Advisory2.png",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -47,6 +50,7 @@ export default {
           name: "오지성",
           designation: "부사장 / Co-Founder",
           image: "Advisory3.png",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -57,6 +61,7 @@ export default {
           name: "박진영",
           designation: "수석",
           image: "Advisory4.png",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -67,6 +72,7 @@ export default {
           name: "김세진",
           designation: "수석",
           image: "Advisory5.png",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",

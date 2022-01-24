@@ -109,6 +109,9 @@ export default {
 
 <style lang="scss" scoped>
 
+.team{
+  padding-bottom: calc(60px + 2vw);
+}
 .team-modal-header {
   margin-bottom: calc(10px + 2.5vw);
   .name {

@@ -74,6 +74,11 @@ export default {
   overflow: hidden;
   .member-img {
     height: 100%;
+    aspect-ratio: 2/2.15;
+    max-height: 438px;
+    @media screen and (max-width: 1560px) {
+      max-height: 300px;
+    }
   }
   &:hover {
     .team-desc {

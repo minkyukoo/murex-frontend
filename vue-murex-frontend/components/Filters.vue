@@ -16,7 +16,12 @@
         >
           <label class="custom-checkbox"
             >{{ item.name }}
-            <input type="checkbox" :value="item.name" v-model="item.selected" @change="filterIt" />
+            <input
+              type="checkbox"
+              :value="item.name"
+              v-model="item.selected"
+              @change="filterIt"
+            />
             <span class="checkmark"></span>
           </label>
         </div>
@@ -112,9 +117,9 @@ export default {
     clearStatus() {
       this.status.forEach((i) => (i.selected = false));
     },
-    filterIt (event) {
-      console.log(event.target.value)
-    }
+    filterIt(event) {
+      console.log(event.target.value);
+    },
   },
 };
 </script>
@@ -122,8 +127,16 @@ export default {
 <style lang="scss" scoped>
 .filters {
   margin-right: 50px;
+  font-weight: 300;
+  font-size: 20px;
+  @media screen and (max-width: 767px) {
+    font-size: 15px;
+  }
   &:last-child {
     margin-right: 0;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0 16px;
   }
 }
 .dropdown {
@@ -132,6 +145,11 @@ export default {
     cursor: pointer;
     position: relative;
     padding-left: 18px;
+    font-weight: 300;
+    font-size: 20px;
+    @media screen and (max-width: 767px) {
+      font-size: 15px;
+    }
     &::before {
       content: "";
       width: 8px;
@@ -140,7 +158,7 @@ export default {
       border-color: $purple-3 transparent transparent transparent;
       position: absolute;
       left: 0;
-      top: 7px;
+      top: 12px;
     }
   }
 }

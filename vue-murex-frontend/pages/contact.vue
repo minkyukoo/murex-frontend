@@ -6,8 +6,8 @@
     <div class="divider-1"></div>
     <div class="fluidContainer">
       <div class="container">
-        <div class="contact-us-cont grid md:grid-rows-1 grid-rows-2 grid-flow-col">
-          <div class="col-auto md:w-1/2 left-panel">
+        <div class="contact-us-cont md:grid grid-rows-1 grid-flow-col">
+          <div class="md:w-1/2 left-panel col-span-1">
             <h2 class="heading-2">Information</h2>
             <ul class="inf-cont">
               <ContactInfoItem
@@ -20,7 +20,7 @@
               />
             </ul>
           </div>
-          <div class="col-auto md:w-1/2 right-panel">
+          <div class="md:w-1/2 right-panel col-span-1">
             <h2 class="heading-2">How to come</h2>
             <ul class="inf-cont">
               <li class="inf-item">
@@ -107,13 +107,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact{
+  padding-bottom: 50px;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 25px;
+  }
+}
 .contact-us-cont {
   padding: 80px 0 100px 0;
+  @media screen and (max-width: 767px) {
+    padding: 50px 0;
+  }
+  .left-panel {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 60px;
+    }
+  }
   .inf-cont {
     margin-top: 40px;
     .inf-item {
       display: flex;
       margin-bottom: 29px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .heading-2 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    color: $black-1;
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
     }
   }
 }
