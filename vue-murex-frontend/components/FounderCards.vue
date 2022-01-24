@@ -1,6 +1,5 @@
 <template>
   <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
-
     <!-- <div>{{$nuxt.$route.path}}</div> -->
     <!-- <div class="Add-founder">
       <img src="../assets/images/founder-logo.png" alt="img" class="logo" />
@@ -16,6 +15,7 @@
       v-for="(team, i) of teams"
       :key="team.id || i + 1"
       :bgImage="team.image"
+      :imgOnHover="team.imgOnHover"
       :name="team.name"
       :designation="team.designation"
       v-on:openModal="OpenModal"
@@ -47,6 +47,7 @@ export default {
           name: "이범석",
           designation: "CEO / Co-Founder",
           image: "team-01.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -57,6 +58,7 @@ export default {
           name: "강동민",
           designation: "부사장 / Co-Founder",
           image: "team-02.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -67,6 +69,7 @@ export default {
           name: "오지성",
           designation: "부사장 / Co-Founder",
           image: "team-03.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -77,6 +80,7 @@ export default {
           name: "박진영",
           designation: "수석",
           image: "team-04.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -87,6 +91,7 @@ export default {
           name: "김세진",
           designation: "수석",
           image: "team-05.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -97,6 +102,7 @@ export default {
           name: "김세호",
           designation: "이사",
           image: "team-06.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -107,6 +113,7 @@ export default {
           name: "이은영",
           designation: "경영기획실장",
           image: "team-07.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -117,6 +124,7 @@ export default {
           name: "김윤나",
           designation: "사원",
           image: "team-08.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -127,6 +135,7 @@ export default {
           name: "신지혜",
           designation: "사원",
           image: "team-09.jpg",
+          imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",

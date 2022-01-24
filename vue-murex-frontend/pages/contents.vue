@@ -31,11 +31,12 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.getContent();
-    })
+    });
   },
   methods: {
     SetType(event) {
       this.tabState = event;
+      // this.pagination.pageNo = 0;
       this.getContent();
     },
     PageElement(event) {
@@ -59,9 +60,13 @@ export default {
       console.log("pagination", this.pagination.totalRecords);
     },
   },
+  // watch: {
+  //   tabState: function() {
+  //     this.pagination.pageNo = 0;
+  //   },
+  // },
 };
 </script>
 
 <style lang="scss" scoped>
-
 </style>

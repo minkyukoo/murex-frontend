@@ -15,7 +15,8 @@
         </div>
         <div>
           <h5>
-            <span>{{ slideNumber }}</span> / <span>0{{ TotalSlides }}</span>
+            <span>{{ slideNumber > 9 ? slideNumber : 0 + slideNumber }}</span> /
+            <span>{{ TotalSlides > 9 ? TotalSlides : 0 + TotalSlides }}</span>
           </h5>
         </div>
       </div>
@@ -82,6 +83,6 @@ progress[value]::-webkit-progress-bar {
 progress[value]::-webkit-progress-value {
   background-color: #ffffff;
   height: 2px;
-  transition : width 3s ease;
+  transition: width 3s ease;
 }
 </style>

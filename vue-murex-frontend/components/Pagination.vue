@@ -36,6 +36,7 @@ export default {
   name: "Pagination",
   props: {
     totalRecords: Number,
+    // pageNo: String,
   },
   data() {
     return {
@@ -54,7 +55,7 @@ export default {
     FindPageNo(id) {
       this.pageNo = id;
       this.$emit("setNumber", this.pageNo);
-      console.log("page no", id);
+      console.log("page no", this.pageNo);
     },
   },
   watch: {

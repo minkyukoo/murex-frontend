@@ -34,6 +34,7 @@ export default {
 <style lang="scss" scoped>
 .content-box {
   margin-bottom: calc(60px + 3vw);
+  overflow-x: auto;
   &:hover {
     .content-desc {
       h3 {
