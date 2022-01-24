@@ -1,24 +1,40 @@
 <template>
   <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
-  <div class="team-item" @click="MemberInfo">
-    <img :src="`${require('../assets/images/' + bgImage)}`" :alt="`${name}`" />
+  <div
+    class="team-item"
+    @click="MemberInfo"
+    @mouseenter="() => (changeImg = true)"
+    @mouseleave="() => (changeImg = false)"
+  >
+    <img
+      :src="`${require('../assets/images/' + bgImage)}`"
+      :alt="`${name}`"
+      class="member-img"
+      v-if="!changeImg"
+    />
+    <img
+      :src="`${require('../assets/images/' + imgOnHover)}`"
+      :alt="`${name}`"
+      class="member-img"
+      v-else
+    />
     <div class="team-desc">
       <div class="team-desc-cont">
         <p class="name">{{ name }}</p>
         <p class="designation">{{ designation }}</p>
       </div>
       <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
-        <nuxt-link class="sns-link" :to="`${snsLnLink}`" v-if="snsLnLink">
+        <a class="sns-link" :href="`${snsLnLink}`" v-if="snsLnLink">
           <i class="icon-ln"></i>
-        </nuxt-link>
-        <nuxt-link class="sns-link" :to="`${snsFbLink}`" v-if="snsFbLink">
+        </a>
+        <a class="sns-link" :href="`${snsFbLink}`" v-if="snsFbLink">
           <i class="icon-fb"></i>
-        </nuxt-link>
+        </a>
       </div>
       <div class="sns-links" v-else-if="`${$nuxt.$route.path}` === '/founders'">
-        <nuxt-link class="sns-link" to="/#">
+        <a class="sns-link" href="/#">
           <img src="../assets/icons/Plus.svg" />
-        </nuxt-link>
+        </a>
       </div>
     </div>
   </div>
@@ -33,6 +49,12 @@ export default {
     designation: String,
     snsFbLink: String,
     snsLnLink: String,
+    imgOnHover: String,
+  },
+  data() {
+    return {
+      changeImg: false,
+    };
   },
   methods: {
     MemberInfo() {
@@ -45,16 +67,24 @@ export default {
 
 <style lang="scss" scoped>
 .team-item {
-  // @include dflex-align-end;
-  // width: 25%;
-  // min-height: 480px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
   overflow: hidden;
+  .member-img {
+    height: 100%;
+  }
   &:hover {
     .team-desc {
+      .team-desc-cont {
+        .name {
+          color: $black-1;
+        }
+        .designation {
+          color: $black-1;
+        }
+      }
       .sns-links {
         transform: translateY(0%);
         opacity: 1;

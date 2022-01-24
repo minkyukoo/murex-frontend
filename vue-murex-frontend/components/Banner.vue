@@ -48,7 +48,7 @@ export default {
       show: false,
       slide: true,
       pauseIcon: true,
-      number: "01",
+      number: "1",
       progressValue: null,
       bannerArr: [],
       mobileView: false,
@@ -75,7 +75,7 @@ export default {
     },
     FindPageNumber(currentPage) {
       console.log(`page changed to ${currentPage}`);
-      this.number = `0${currentPage + 1}`;
+      this.number = `${currentPage + 1}`;
       this.progressValue = (this.number / this.bannerArr.length) * 100;
     },
     async getBanner() {

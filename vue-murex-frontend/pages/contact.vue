@@ -6,8 +6,8 @@
     <div class="divider-1"></div>
     <div class="fluidContainer">
       <div class="container">
-        <div class="contact-us-cont flex">
-          <div class="col-auto w-1/2 left-panel">
+        <div class="contact-us-cont grid md:grid-rows-1 grid-rows-2 grid-flow-col">
+          <div class="col-auto md:w-1/2 left-panel">
             <h2 class="heading-2">Information</h2>
             <ul class="inf-cont">
               <ContactInfoItem
@@ -20,7 +20,7 @@
               />
             </ul>
           </div>
-          <div class="col-auto w-1/2 right-panel">
+          <div class="col-auto md:w-1/2 right-panel">
             <h2 class="heading-2">How to come</h2>
             <ul class="inf-cont">
               <li class="inf-item">
