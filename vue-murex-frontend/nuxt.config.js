@@ -1,8 +1,8 @@
-// import { defineNuxtConfig } from "@nuxt/bridge";
 import i18n from "./config/i18n.js";
 export default {
   target: 'server',
   server: {
+    // host: '0',
     port: 3002,
   },
   loading: "~/components/LoadingBar.vue",
