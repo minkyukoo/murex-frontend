@@ -4,7 +4,7 @@
       <TopHeading :heading="pageHeading" />
     </div>
     <div class="fluidContainer">
-      <Filters />
+      <!-- <Filters /> -->
       <FounderCards />
     </div>
   </div>
@@ -12,13 +12,13 @@
 
 <script>
 import TopHeading from "../components/TopHeading.vue";
-import Filters from "../components/Filters.vue";
+// import Filters from "../components/Filters.vue";
 import FounderCards from "../components/FounderCards.vue";
   export default {
     name: 'founders',
     components: {
       TopHeading,
-      Filters,
+      // Filters,
       FounderCards,
     },
     data() {

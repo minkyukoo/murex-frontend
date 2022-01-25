@@ -5,7 +5,7 @@
     </div>
     <div class="fluidContainer">
       <!-- <div class="divider-1"></div> -->
-      <TeamCards v-on:openModal="changeState" />
+      <TeamCards v-on:openModal="changeState($event)" />
     </div>
     <div class="container">
       <TopHeading :heading="pageHeading2" />
@@ -14,58 +14,71 @@
       <!-- <div class="divider-1"></div> -->
       <AdvisoryCards v-on:openModal="changeState" />
     </div>
-    <Modal v-show="TeamModal" @close="closeModal" v-bind:showCloseBtn="true">
+    <Modal
+      v-show="TeamModal"
+      @close="closeModal"
+      v-bind:showCloseBtn="true"
+      v-if="Object.keys(modalData).length > 0"
+    >
       <template v-slot:header>
         <div class="w-full team-modal-header">
-          <h1 class="name">강동민 <span>부사장 / Co-Founder</span></h1>
+          <h1 class="name">
+            {{ modalData.name }} <span>{{ modalData.designation }}</span>
+          </h1>
         </div>
       </template>
       <template v-slot:body>
         <div class="w-full team-modal-body">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
-            <div class="img-holder">
-              <img src="~/assets/images/team-01.jpg" alt="img" />
+            <div class="img-holder" v-if="modalData.image">
+              <img
+                :src="`${require('../assets/images/' + modalData.image)}`"
+                alt="img"
+              />
             </div>
             <div>
               <p class="desc-sec main-desc">
-                강동민 부사장은 +14년 경력의 벤처캐피탈리스트로 야놀자,
-                펫프렌즈, 바디텍메드, 패스트파이브 등에 투자하였습니다.
-                현대증권에서 근무한 금융 출신 경험을 바탕으로 투자 기업 분석,
-                투자 전략 수립 등에 전문성을 가지고 있습니다.
+                {{ modalData.basicDesc }}
               </p>
               <h4 class="heading">학력 / 경력</h4>
-              <p class="sub-desc desc-sec">
-                파트너스인베스트먼트(’14~’18) 수석팀장<br />
-                현대증권(現 KB증권)(’07~’13) Principal Investment <br />
-                연세대 경제학 석사 <br />
-                서울대 경제학부
-              </p>
+              <ul class="sub-desc desc-sec">
+                <li
+                  v-for="(item, index) in modalData.EducationList"
+                  :key="index"
+                >
+                  {{ item }}
+                </li>
+              </ul>
               <h4 class="heading">투자경력</h4>
               <div class="grid grid-rows-1 grid-flow-col desc-sec">
                 <div>
                   <ul>
-                    <li>펫프렌즈</li>
-                    <li>다노</li>
-                    <li>솔트룩스</li>
-                    <li>모아이게임즈</li>
+                    <li
+                      v-for="(item, index) in modalData.investmentExp1"
+                      :key="index"
+                    >
+                      {{ item }}
+                    </li>
                   </ul>
                 </div>
                 <div>
                   <ul>
-                    <li>스틸에잇</li>
-                    <li>야놀자</li>
-                    <li>바디텍메드</li>
-                    <li>루멘스</li>
+                    <li
+                      v-for="(item, index) in modalData.investmentExp2"
+                      :key="index"
+                    >
+                      {{ item }}
+                    </li>
                   </ul>
                 </div>
               </div>
               <div>
-                <span role="button" class="social-icon">
+                <a :href="modalData.sns_links.ln" class="social-icon">
                   <i class="icon-linkedin-dark"></i>
-                </span>
-                <span role="button" class="social-icon">
+                </a>
+                <a :href="modalData.sns_links.fb" class="social-icon">
                   <i class="icon-facebook-dark"></i>
-                </span>
+                </a>
               </div>
             </div>
           </div>
@@ -84,7 +97,7 @@ import AdvisoryCards from "../components/AdvisoryCards.vue";
 import Modal from "../components/Modal.vue";
 export default {
   name: "team",
-  components: { TeamCards, Modal,AdvisoryCards },
+  components: { TeamCards, Modal, AdvisoryCards },
   props: {
     showCloseBtn: Boolean,
   },
@@ -94,11 +107,15 @@ export default {
       pageHeading2: "Venture Partner / Advisory",
       isModalVisible: false,
       TeamModal: false,
+      modalData: [],
     };
   },
   methods: {
-    changeState() {
+    changeState(event) {
       this.TeamModal = true;
+      // console.log(event);
+      this.modalData = event;
+      console.log(this.modalData);
     },
     closeModal() {
       this.TeamModal = false;
@@ -108,8 +125,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.team{
+.team {
   padding-bottom: calc(60px + 2vw);
 }
 .team-modal-header {

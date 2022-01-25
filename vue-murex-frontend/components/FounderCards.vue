@@ -1,7 +1,9 @@
 <template>
-  <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
-    <!-- <div>{{$nuxt.$route.path}}</div> -->
-    <!-- <div class="Add-founder">
+  <div>
+    <filters />
+    <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
+      <!-- <div>{{$nuxt.$route.path}}</div> -->
+      <!-- <div class="Add-founder">
       <img src="../assets/images/founder-logo.png" alt="img" class="logo" />
       <div class="Adding">
         <div>
@@ -11,23 +13,25 @@
         <img src="../assets/icons/Plus.svg" />
       </div>
     </div> -->
-    <TeamCard
-      v-for="(team, i) of teams"
-      :key="team.id || i + 1"
-      :bgImage="team.image"
-      :imgOnHover="team.imgOnHover"
-      :name="team.name"
-      :designation="team.designation"
-      v-on:openModal="OpenModal"
-    />
+      <TeamCard
+        v-for="(team, i) of teams"
+        :key="team.id || i + 1"
+        :bgImage="team.image"
+        :imgOnHover="team.imgOnHover"
+        :name="team.name"
+        :designation="team.designation"
+        v-on:openModal="OpenModal"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import Filters from "./Filters.vue";
 import TeamCard from "./TeamCard.vue";
 export default {
   name: "FounderCards",
-  components: { TeamCard },
+  components: { TeamCard, Filters },
   data() {
     return {
       pageHeading: "Our Team",
@@ -48,6 +52,8 @@ export default {
           designation: "CEO / Co-Founder",
           image: "team-01.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -59,6 +65,8 @@ export default {
           designation: "부사장 / Co-Founder",
           image: "team-02.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -70,6 +78,8 @@ export default {
           designation: "부사장 / Co-Founder",
           image: "team-03.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -81,6 +91,8 @@ export default {
           designation: "수석",
           image: "team-04.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -92,6 +104,8 @@ export default {
           designation: "수석",
           image: "team-05.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -103,6 +117,8 @@ export default {
           designation: "이사",
           image: "team-06.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -114,6 +130,8 @@ export default {
           designation: "경영기획실장",
           image: "team-07.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -125,6 +143,8 @@ export default {
           designation: "사원",
           image: "team-08.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -136,6 +156,8 @@ export default {
           designation: "사원",
           image: "team-09.jpg",
           imgOnHover: "company-logoOnHover.png",
+          sector: "",
+          status: "",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",

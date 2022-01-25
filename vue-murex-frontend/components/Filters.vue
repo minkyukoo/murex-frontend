@@ -99,6 +99,8 @@ export default {
       sectorState: false,
       statusState: false,
       check: false,
+      sectorFilter: [],
+      statusFilter: [],
     };
   },
   methods: {
@@ -118,7 +120,8 @@ export default {
       this.status.forEach((i) => (i.selected = false));
     },
     filterIt(event) {
-      console.log(event.target.value);
+      this.sectorFilter.push(event.target.value)
+      console.log(this.sectorFilter)
     },
   },
 };

@@ -50,6 +50,7 @@ export default {
     snsFbLink: String,
     snsLnLink: String,
     imgOnHover: String,
+    product: Object,
   },
   data() {
     return {
@@ -58,8 +59,8 @@ export default {
   },
   methods: {
     MemberInfo() {
-      this.$emit("openModal", true);
-      console.log("member clicked");
+      this.$emit("openModal", this.product);
+      // console.log("member clicked", this.product);
     },
   },
 };
