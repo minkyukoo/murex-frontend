@@ -1,6 +1,6 @@
 <template>
   <div class="flex mb-10">
-    <div class="filters" role="button">All</div>
+    <div class="filters" role="button" @click="ClearAll">All</div>
     <div class="filters dropdown">
       <h4 class="dropdown-opener" @click="openSector">Sector</h4>
       <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']">
@@ -43,7 +43,12 @@
         <div class="dropdown-item" v-for="(item, index) of status" :key="index">
           <label class="custom-checkbox"
             >{{ item.name }}
-            <input type="checkbox" :value="item.name" v-model="item.selected" />
+            <input
+              type="checkbox"
+              :value="item.name"
+              v-model="item.selected"
+              @change="filterIt"
+            />
             <span class="checkmark"></span>
           </label>
         </div>
@@ -100,7 +105,7 @@ export default {
       statusState: false,
       check: false,
       sectorFilter: [],
-      statusFilter: [],
+      // statusFilter: [],
     };
   },
   methods: {
@@ -112,16 +117,46 @@ export default {
       this.statusState = !this.statusState;
       this.sectorState = false;
     },
+    ClearAll() {
+      this.sectors.forEach((item) => (item.selected = false));
+      this.status.forEach((i) => (i.selected = false));
+      this.sectorFilter = [];
+      this.$emit("sectorFilter", this.sectorFilter);
+      console.log(this.sectorFilter)
+    },
     clearSectors() {
       this.sectors.forEach((item) => (item.selected = false));
       console.log("Sector cleared");
+      // this.sectorFilter = [];
+      this.sectors.forEach((e, i) => {
+        let imd = this.sectorFilter.findIndex((x) => x == e.name);
+        if (imd > -1) {
+          this.sectorFilter.splice(imd, 1);
+        }
+      });
+      this.$emit("sectorFilter", this.sectorFilter);
     },
     clearStatus() {
       this.status.forEach((i) => (i.selected = false));
+      this.status.forEach((e, i) => {
+        let imd = this.sectorFilter.findIndex((x) => x == e.name);
+        if (imd > -1) {
+          this.sectorFilter.splice(imd, 1);
+        }
+      });
+      this.$emit("sectorFilter", this.sectorFilter);
     },
     filterIt(event) {
-      this.sectorFilter.push(event.target.value)
-      console.log(this.sectorFilter)
+      if (event.target.checked) {
+        this.sectorFilter.push(event.target.value);
+      } else if (!event.target.checked) {
+        let index = this.sectorFilter.findIndex((x) => x == event.target.value);
+        if (index > -1) {
+          this.sectorFilter.splice(index, 1);
+        }
+      }
+      this.$emit("sectorFilter", this.sectorFilter);
+      console.log(this.sectorFilter);
     },
   },
 };

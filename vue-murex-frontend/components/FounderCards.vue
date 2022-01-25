@@ -1,6 +1,6 @@
 <template>
   <div>
-    <filters />
+    <filters v-on:sectorFilter="filterSector($event)"  />
     <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
       <!-- <div>{{$nuxt.$route.path}}</div> -->
       <!-- <div class="Add-founder">
@@ -52,8 +52,8 @@ export default {
           designation: "CEO / Co-Founder",
           image: "team-01.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Healthcare",
+          status: "Alumni",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -65,8 +65,8 @@ export default {
           designation: "부사장 / Co-Founder",
           image: "team-02.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Consumer",
+          status: "Alumni",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -78,8 +78,8 @@ export default {
           designation: "부사장 / Co-Founder",
           image: "team-03.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Crypto",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -91,8 +91,8 @@ export default {
           designation: "수석",
           image: "team-04.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Consumer",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -104,8 +104,8 @@ export default {
           designation: "수석",
           image: "team-05.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Consumer",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -117,8 +117,8 @@ export default {
           designation: "이사",
           image: "team-06.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Consumer",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -130,8 +130,8 @@ export default {
           designation: "경영기획실장",
           image: "team-07.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Enterprise",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -143,8 +143,8 @@ export default {
           designation: "사원",
           image: "team-08.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Consumer",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
@@ -156,20 +156,62 @@ export default {
           designation: "사원",
           image: "team-09.jpg",
           imgOnHover: "company-logoOnHover.png",
-          sector: "",
-          status: "",
+          sector: "Enterprise",
+          status: "Current",
           sns_links: {
             fb: "https://facebook.com",
             ln: "https://linkedin.com",
           },
         },
       ],
+      backupTeam: [],
+      clear: [],
     };
+  },
+  mounted() {
+    this.backupTeam = [...this.teams];
   },
   methods: {
     OpenModal() {
       this.$emit("openModal", true);
       console.log("member click passed");
+    },
+    filterSector(event = []) {
+      // console.log(event,event.includes("Consumer"))
+      this.clear = event;
+      if (event.length > 0) {
+        this.teams = this.backupTeam.filter((x) => {
+          let imd = event.findIndex((y) => y == x.sector || y == x.status); // [Consumer,Enterprice]
+          console.log(imd);
+          if (imd > -1) {
+            return true;
+          }
+        });
+        // console.log(this.teams);
+      } else {
+        this.teams = [...this.backupTeam];
+      }
+    },
+    clearFilter(type = "") {
+      console.log(type,this.clear)
+      if (type == "Sector") {
+        this.teams = this.backupTeam.filter((x) => {
+          let imd = this.clear.findIndex((y) => y == x.status); // [Consumer,Enterprice]
+          console.log(imd);
+          if (imd > -1) {
+            return true;
+          }
+        });
+      }
+      if (type == "Status") {
+        this.teams = this.backupTeam.filter((x) => {
+          let imd = this.clear.findIndex((y) => y == x.sector); // [Consumer,Enterprice]
+          console.log(imd);
+          if (imd > -1) {
+            return true;
+          }
+        });
+      }
     },
   },
 };
