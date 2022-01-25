@@ -11,7 +11,6 @@
       <TopHeading :heading="pageHeading2" />
     </div>
     <div class="fluidContainer">
-      <!-- <div class="divider-1"></div> -->
       <AdvisoryCards v-on:openModal="changeState" />
     </div>
     <Modal
