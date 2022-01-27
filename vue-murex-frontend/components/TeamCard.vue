@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
   <div
-    class="team-item"
+    :class="`team-item ${$nuxt.$route.path === '/team' ? 'gradient' : ''}`"
     @click="MemberInfo"
     @mouseenter="() => (changeImg = true)"
     @mouseleave="() => (changeImg = false)"
@@ -73,6 +73,33 @@ export default {
   background-size: cover;
   position: relative;
   overflow: hidden;
+  &.gradient {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 59.11%,
+        #272727 100%
+      );
+    }
+    &:hover {
+      .team-desc {
+        .team-desc-cont {
+          .name {
+            color: $white;
+          }
+          .designation {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
   .member-img {
     height: 100%;
     aspect-ratio: 2/2.15;
