@@ -69,10 +69,6 @@ export default {
             name: "EN",
           },
           {
-            code: "fr",
-            name: "FR",
-          },
-          {
             code: "kr",
             name: "KO",
           },
