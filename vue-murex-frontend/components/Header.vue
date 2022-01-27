@@ -116,9 +116,15 @@ export default {
     width: calc(100px + 3vw);
     height: auto;
   }
+  .container{
+    @media screen and (max-width: 640px) {
+      padding: 0 16px;
+    } 
+  }
   .header-wrap {
     @include dflex-align-justify-between;
     height: 80px;
+
     .right-panel {
       @include dflex-align-center;
       .nav-wrap {
