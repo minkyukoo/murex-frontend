@@ -6,6 +6,7 @@
       <content-wrapper
         :itemList="contentList"
         :paginationState="pagination"
+        :tabState="tabState"
         v-on:setPage="PageElement($event)"
         v-if="contentList.length > 0"
       />
@@ -28,8 +29,7 @@ export default {
       pagination: {
         totalRecords: 4,
         perPage: 10,
-        pageNo: "0",
-        resetPageNo: 1,
+        pageNo: 0,
       },
     };
   },
@@ -42,15 +42,16 @@ export default {
     SetType(event) {
       this.tabState = event;
       this.pagination.resetPageNo = 0;
-      this.pagination.pageNo = "0";
+      this.pagination.pageNo = 0;
       this.getContent();
     },
     PageElement(event) {
-      this.pagination.pageNo = event.toString();
+      this.pagination.pageNo = event;
       console.log("furthur passing", this.pagination.pageNo);
       this.getContent();
     },
     async getContent() {
+      this.pagination.pageNo = this.pagination.pageNo.toString();
       const contentList = await this.$axios.$get("getcontentlist", {
         params: {
           per_page: "10",

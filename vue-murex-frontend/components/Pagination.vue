@@ -36,7 +36,7 @@ export default {
   name: "Pagination",
   props: {
     totalRecords: Number,
-    resetPageNo: Number,
+    tabState: String,
   },
   data() {
     return {
@@ -68,8 +68,8 @@ export default {
       this.totalPaginator = [];
       this.calcPage();
     },
-    resetPageNo: function () {
-      this.pagiNo = this.resetPageNo;
+    tabState: function () {
+      this.pagiNo = 0;
       console.log("page no reset to", this.pagiNo);
       // this.calcPage();
     },

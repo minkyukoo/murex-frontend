@@ -29,7 +29,7 @@ export default {
           id: 1,
           name: "이범석",
           designation: "CEO / Co-Founder",
-          image: "team-01.jpg",
+          image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
           basicDesc:
             "강동민 부사장은 +14년 경력의 벤처캐피탈리스트로 야놀자, 펫프렌즈, 바디텍메드, 패스트파이브 등에 투자하였습니다. 현대증권에서 근무한 금융 출신 경험을 바탕으로 투자 기업 분석, 투자 전략 수립 등에 전문성을 가지고 있습니다.",

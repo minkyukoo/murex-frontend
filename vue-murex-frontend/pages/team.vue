@@ -11,7 +11,7 @@
       <TopHeading :heading="pageHeading2" />
     </div>
     <div class="fluidContainer">
-      <AdvisoryCards v-on:openModal="changeState" />
+      <AdvisoryCards v-on:openModal="changeState($event)" />
     </div>
     <Modal
       v-show="TeamModal"
@@ -126,6 +126,7 @@ export default {
 <style lang="scss" scoped>
 .team {
   padding-bottom: calc(60px + 2vw);
+  background: #E5E5E5;
 }
 .team-modal-header {
   margin-bottom: calc(10px + 2.5vw);

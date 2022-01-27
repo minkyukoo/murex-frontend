@@ -18,7 +18,7 @@
     ></jw-pagination> -->
     <pagination
       :totalRecords="paginationState.totalRecords"
-      :resetPageNo="paginationState.resetPageNo"
+      :tabState="tabState"
       v-on:setNumber="pageElement($event)"
     />
   </div>
@@ -27,33 +27,13 @@
 <script>
 import ContentBox from "./ContentBox.vue";
 import Pagination from "./Pagination.vue";
-// const customLabels = {
-//   first: "",
-//   last: "",
-//   previous: "<",
-//   next: ">",
-// };
-// const customStyles = {
-//   ul: {
-//     // border: "2px solid red",
-//     position: "relative",
-//     left: "50%",
-//     transform: "translateX(-50%)",
-//   },
-//   li: {
-//     display: "inline-block",
-//   },
-//   a: {
-//     color: "#828282",
-//     fontSize: "16px",
-//   },
-// };
 export default {
   components: { ContentBox, Pagination },
   name: "ContentWrapper",
   props: {
     itemList: Array,
     paginationState: Object,
+    tabState: String,
   },
   data() {
     return {

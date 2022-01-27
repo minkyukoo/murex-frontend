@@ -4,12 +4,14 @@
       v-for="(team, i) of teams"
       :key="team.id || i + 1"
       :bgImage="team.image"
+      :product="team"
       :imgOnHover="team.imgOnHover"
       :name="team.name"
       :designation="team.designation"
       :snsFbLink="team.sns_links.fb"
       :snsLnLink="team.sns_links.ln"
-      v-on:openModal="OpenModal"
+      v-on:openModal="OpenModal($event)"
+      
     />
   </div>
 </template>
@@ -82,8 +84,8 @@ export default {
     };
   },
   methods : {
-    OpenModal() {
-      this.$emit('openModal',true)
+    OpenModal(event) {
+      this.$emit("openModal", event);
       console.log("member click passed")
     }
   }

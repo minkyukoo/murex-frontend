@@ -50,7 +50,7 @@ export default {
           id: 2,
           name: "이범석",
           designation: "CEO / Co-Founder",
-          image: "team-01.jpg",
+          image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
           sector: "Healthcare",
           status: "Alumni",
