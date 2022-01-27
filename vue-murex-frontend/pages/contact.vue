@@ -114,7 +114,9 @@ export default {
   }
 }
 .contact-us-cont {
+  max-width: 1520px;
   padding: 80px 0 100px 0;
+  margin: 0 auto;
   @media screen and (max-width: 767px) {
     padding: 50px 0;
   }
