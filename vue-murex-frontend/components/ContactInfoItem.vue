@@ -28,6 +28,7 @@ export default {
   margin-bottom: 29px;
   i {
     margin-right: 7px;
+    margin-top: 4px
   }
   .label {
     @include black-text-1;

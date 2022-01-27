@@ -6,7 +6,7 @@
     <div class="divider-1"></div>
     <div class="fluidContainer">
       <div class="container">
-        <div class="contact-us-cont md:grid grid-rows-1 grid-flow-col">
+        <div class="contact-us-cont md:grid grid-cols-2">
           <div class="md:w-1/2 left-panel col-span-1">
             <h2 class="heading-2">Information</h2>
             <ul class="inf-cont">

@@ -10,8 +10,17 @@
       </a>
       <h6 class="author">by {{ author }}</h6>
     </div>
-    <div class="content-img">
-      <img :src="image" alt="img" />
+    <div
+      class="content-img"
+      v-if="image.length > 0"
+      :style="{
+        backgroundImage: `url(${image})`,
+      }"
+    >
+      <!-- <img :src="image" alt="img" /> -->
+    </div>
+    <div class="no-img" v-else>
+      <h4>No image available</h4>
     </div>
   </div>
 </template>
@@ -48,11 +57,13 @@ export default {
     @include dflex-column-between;
     padding-bottom: 20px;
     border-bottom: 1px solid $grey-2;
+    overflow-x: auto;
     @media screen and (max-width: 767px) {
       order: 3;
     }
     h3 {
       width: 85%;
+      word-break: break-all;
       font-weight: 300;
       font-size: 32px;
       line-height: calc(28px + 1vw);
@@ -77,9 +88,25 @@ export default {
     }
   }
   .content-img {
+    width: 100%;
+    height: 300px;
+    background-position: center center;
+    background-size: cover;
+    @media screen and (max-width: 992px) {
+      height: 200px;
+    }
     img {
       width: 100%;
-      max-height: 300px;
+      height: 100%;
+    }
+  }
+  .no-img{
+    width: 100%;
+    height: 300px;
+    background-color: #cecece;
+    @include dflex-align-justify-center;
+    @media screen and (max-width: 992px) {
+      height: 200px;
     }
   }
 }
