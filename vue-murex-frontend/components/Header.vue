@@ -1,6 +1,6 @@
 <template>
   <div :class="`header ${bgClass}`">
-    <div class="fluidContainer">
+    <div class="container">
       <div class="header-wrap">
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
