@@ -3,14 +3,14 @@
     class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-x-0 md:gap-x-4 content-box"
   >
     <div class="col-span-2 content-desc">
-      <a :href="link">
+      <a :href="link" target="_blank">
         <h3>
           {{ desc }}
         </h3>
       </a>
       <h6 class="author">by {{ author }}</h6>
     </div>
-    <a :href="link">
+    <a :href="link" target="_blank">
       <div
         class="content-img"
         v-if="image.length > 0"
