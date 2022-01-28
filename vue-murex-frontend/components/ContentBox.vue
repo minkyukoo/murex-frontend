@@ -65,13 +65,16 @@ export default {
       width: 85%;
       word-break: break-all;
       font-weight: 300;
-      font-size: calc(12.8px + 1vw);
-      line-height: calc(28px + 1vw);
+      font-size: 32px;
+      line-height: 140%;
       color: $black-3;
       margin-bottom: 20px;
       text-decoration: 2px solid underline;
       text-decoration-color: transparent;
       transition: all 0.3s ease;
+      @media screen and (max-width: 1600px) {
+        font-size: 22px;
+      }
       @media screen and (max-width: 767px) {
         width: 100%;
         font-size: 16px;
