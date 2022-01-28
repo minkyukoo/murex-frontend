@@ -1,7 +1,7 @@
 <template>
   <div class="contents">
     <TopHeading heading="Contents" />
-    <div class="container">
+    <div class="container contentWrap">
       <ContentTab :tabState="tabState" v-on:currentState="SetType($event)" />
       <content-wrapper
         :itemList="contentList"
@@ -76,4 +76,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contentWrap{
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
 </style>
