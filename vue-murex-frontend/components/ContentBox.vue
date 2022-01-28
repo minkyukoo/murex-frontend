@@ -10,18 +10,20 @@
       </a>
       <h6 class="author">by {{ author }}</h6>
     </div>
-    <div
-      class="content-img"
-      v-if="image.length > 0"
-      :style="{
-        backgroundImage: `url(${image})`,
-      }"
-    >
-      <!-- <img :src="image" alt="img" /> -->
-    </div>
-    <div class="no-img" v-else>
-      <h4>No image available</h4>
-    </div>
+    <a :href="link">
+      <div
+        class="content-img"
+        v-if="image.length > 0"
+        :style="{
+          backgroundImage: `url(${image})`,
+        }"
+      >
+        <!-- <img :src="image" alt="img" /> -->
+      </div>
+      <div class="no-img" v-else>
+        <h4>No image available</h4>
+      </div>
+    </a>
   </div>
 </template>
 
