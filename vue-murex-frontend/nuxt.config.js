@@ -4,7 +4,7 @@ export default {
   target: 'server',
   server: {
     // host: '0',
-    port: 3002,
+    // port: 3002,
   },
   loading: "~/components/LoadingBar.vue",
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -67,10 +67,6 @@ export default {
           {
             code: "en",
             name: "EN",
-          },
-          {
-            code: "fr",
-            name: "FR",
           },
           {
             code: "kr",
