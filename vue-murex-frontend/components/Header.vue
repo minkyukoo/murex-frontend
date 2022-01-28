@@ -1,6 +1,6 @@
 <template>
   <div :class="`header ${bgClass}`">
-    <div class="container">
+    <div class="Nav-container">
       <div class="header-wrap">
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
@@ -209,6 +209,10 @@ export default {
         }
       }
     }
+  }
+  .Nav-container{
+    width: 100%;
+    padding: 0 calc(38px + 0.5vw);
   }
 }
 </style>

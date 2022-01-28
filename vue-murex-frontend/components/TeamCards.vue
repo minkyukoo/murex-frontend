@@ -11,7 +11,6 @@
       :snsFbLink="team.sns_links.fb"
       :snsLnLink="team.sns_links.ln"
       v-on:openModal="OpenModal($event)"
-      @click="MemberInfo"
     />
   </div>
 </template>

@@ -49,7 +49,7 @@ export default {
       slide: true,
       pauseIcon: true,
       number: "1",
-      progressValue: 1,
+      progressValue: null,
       bannerArr: [],
       mobileView: false,
      

@@ -101,7 +101,7 @@ export default {
     }
   }
   .member-img {
-    height: 100%;
+    // height: 100%;
     aspect-ratio: 2/2.15;
     max-height: 438px;
     @media screen and (max-width: 1560px) {

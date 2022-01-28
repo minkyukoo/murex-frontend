@@ -65,7 +65,7 @@ export default {
       width: 85%;
       word-break: break-all;
       font-weight: 300;
-      font-size: 32px;
+      font-size: calc(12.8px + 1vw);
       line-height: calc(28px + 1vw);
       color: $black-3;
       margin-bottom: 20px;
