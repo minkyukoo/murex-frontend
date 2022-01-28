@@ -29,7 +29,7 @@ export default {
           id: 1,
           name: "김택동",
           designation: "벤처파트너 / 레이크투자자문 대표이사",
-          image: "Advisory1.png",
+          image: "advisory1.png",
           imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
@@ -40,7 +40,7 @@ export default {
           id: 2,
           name: "강동민",
           designation: "부사장 / Co-Founder",
-          image: "Advisory2.png",
+          image: "advisory2.png",
           imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
@@ -51,7 +51,7 @@ export default {
           id: 3,
           name: "오지성",
           designation: "부사장 / Co-Founder",
-          image: "Advisory3.png",
+          image: "advisory3.png",
           imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
@@ -62,7 +62,7 @@ export default {
           id: 4,
           name: "박진영",
           designation: "수석",
-          image: "Advisory4.png",
+          image: "advisory4.png",
           imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",
@@ -73,7 +73,7 @@ export default {
           id: 5,
           name: "김세진",
           designation: "수석",
-          image: "Advisory5.png",
+          image: "advisory5.png",
           imgOnHover: "company-logoOnHover.png",
           sns_links: {
             fb: "https://facebook.com",

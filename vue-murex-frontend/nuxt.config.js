@@ -9,7 +9,7 @@ export default {
   loading: "~/components/LoadingBar.vue",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "vue-nuxt-pro",
+    title: "Murex Partners",
     htmlAttrs: {
       lang: "en",
     },
