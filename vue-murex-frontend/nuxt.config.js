@@ -34,20 +34,18 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // 'css', 'pcss', 'postcss', 'scss', 'sass',
     // css
     '~/assets/css/main.css',
     '~/assets/css/tailwind.css',
     // scss
-    // '~/assets/scss/variables.scss',
-    // '~/assets/scss/_mixins.scss',
     '~/assets/scss/general.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~plugins/vue-carousel', mode: 'client' },
-    { src: '~plugins/jw-vue-pagination', mode: 'client' },
+    { src: '~/plugins/vue-carousel', mode: 'client' },
+    { src: '~/plugins/jw-vue-pagination', mode: 'client' },
+    { src: '~/plugins/i18n.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -58,24 +56,6 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/style-resources',
-    [
-      'nuxt-i18n',
-      {
-        vueI18nLoader: true,
-        defaultLocale: "en",
-        locales: [
-          {
-            code: "en",
-            name: "EN",
-          },
-          {
-            code: "kr",
-            name: "KO",
-          },
-        ],
-        vueI18n: i18n,
-      },
-    ],
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -98,6 +78,21 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/axios',
   ],
+  i18n: {
+    vueI18nLoader: true,
+    defaultLocale: "en",
+    locales: [
+      {
+        code: "en",
+        name: "EN",
+      },
+      {
+        code: "kr",
+        name: "KO",
+      },
+    ],
+    vueI18n: i18n,
+  },
   axios: {
     baseURL: 'http://murex-backend.dvconsulting.org/api/', // Used as fallback if no runtime config is provided
   },
