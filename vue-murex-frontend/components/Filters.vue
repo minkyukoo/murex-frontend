@@ -1,21 +1,17 @@
 <template>
   <div class="flex mb-10">
-    <div class="filters" role="button" @click="ClearAll">{{$t(`founders.filters.allFilters`)}}</div>
+    <div class="filters" role="button" @click="ClearAll">{{ $t(`founders.filters.allFilters`) }}</div>
     <div class="filters dropdown">
-      <h4 class="dropdown-opener" @click="openSector">{{$t(`founders.filters.sectorFilters`)}}</h4>
-      <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']">
+      <h4 class="dropdown-opener" @click="openSector">{{ $t(`founders.filters.sectorFilters`) }}</h4>
+      <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']" v-show="sectorState">
         <!-- <input
           type="checkbox"
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
           id="sector-1"
-        /> -->
-        <div
-          class="dropdown-item"
-          v-for="(item, index) of sectors"
-          :key="index"
-        >
-          <label class="custom-checkbox"
-            >{{ item.name }}
+        />-->
+        <div class="dropdown-item" v-for="(item, index) of sectors" :key="index">
+          <label class="custom-checkbox">
+            {{ item.name }}
             <input
               type="checkbox"
               :value="item.filterName"
@@ -26,23 +22,21 @@
           </label>
         </div>
         <div>
-          <button class="clear-filter" @click="clearSectors">
-            {{$t(`founders.button.clearFilter`)}}
-          </button>
+          <button class="clear-filter" @click="clearSectors">{{ $t(`founders.button.clearFilter`) }}</button>
         </div>
       </div>
     </div>
     <div class="filters dropdown">
-      <h4 class="dropdown-opener" @click="openState">{{$t(`founders.filters.statusFilters`)}}</h4>
-      <div :class="[statusState ? 'dropdown-menu active' : 'dropdown-menu']">
+      <h4 class="dropdown-opener" @click="openState">{{ $t(`founders.filters.statusFilters`) }}</h4>
+      <div :class="[statusState ? 'dropdown-menu active' : 'dropdown-menu']" v-show="statusState">
         <!-- <input
           type="checkbox"
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
           id="sector-1"
-        /> -->
+        />-->
         <div class="dropdown-item" v-for="(item, index) of status" :key="index">
-          <label class="custom-checkbox"
-            >{{ item.name }}
+          <label class="custom-checkbox">
+            {{ item.name }}
             <input
               type="checkbox"
               :value="item.name"
@@ -53,9 +47,7 @@
           </label>
         </div>
         <div>
-          <button class="clear-filter" @click="clearStatus">
-            {{$t(`founders.button.clearFilter`)}}
-          </button>
+          <button class="clear-filter" @click="clearStatus">{{ $t(`founders.button.clearFilter`) }}</button>
         </div>
       </div>
     </div>
@@ -71,25 +63,25 @@ export default {
         {
           id: "01",
           name: this.$t(`founders.sectors.consumer`),
-          filterName: 'Consumer',
+          filterName: "Consumer",
           selected: false,
         },
         {
           id: "02",
           name: this.$t(`founders.sectors.enterprise`),
-          filterName: 'Enterprise',
+          filterName: "Enterprise",
           selected: false,
         },
         {
           id: "03",
           name: this.$t(`founders.sectors.healthcare`),
-          filterName: 'Healthcare',
+          filterName: "Healthcare",
           selected: false,
         },
         {
           id: "04",
           name: this.$t(`founders.sectors.crypto`),
-          filterName: 'Crypto',
+          filterName: "Crypto",
           selected: false,
         },
       ],
@@ -97,13 +89,13 @@ export default {
         {
           id: "01",
           name: this.$t(`founders.status.current`),
-          filterName: 'Current',
+          filterName: "Current",
           selected: false,
         },
         {
           id: "02",
           name: this.$t(`founders.status.alumni`),
-          filterName: 'Alumni',
+          filterName: "Alumni",
           selected: false,
         },
       ],
@@ -123,15 +115,11 @@ export default {
       this.statusState = !this.statusState;
       this.sectorState = false;
     },
-    onClick() {
-      console.log('document Click');
-      if((this.sectorState == true) || (this.statusState == true)) {
-        // this.sectorState = false;
-        // this.statusState = false;
-        console.log('open');
-
-      } else {
-        console.log('close');
+    onClick(e) {
+      console.log("document Click");
+      if (!this.$el.contains(e.target)) {
+        this.sectorState = false;
+        this.statusState = false;
       }
     },
     ClearAll() {
@@ -139,7 +127,7 @@ export default {
       this.status.forEach((i) => (i.selected = false));
       this.sectorFilter = [];
       this.$emit("sectorFilter", this.sectorFilter);
-      console.log(this.sectorFilter)
+      console.log(this.sectorFilter);
     },
     clearSectors() {
       this.sectors.forEach((item) => (item.selected = false));
@@ -177,11 +165,11 @@ export default {
       console.log(this.sectorFilter);
     },
   },
-  mounted() {
-    document.addEventListener('click', this.onClick);
+  updated() {
+    document.addEventListener("click", this.onClick);
   },
   beforeDestroy() {
-    document.removeEventListener('click', this.onClick);
+    document.removeEventListener("click", this.onClick);
   },
 };
 </script>
