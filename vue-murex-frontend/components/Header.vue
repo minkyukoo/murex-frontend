@@ -33,7 +33,7 @@
                 v-for="(item, i) of menu"
                 :key="item.label || i"
               >
-                <NuxtLink :to="item.to" class="nav-link">
+                <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">
                   {{ item.label }}
                 </NuxtLink>
               </li>
@@ -51,7 +51,7 @@
       </div>
       <ul>
         <li v-for="(item, i) of menu" :key="item.label || i" @click="closeMenu">
-          <NuxtLink :to="item.to" class="nav-link">
+          <NuxtLink :to="localePath('/contents')" class="nav-link">
             {{ item.label }}
           </NuxtLink>
         </li>
@@ -119,7 +119,7 @@ export default {
   .container{
     @media screen and (max-width: 640px) {
       padding: 0 16px;
-    } 
+    }
   }
   .header-wrap {
     @include dflex-align-justify-between;
@@ -215,7 +215,7 @@ export default {
     padding: 0 48px;
     @media screen and (max-width: 640px) {
       padding: 0 16px;
-    } 
+    }
   }
 }
 </style>

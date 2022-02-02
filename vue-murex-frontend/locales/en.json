@@ -45,5 +45,9 @@
       "button": {
         "clearFilter": "Clear Filter"
       }
+    },
+    "team": {
+      "pageTitle1": "Our Team",
+      "pageTitle2": "Venture Partner / Advisory"
     }
   }

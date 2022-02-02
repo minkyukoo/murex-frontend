@@ -125,9 +125,13 @@ export default {
     },
     onClick() {
       console.log('document Click');
-      if((this.sectorState = !this.sectorState) && (this.statusState = !this.statusState)) {
-        this.sectorState = false;
-        this.statusState = false;
+      if((this.sectorState == true) || (this.statusState == true)) {
+        // this.sectorState = false;
+        // this.statusState = false;
+        console.log('open');
+
+      } else {
+        console.log('close');
       }
     },
     ClearAll() {

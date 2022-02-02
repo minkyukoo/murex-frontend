@@ -18,11 +18,11 @@
     }
   },
   "contents": {
-    "pageTitle": "Contents",
+    "pageTitle": "Contents kr",
     "tabs": {
       "allTab": "All",
-      "newTab": "News",
-      "insightTab": "Insights dfvfv"
+      "newTab": "News kr",
+      "insightTab": "Insights kr"
     }
   },
   "founders": {
@@ -45,5 +45,9 @@
     "button": {
       "clearFilter": "창립자"
     }
+  },
+  "team": {
+    "pageTitle1": "Our Team kr",
+    "pageTitle2": "Venture Partner / Advisory kr"
   }
 }

@@ -45,7 +45,8 @@ export default {
   plugins: [
     { src: '~/plugins/vue-carousel', mode: 'client' },
     { src: '~/plugins/jw-vue-pagination', mode: 'client' },
-    { src: '~/plugins/i18n.js' }
+    { src: '~/plugins/i18n.js' },
+    // '~/plugins/router'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

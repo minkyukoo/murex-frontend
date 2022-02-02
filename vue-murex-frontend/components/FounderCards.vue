@@ -34,7 +34,6 @@ export default {
   components: { TeamCard, Filters },
   data() {
     return {
-      pageHeading: "Our Team",
       teams: [
         // {
         //   id: 1,

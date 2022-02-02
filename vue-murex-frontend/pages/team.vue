@@ -102,8 +102,8 @@ export default {
   },
   data() {
     return {
-      pageHeading: "Our Team",
-      pageHeading2: "Venture Partner / Advisory",
+      pageHeading: this.$t(`team.pageTitle1`),
+      pageHeading2: this.$t(`team.pageTitle2`),
       isModalVisible: false,
       TeamModal: false,
       modalData: [],
