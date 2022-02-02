@@ -23,7 +23,7 @@ import FounderCards from "../components/FounderCards.vue";
     },
     data() {
       return{
-        pageHeading: "Our Founders"
+        pageHeading: this.$t(`founders.pageTitle`)
       }
     }
   }

@@ -3,5 +3,9 @@ import kr from '../locales/kr.json'
 export default {
   locale: 'en',
   fallbackLocale: 'en',
-  messages: { en, kr }
+  // messages: { en, kr }
+  messages: {
+    "en" : en,
+    "kr" : kr,
+  },
 }

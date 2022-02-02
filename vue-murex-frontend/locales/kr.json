@@ -16,5 +16,34 @@
       "label1Info": "압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향",
       "label2Info": "도산공원사거리 정류장(23-155)에서 하차"
     }
+  },
+  "contents": {
+    "pageTitle": "Contents",
+    "tabs": {
+      "allTab": "All",
+      "newTab": "News",
+      "insightTab": "Insights dfvfv"
+    }
+  },
+  "founders": {
+    "pageTitle": "창립자",
+    "filters": {
+      "allFilters": "All",
+      "sectorFilters": "창립자",
+      "statusFilters": "Status"
+    },
+    "sectors": {
+      "consumer": "창립자",
+      "enterprise": "Enterprise",
+      "healthcare": "Healthcare",
+      "crypto": "Crypto"
+    },
+    "status": {
+      "current": "창립자",
+      "alumni": "Alumni"
+    },
+    "button": {
+      "clearFilter": "창립자"
+    }
   }
 }
