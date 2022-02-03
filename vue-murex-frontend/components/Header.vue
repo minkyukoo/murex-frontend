@@ -50,7 +50,7 @@
         </button>
       </div>
       <ul>
-        <li v-for="(item, i) of menu" :key="item.label || i" @click="closeMenu">
+        <li class="Mobnav-item" v-for="(item, i) of menu" :key="item.label || i" @click="closeMenu">
           <NuxtLink :to="item.to" class="nav-link">
             {{ item.label }}
           </NuxtLink>
@@ -209,6 +209,9 @@ export default {
         }
       }
     }
+  }
+  .Mobnav-item{
+    width: fit-content;
   }
   .Nav-container{
     width: 100%;

@@ -16,7 +16,7 @@
         <div>
           <h5>
             <span>{{ slideNumber > 9 ? slideNumber : 0 + slideNumber }}</span> /
-            <span>{{ TotalSlides > 9 ? TotalSlides : 0 + TotalSlides }}</span>
+            <span>{{ TotalSlides > 9 ? TotalSlides : `0${TotalSlides}` }}</span>
           </h5>
         </div>
       </div>
