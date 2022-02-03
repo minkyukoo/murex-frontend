@@ -96,6 +96,7 @@ export default {
   justify-content: center;
   // background-image: url("../assets/images/banner-img.png");
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 .slider-item::before {

@@ -61,6 +61,7 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  z-index: 99;
   //   max-width: 330px;
   //   color: $black-3;
   //   border-radius: 20px;
