@@ -215,7 +215,10 @@ export default {
   }
   .Nav-container{
     width: 100%;
-    padding: 0 calc(38px + 0.5vw);
+    padding: 0 48px;
+    @media screen and (max-width: 640px) {
+      padding: 0 16px;
+    } 
   }
 }
 </style>

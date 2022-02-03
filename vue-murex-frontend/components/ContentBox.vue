@@ -10,18 +10,20 @@
       </a>
       <h6 class="author">by {{ author }}</h6>
     </div>
-    <div
-      class="content-img"
-      v-if="image.length > 0"
-      :style="{
-        backgroundImage: `url(${image})`,
-      }"
-    >
-      <!-- <img :src="image" alt="img" /> -->
-    </div>
-    <div class="no-img" v-else>
-      <h4>No image available</h4>
-    </div>
+    <a :href="link">
+      <div
+        class="content-img"
+        v-if="image.length > 0"
+        :style="{
+          backgroundImage: `url(${image})`,
+        }"
+      >
+        <!-- <img :src="image" alt="img" /> -->
+      </div>
+      <div class="no-img" v-else>
+        <h4>No image available</h4>
+      </div>
+    </a>
   </div>
 </template>
 
@@ -65,13 +67,16 @@ export default {
       width: 85%;
       word-break: break-all;
       font-weight: 300;
-      font-size: calc(12.8px + 1vw);
-      line-height: calc(28px + 1vw);
+      font-size: 32px;
+      line-height: 140%;
       color: $black-3;
       margin-bottom: 20px;
       text-decoration: 2px solid underline;
       text-decoration-color: transparent;
       transition: all 0.3s ease;
+      @media screen and (max-width: 1600px) {
+        font-size: 22px;
+      }
       @media screen and (max-width: 767px) {
         width: 100%;
         font-size: 16px;
