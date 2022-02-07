@@ -2,32 +2,43 @@
   <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
   <div
     :class="`team-item ${$nuxt.$route.path === '/team' ? 'gradient' : ''}`"
-    @click="MemberInfo"
     @mouseenter="() => (changeImg = true)"
     @mouseleave="() => (changeImg = false)"
   >
-    <img
-      :src="`${require('../assets/images/' + bgImage)}`"
-      :alt="`${name}`"
-      class="member-img"
-      v-if="!changeImg"
-    />
-    <img
-      :src="`${require('../assets/images/' + imgOnHover)}`"
-      :alt="`${name}`"
-      class="member-img"
-      v-else
-    />
+    <div class="img-holder" @click="MemberInfo">
+      <img
+        :src="`${require('../assets/images/' + bgImage)}`"
+        :alt="`${name}`"
+        class="member-img"
+        v-if="!changeImg"
+      />
+      <img
+        :src="`${require('../assets/images/' + imgOnHover)}`"
+        :alt="`${name}`"
+        class="member-img"
+        v-else
+      />
+    </div>
     <div class="team-desc">
       <div class="team-desc-cont">
         <p class="name">{{ name }}</p>
         <p class="designation">{{ designation }}</p>
       </div>
       <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
-        <a class="sns-link" :href="`${snsLnLink}`" v-if="snsLnLink">
+        <a
+          class="sns-link"
+          :href="`${snsLnLink}`"
+          target="_blank"
+          v-if="snsLnLink"
+        >
           <i class="icon-ln"></i>
         </a>
-        <a class="sns-link" :href="`${snsFbLink}`" v-if="snsFbLink">
+        <a
+          class="sns-link"
+          :href="`${snsFbLink}`"
+          target="_blank"
+          v-if="snsFbLink"
+        >
           <i class="icon-fb"></i>
         </a>
       </div>
@@ -74,18 +85,20 @@ export default {
   position: relative;
   overflow: hidden;
   &.gradient {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 59.11%,
-        #272727 100%
-      );
+    .img-holder {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 59.11%,
+          #272727 100%
+        );
+      }
     }
     &:hover {
       .team-desc {
@@ -131,6 +144,7 @@ export default {
   .team-desc {
     position: absolute;
     bottom: 0;
+    // z-index: 5;
     display: flex;
     justify-content: space-between;
     align-items: center;
