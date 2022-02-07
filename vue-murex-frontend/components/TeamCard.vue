@@ -20,9 +20,13 @@
       />
     </div>
     <div class="team-desc">
-      <div class="team-desc-cont">
+      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team'">
         <p class="name">{{ name }}</p>
         <p class="designation">{{ designation }}</p>
+      </div>
+       <div class="team-desc-cont" v-else-if="`${$nuxt.$route.path}` === '/founders'">
+        <p class="name">{{ company }}</p>
+        <p class="designation">{{ name }}</p>
       </div>
       <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
         <a
@@ -57,6 +61,7 @@ export default {
   props: {
     bgImage: String,
     name: String,
+    company: String,
     designation: String,
     snsFbLink: String,
     snsLnLink: String,

@@ -19,6 +19,7 @@
         :bgImage="team.image"
         :imgOnHover="team.imgOnHover"
         :name="team.name"
+        :company="team.company"
         v-on:openModal="OpenModal"
       />
     </div>
@@ -35,20 +36,6 @@ export default {
     return {
       pageHeading: "Our Team",
       teams: [
-        // {
-        //   id: 2,
-        //   name: "이범석",
-        //   designation: "CEO / Co-Founder",
-        //   image: "founder-1.png",
-        //   imgOnHover: "company-logoOnHover.png",
-        //   sector: "Healthcare",
-        //   status: "Alumni",
-        //   sns_links: {
-        //     fb: "https://facebook.com",
-        //     ln: "https://linkedin.com",
-        //   },
-        // },
-
          {
           id: 1,
           company:"하이메디",
