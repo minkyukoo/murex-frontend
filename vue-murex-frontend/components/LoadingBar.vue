@@ -27,7 +27,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(213, 53, 53, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     text-align: center;
     padding-top: 200px;
     font-size: 30px;

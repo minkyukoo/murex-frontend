@@ -4,19 +4,19 @@
       :class="`tab-element ${tabState === 'all' ? 'active' : ''}`"
       @click="setState('all')"
     >
-      <h5>ALL</h5>
+      <h5>{{ $t(`contents.tabs.allTab`) }}</h5>
     </div>
     <div
       :class="`tab-element ${tabState === 'news' ? 'active' : ''}`"
       @click="setState('news')"
     >
-      <h5>News</h5>
+      <h5>{{ $t(`contents.tabs.newTab`) }}</h5>
     </div>
     <div
       :class="`tab-element ${tabState === 'insight' ? 'active' : ''}`"
       @click="setState('insight')"
     >
-      <h5>Insights</h5>
+      <h5>{{ $t(`contents.tabs.insightTab`) }}</h5>
     </div>
   </div>
 </template>

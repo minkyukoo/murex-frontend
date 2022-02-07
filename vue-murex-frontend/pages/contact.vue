@@ -8,7 +8,8 @@
       <div class="container">
         <div class="contact-us-cont md:grid grid-cols-2">
           <div class="md:w-1/2 left-panel col-span-1">
-            <h2 class="heading-2">Information</h2>
+          <p>Current language: {{$i18n.locale }}</p>
+            <h2 class="heading-2">{{ $t(`contact.content.title1`) }}</h2>
             <ul class="inf-cont">
               <ContactInfoItem
                 v-for="(item, i) of contactInformation"
@@ -21,12 +22,10 @@
             </ul>
           </div>
           <div class="md:w-1/2 right-panel col-span-1">
-            <h2 class="heading-2">How to come</h2>
+            <h2 class="heading-2">{{ $t(`contact.content.title2`) }}</h2>
             <ul class="inf-cont">
               <li class="inf-item">
-                <p class="cont">
-                  뮤렉스 파트너스에 오시는 방법을 안내해 드립니다.
-                </p>
+                <p class="cont">{{ $t(`contact.content.textCont`) }}</p>
               </li>
               <ContactInfoItem
                 v-for="(item, i) of contactToCome"
@@ -62,29 +61,29 @@ export default {
   components: { TopHeading, ContactInfoItemVue },
   data() {
     return {
-      pageHeading: "Contact",
+      pageHeading: this.$t(`contact.pageTitle`),
       contactInformation: [
         {
           iconClass: "icon-location-pin",
-          label: "Adress",
-          cont: "서울시 강남구 도산대로45길 18-6, 2층",
+          label: this.$t(`contact.content.address`),
+          cont: this.$t(`contact.content.addressInfo`),
           linkType: "text",
         },
         {
           iconClass: "icon-call",
-          label: "Call",
+          label: this.$t(`contact.content.call`),
           cont: "+82 2-585-1116",
           linkType: "tel",
         },
         {
           iconClass: "icon-fax",
-          label: "Fax",
+          label: this.$t(`contact.content.fax`),
           cont: "+82 2-546-8238",
           linkType: "text",
         },
         {
           iconClass: "icon-mail",
-          label: "E-mail",
+          label: this.$t(`contact.content.email`),
           cont: "we@murexpartners.com",
           linkType: "mail",
         },
@@ -92,14 +91,14 @@ export default {
       contactToCome: [
         {
           iconClass: "icon-train",
-          label: "지하철 이용 시",
-          cont: "압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향",
+          label: this.$t(`contact.content.label1`),
+          cont: this.$t(`contact.content.label1Info`),
           linkType: "text",
         },
         {
           iconClass: "icon-bus",
-          label: "버스 이용시",
-          cont: "도산공원사거리 정류장(23-155)에서 하차",
+          label: this.$t(`contact.content.label2`),
+          cont: this.$t(`contact.content.label2Info`),
           linkType: "text",
         },
       ],
@@ -109,7 +108,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contact{
+.contact {
   padding-bottom: 50px;
   @media screen and (max-width: 767px) {
     padding-bottom: 25px;
@@ -148,7 +147,7 @@ export default {
   }
 }
 
-.mapWrapper{
+.mapWrapper {
   @media screen and (max-width: 767px) {
     padding: 16px;
   }

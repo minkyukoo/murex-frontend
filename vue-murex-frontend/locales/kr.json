@@ -1,3 +1,53 @@
 {
-  "message": "안녕하세요!"
+  "message": "Hello!",
+  "contact": {
+    "pageTitle": "서울시",
+    "content": {
+      "title1": "Information",
+      "title2": "How to come 서울시",
+      "address": "주소",
+      "addressInfo": "서울시 강남구 도산대로45길 18-6, 2층",
+      "call": "Call",
+      "fax": "Fax",
+      "email": "E-mail",
+      "textCont": "뮤렉스 파트너스에 오시는 방법을 안내해 드립니다.",
+      "label1": "지하철 이용 시",
+      "label2": "버스 이용시",
+      "label1Info": "압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향",
+      "label2Info": "도산공원사거리 정류장(23-155)에서 하차"
+    }
+  },
+  "contents": {
+    "pageTitle": "Contents kr",
+    "tabs": {
+      "allTab": "All",
+      "newTab": "News kr",
+      "insightTab": "Insights kr"
+    }
+  },
+  "founders": {
+    "pageTitle": "창립자",
+    "filters": {
+      "allFilters": "All",
+      "sectorFilters": "창립자",
+      "statusFilters": "Status"
+    },
+    "sectors": {
+      "consumer": "창립자",
+      "enterprise": "Enterprise",
+      "healthcare": "Healthcare",
+      "crypto": "Crypto"
+    },
+    "status": {
+      "current": "창립자",
+      "alumni": "Alumni"
+    },
+    "button": {
+      "clearFilter": "창립자"
+    }
+  },
+  "team": {
+    "pageTitle1": "Our Team kr",
+    "pageTitle2": "Venture Partner / Advisory kr"
+  }
 }
