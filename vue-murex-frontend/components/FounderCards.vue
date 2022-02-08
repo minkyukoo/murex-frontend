@@ -405,13 +405,13 @@ export default {
       this.clear = event;
       if (event.length > 0) {
         this.teams = this.backupTeam.filter((x) => {
-          let imd = event.findIndex((y) => y == x.sector || y == x.status); // [Consumer,Enterprice]
+          let imd = event.findIndex((y) => y == x.sector && y == x.status); // [Consumer,Enterprice]
           console.log(imd);
-          if (imd > -1) {
+          if (imd > -1 ) {
             return true;
           }
         });
-        // console.log(this.teams);
+        console.log("teams", this.teams);
       } else {
         this.teams = [...this.backupTeam];
       }

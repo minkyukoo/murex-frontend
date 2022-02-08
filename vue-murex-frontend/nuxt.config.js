@@ -81,7 +81,7 @@ export default {
   ],
   i18n: {
     vueI18nLoader: true,
-    defaultLocale: "kr",
+    defaultLocale: "en",
     locales: [
       {
         code: "en",

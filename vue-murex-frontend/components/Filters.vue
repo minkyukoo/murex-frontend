@@ -179,14 +179,13 @@ export default {
   margin-right: 50px;
   font-weight: 300;
   font-size: 20px;
-  @media screen and (max-width: 767px) {
-    font-size: 15px;
-  }
   &:last-child {
     margin-right: 0;
   }
   @media screen and (max-width: 767px) {
+    font-size: 15px;
     padding: 0 16px;
+    margin-right: 26px;
   }
 }
 .dropdown {
@@ -199,6 +198,7 @@ export default {
     font-size: 20px;
     @media screen and (max-width: 767px) {
       font-size: 15px;
+      line-height: 22px;
     }
     &::before {
       content: "";
