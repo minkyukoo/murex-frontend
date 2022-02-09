@@ -429,7 +429,7 @@ export default {
       }
       if (type == "Status") {
         this.teams = this.backupTeam.filter((x) => {
-          let imd = this.clear.findIndex((y) => y == x.sector); // [Consumer,Enterprice]
+          let imd = this.clear.findIndex((y) => y == x.sector); // [current,alumini]
           console.log(imd);
           if (imd > -1) {
             return true;
