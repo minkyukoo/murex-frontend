@@ -4,11 +4,7 @@
       <div class="header-wrap">
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
-            <img
-              src="../assets/images/site-logo-white.svg"
-              class="logo"
-              alt="Logo"
-            />
+            <img src="../assets/images/site-logo-white.svg" class="logo" alt="Logo" />
           </router-link>
           <router-link to="/" v-else>
             <img src="../assets/images/site-logo.svg" class="logo" alt="Logo" />
@@ -17,25 +13,13 @@
         <div class="right-panel">
           <div v-if="mobileView">
             <button type="button" @click="mobileToggle">
-              <i
-                :class="
-                  bgClass === 'bg-transparent'
-                    ? 'icon-menu'
-                    : 'icon-menu-violet-bg'
-                "
-              ></i>
+              <i :class="bgClass === 'bg-transparent' ? 'icon-menu' : 'icon-menu-violet-bg'"></i>
             </button>
           </div>
           <div class="flex jc-center" v-if="!mobileView">
             <ul class="nav-wrap">
-              <li
-                class="nav-item"
-                v-for="(item, i) of menu"
-                :key="item.label || i"
-              >
-                <NuxtLink :to="item.to" class="nav-link">
-                  {{ item.label }}
-                </NuxtLink>
+              <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
+                <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">{{ item.label }}</NuxtLink>
               </li>
             </ul>
             <LanguageInput />
@@ -51,9 +35,7 @@
       </div>
       <ul>
         <li class="Mobnav-item" v-for="(item, i) of menu" :key="item.label || i" @click="closeMenu">
-          <NuxtLink :to="item.to" class="nav-link">
-            {{ item.label }}
-          </NuxtLink>
+          <NuxtLink :to="item.to" class="nav-link">{{ item.label }}</NuxtLink>
         </li>
       </ul>
       <div class="lang-select">
@@ -116,10 +98,10 @@ export default {
     width: calc(100px + 3vw);
     height: auto;
   }
-  .container{
+  .container {
     @media screen and (max-width: 640px) {
       padding: 0 16px;
-    } 
+    }
   }
   .header-wrap {
     @include dflex-align-justify-between;
@@ -210,15 +192,15 @@ export default {
       }
     }
   }
-  .Mobnav-item{
+  .Mobnav-item {
     width: fit-content;
   }
-  .Nav-container{
+  .Nav-container {
     width: 100%;
     padding: 0 48px;
     @media screen and (max-width: 640px) {
       padding: 0 16px;
-    } 
+    }
   }
 }
 </style>

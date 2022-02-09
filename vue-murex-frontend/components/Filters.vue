@@ -1,24 +1,20 @@
 <template>
   <div class="flex mb-10">
-    <div class="filters" role="button" @click="ClearAll">All</div>
+    <div class="filters" role="button" @click="ClearAll">{{ $t(`founders.filters.allFilters`) }}</div>
     <div class="filters dropdown">
-      <h4 class="dropdown-opener" @click="openSector">Sector</h4>
-      <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']">
+      <h4 class="dropdown-opener" @click="openSector">{{ $t(`founders.filters.sectorFilters`) }}</h4>
+      <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']" v-show="sectorState">
         <!-- <input
           type="checkbox"
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
           id="sector-1"
-        /> -->
-        <div
-          class="dropdown-item"
-          v-for="(item, index) of sectors"
-          :key="index"
-        >
-          <label class="custom-checkbox"
-            >{{ item.name }}
+        />-->
+        <div class="dropdown-item" v-for="(item, index) of sectors" :key="index">
+          <label class="custom-checkbox">
+            {{ item.name }}
             <input
               type="checkbox"
-              :value="item.name"
+              :value="item.filterName"
               v-model="item.selected"
               @change="filterIt"
             />
@@ -26,23 +22,21 @@
           </label>
         </div>
         <div>
-          <button class="clear-filter" @click="clearSectors">
-            Clear Filter
-          </button>
+          <button class="clear-filter" @click="clearSectors">{{ $t(`founders.button.clearFilter`) }}</button>
         </div>
       </div>
     </div>
     <div class="filters dropdown">
-      <h4 class="dropdown-opener" @click="openState">Status</h4>
-      <div :class="[statusState ? 'dropdown-menu active' : 'dropdown-menu']">
+      <h4 class="dropdown-opener" @click="openState">{{ $t(`founders.filters.statusFilters`) }}</h4>
+      <div :class="[statusState ? 'dropdown-menu active' : 'dropdown-menu']" v-show="statusState">
         <!-- <input
           type="checkbox"
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
           id="sector-1"
-        /> -->
+        />-->
         <div class="dropdown-item" v-for="(item, index) of status" :key="index">
-          <label class="custom-checkbox"
-            >{{ item.name }}
+          <label class="custom-checkbox">
+            {{ item.name }}
             <input
               type="checkbox"
               :value="item.name"
@@ -53,9 +47,7 @@
           </label>
         </div>
         <div>
-          <button class="clear-filter" @click="clearStatus">
-            Clear Filter
-          </button>
+          <button class="clear-filter" @click="clearStatus">{{ $t(`founders.button.clearFilter`) }}</button>
         </div>
       </div>
     </div>
@@ -70,34 +62,40 @@ export default {
       sectors: [
         {
           id: "01",
-          name: "Consumer",
+          name: this.$t(`founders.sectors.consumer`),
+          filterName: "Consumer",
           selected: false,
         },
         {
           id: "02",
-          name: "Enterprise",
+          name: this.$t(`founders.sectors.enterprise`),
+          filterName: "Enterprise",
           selected: false,
         },
         {
           id: "03",
-          name: "Healthcare",
+          name: this.$t(`founders.sectors.healthcare`),
+          filterName: "Healthcare",
           selected: false,
         },
         {
           id: "04",
-          name: "Crypto",
+          name: this.$t(`founders.sectors.crypto`),
+          filterName: "Crypto",
           selected: false,
         },
       ],
       status: [
         {
           id: "01",
-          name: "Current",
+          name: this.$t(`founders.status.current`),
+          filterName: "Current",
           selected: false,
         },
         {
           id: "02",
-          name: "Alumni",
+          name: this.$t(`founders.status.alumni`),
+          filterName: "Alumni",
           selected: false,
         },
       ],
@@ -117,19 +115,26 @@ export default {
       this.statusState = !this.statusState;
       this.sectorState = false;
     },
+    onClick(e) {
+      console.log("document Click");
+      if (!this.$el.contains(e.target)) {
+        this.sectorState = false;
+        this.statusState = false;
+      }
+    },
     ClearAll() {
       this.sectors.forEach((item) => (item.selected = false));
       this.status.forEach((i) => (i.selected = false));
       this.sectorFilter = [];
       this.$emit("sectorFilter", this.sectorFilter);
-      console.log(this.sectorFilter)
+      console.log(this.sectorFilter);
     },
     clearSectors() {
       this.sectors.forEach((item) => (item.selected = false));
       console.log("Sector cleared");
       // this.sectorFilter = [];
       this.sectors.forEach((e, i) => {
-        let imd = this.sectorFilter.findIndex((x) => x == e.name);
+        let imd = this.sectorFilter.findIndex((x) => x == e.filterName);
         if (imd > -1) {
           this.sectorFilter.splice(imd, 1);
         }
@@ -139,7 +144,7 @@ export default {
     clearStatus() {
       this.status.forEach((i) => (i.selected = false));
       this.status.forEach((e, i) => {
-        let imd = this.sectorFilter.findIndex((x) => x == e.name);
+        let imd = this.sectorFilter.findIndex((x) => x == e.filterName);
         if (imd > -1) {
           this.sectorFilter.splice(imd, 1);
         }
@@ -148,6 +153,7 @@ export default {
     },
     filterIt(event) {
       if (event.target.checked) {
+        console.log(event.target.checked);
         this.sectorFilter.push(event.target.value);
       } else if (!event.target.checked) {
         let index = this.sectorFilter.findIndex((x) => x == event.target.value);
@@ -159,6 +165,12 @@ export default {
       console.log(this.sectorFilter);
     },
   },
+  updated() {
+    document.addEventListener("click", this.onClick);
+  },
+  beforeDestroy() {
+    document.removeEventListener("click", this.onClick);
+  },
 };
 </script>
 
@@ -167,14 +179,13 @@ export default {
   margin-right: 50px;
   font-weight: 300;
   font-size: 20px;
-  @media screen and (max-width: 767px) {
-    font-size: 15px;
-  }
   &:last-child {
     margin-right: 0;
   }
   @media screen and (max-width: 767px) {
+    font-size: 15px;
     padding: 0 16px;
+    margin-right: 26px;
   }
 }
 .dropdown {
@@ -187,6 +198,7 @@ export default {
     font-size: 20px;
     @media screen and (max-width: 767px) {
       font-size: 15px;
+      line-height: 22px;
     }
     &::before {
       content: "";
