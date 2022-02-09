@@ -47,8 +47,8 @@
         </a>
       </div>
       <div class="sns-links" v-else-if="`${$nuxt.$route.path}` === '/founders'">
-        <a class="sns-link" href="/#">
-          <img src="../assets/icons/Plus.svg" />
+        <a class="sns-link" :href="companyLink" target="_blank">
+          <img class="plus-icon" src="../assets/icons/Plus.svg" />
         </a>
       </div>
     </div>
@@ -63,8 +63,7 @@ export default {
     name: String,
     company: String,
     designation: String,
-    snsFbLink: String,
-    snsLnLink: String,
+    companyLink: String,
     imgOnHover: String,
     product: Object,
   },
@@ -176,6 +175,17 @@ export default {
         display: inline-block;
         margin-right: 12px;
         vertical-align: middle;
+        @media screen and (max-width: 767px) {
+          margin-right: 8px;
+        }
+        .plus-icon{
+          width: 55px;
+          height: 60px;
+          @media screen and (max-width: 1600px) {
+            width: 40px;
+            height: 45px;
+          }
+        }
         &:last-child {
           margin-right: 0;
         }

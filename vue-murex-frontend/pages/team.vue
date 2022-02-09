@@ -49,9 +49,9 @@
                 </li>
               </ul>
               <h4 class="heading">투자경력</h4>
-              <div class="grid grid-rows-1 grid-flow-col desc-sec">
+              <div class="grid grid-rows-1 grid-flow-col">
                 <div>
-                  <ul>
+                  <ul class="sub-desc desc-sec">
                     <li
                       v-for="(item, index) in modalData.investmentExp1"
                       :key="index"
@@ -169,12 +169,18 @@ export default {
     font-weight: normal;
     font-size: 24px;
     line-height: 150%;
+    @media screen and (max-width: 767px) {
+      font-size: 15px;
+    }
   }
   .sub-desc {
     font-weight: normal;
     font-size: 16px;
     line-height: 180%;
     color: $grey-5;
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
   }
   .social-icon {
     display: inline-block;

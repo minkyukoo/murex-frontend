@@ -75,7 +75,7 @@ export default {
       text-decoration-color: transparent;
       transition: all 0.3s ease;
       @media screen and (max-width: 1600px) {
-        font-size: 22px;
+        font-size: 21px;
       }
       @media screen and (max-width: 767px) {
         width: 100%;
@@ -100,18 +100,24 @@ export default {
     @media screen and (max-width: 992px) {
       height: 200px;
     }
+    @media screen and (max-width: 1600px) {
+      height: 250px;
+    }
     img {
       width: 100%;
       height: 100%;
     }
   }
-  .no-img{
+  .no-img {
     width: 100%;
     height: 300px;
     background-color: #cecece;
     @include dflex-align-justify-center;
     @media screen and (max-width: 992px) {
       height: 200px;
+    }
+    @media screen and (max-width: 1600px) {
+      height: 250px;
     }
   }
 }

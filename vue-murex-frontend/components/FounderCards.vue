@@ -20,6 +20,7 @@
         :imgOnHover="team.imgOnHover"
         :name="team.name"
         :company="team.company"
+        :companyLink="team.link"
         v-on:openModal="OpenModal"
       />
     </div>
@@ -42,8 +43,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.himedi.com/en",
-          image: "com_1.png",
-          imgOnHover: "com_ceo_1.png",
+          image: "com_ceo_1.png",
+          imgOnHover: "com_1.png",
         },
         {
           id: 2,
@@ -53,7 +54,7 @@ export default {
           status: "Consumer",
           link: "https://www.banksalad.com/",
           image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          imgOnHover: "com_2.png",
         },
         {
           id: 3,
@@ -62,8 +63,8 @@ export default {
           sector: "Current",
           status: "Healthcare",
           link: "https://www.imprimedicine.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_3.png",
+          imgOnHover: "com_3.png",
         },
         {
           id: 4,
@@ -72,8 +73,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.yanolja.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_4.png",
+          imgOnHover: "com_4.png",
         },
         {
           id: 5,
@@ -82,8 +83,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.honestfund.kr/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_5.png",
+          imgOnHover: "com_5.png",
         },
         {
           id: 6,
@@ -92,8 +93,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.mydano.net/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_6.png",
+          imgOnHover: "com_6.png",
         },
         {
           id: 7,
@@ -102,8 +103,8 @@ export default {
           sector: "Alumni",
           status: "Consumer",
           link: "https://www.pet-friends.co.kr/main/tab/2",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_7.png",
+          imgOnHover: "com_7.png",
         },
         {
           id: 8,
@@ -112,8 +113,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.kiwiblack.kr/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_8.png",
+          imgOnHover: "com_8.png",
         },
         {
           id: 9,
@@ -122,8 +123,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.fastfive.co.kr/#enp_mbris",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_9.png",
+          imgOnHover: "com_9.png",
         },
         {
           id: 10,
@@ -132,8 +133,8 @@ export default {
           sector: "Current",
           status: "Enterprise",
           link: "https://www.teamfresh.co.kr/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_10.png",
+          imgOnHover: "com_10.png",
         },
         {
           id: 11,
@@ -142,8 +143,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.urbanplay.co.kr/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_11.png",
+          imgOnHover: "com_11.png",
         },
         {
           id: 12,

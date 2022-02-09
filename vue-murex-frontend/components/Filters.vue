@@ -209,6 +209,9 @@ export default {
       position: absolute;
       left: 0;
       top: 12px;
+      @media screen and (max-width: 767px) {
+        top: 9px;
+      }
     }
   }
 }
@@ -223,6 +226,9 @@ export default {
   background: $white;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   border-top: 1px solid #000000;
+  @media screen and (max-width: 360px) {
+    left: -30px;
+  }
   &.active {
     display: block;
   }
