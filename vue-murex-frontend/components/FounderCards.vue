@@ -42,8 +42,8 @@ export default {
           sector: "Current",
           status: "Consumer",
           link: "https://www.himedi.com/en",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_1.png",
+          imgOnHover: "com_ceo_1.png",
         },
         {
           id: 2,
