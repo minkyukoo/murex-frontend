@@ -1,6 +1,7 @@
 <template>
   <div
     class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-x-0 md:gap-x-4 content-box"
+    v-if="status != 'inactive'"
   >
     <div class="col-span-2 content-desc">
       <a :href="link" target="_blank">
@@ -35,6 +36,7 @@ export default {
     author: String,
     image: String,
     link: String,
+    status: String,
   },
   // mounted() {
   //   console.log("images" , author)

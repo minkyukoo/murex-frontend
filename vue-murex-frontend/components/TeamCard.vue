@@ -23,10 +23,16 @@
       <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team'">
         <p class="name">{{ name }}</p>
         <p class="designation">{{ designation }}</p>
+        
       </div>
-       <div class="team-desc-cont" v-else-if="`${$nuxt.$route.path}` === '/founders'">
+      <div
+        class="team-desc-cont"
+        v-else-if="`${$nuxt.$route.path}` === '/founders'"
+      >
         <p class="name">{{ company }}</p>
         <p class="designation">{{ name }}</p>
+        <!-- <p class="designation">{{ status }}</p>
+        <p class="designation">{{ sector }}</p> -->
       </div>
       <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
         <a
@@ -66,6 +72,8 @@ export default {
     companyLink: String,
     imgOnHover: String,
     product: Object,
+    status: String,
+    sector: String,
   },
   data() {
     return {
@@ -121,6 +129,7 @@ export default {
     // height: 100%;
     aspect-ratio: 2/2.15;
     max-height: 438px;
+    object-fit: cover;
     @media screen and (max-width: 1560px) {
       max-height: 300px;
     }
@@ -178,7 +187,7 @@ export default {
         @media screen and (max-width: 767px) {
           margin-right: 8px;
         }
-        .plus-icon{
+        .plus-icon {
           width: 55px;
           height: 60px;
           @media screen and (max-width: 1600px) {

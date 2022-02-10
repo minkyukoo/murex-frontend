@@ -1,15 +1,26 @@
 <template>
   <div class="flex mb-10">
-    <div class="filters" role="button" @click="ClearAll">{{ $t(`founders.filters.allFilters`) }}</div>
+    <div class="filters" role="button" @click="ClearAll">
+      {{ $t(`founders.filters.allFilters`) }}
+    </div>
     <div class="filters dropdown">
-      <h4 class="dropdown-opener" @click="openSector">{{ $t(`founders.filters.sectorFilters`) }}</h4>
-      <div :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']" v-show="sectorState">
+      <h4 class="dropdown-opener" @click="openSector">
+        {{ $t(`founders.filters.sectorFilters`) }}
+      </h4>
+      <div
+        :class="[sectorState ? 'dropdown-menu active' : 'dropdown-menu']"
+        v-show="sectorState"
+      >
         <!-- <input
           type="checkbox"
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
           id="sector-1"
         />-->
-        <div class="dropdown-item" v-for="(item, index) of sectors" :key="index">
+        <div
+          class="dropdown-item"
+          v-for="(item, index) of sectors"
+          :key="index"
+        >
           <label class="custom-checkbox">
             {{ item.name }}
             <input
@@ -22,13 +33,24 @@
           </label>
         </div>
         <div>
-          <button class="clear-filter" @click="clearSectors">{{ $t(`founders.button.clearFilter`) }}</button>
+          <button
+            :class="`clear-filter ${sectorFilter.length == 0 ? 'disabled' : ''}`"
+            @click="clearSectors"
+            :disabled="sectorFilter.length == 0"
+          >
+            {{ $t(`founders.button.clearFilter`) }}
+          </button>
         </div>
       </div>
     </div>
     <div class="filters dropdown">
-      <h4 class="dropdown-opener" @click="openState">{{ $t(`founders.filters.statusFilters`) }}</h4>
-      <div :class="[statusState ? 'dropdown-menu active' : 'dropdown-menu']" v-show="statusState">
+      <h4 class="dropdown-opener" @click="openState">
+        {{ $t(`founders.filters.statusFilters`) }}
+      </h4>
+      <div
+        :class="[statusState ? 'dropdown-menu active' : 'dropdown-menu']"
+        v-show="statusState"
+      >
         <!-- <input
           type="checkbox"
           class="appearance-none h-4 w-4 border border-grey-1 rounded-sm"
@@ -41,13 +63,21 @@
               type="checkbox"
               :value="item.name"
               v-model="item.selected"
-              @change="filterIt"
+              @change="Statusfilter"
             />
             <span class="checkmark"></span>
           </label>
         </div>
         <div>
-          <button class="clear-filter" @click="clearStatus">{{ $t(`founders.button.clearFilter`) }}</button>
+          <button
+            :class="`clear-filter ${
+              statusFilter.length == 0 ? 'disabled' : ''
+            }`"
+            @click="clearStatus"
+            :disabled="statusFilter.length == 0"
+          >
+            {{ $t(`founders.button.clearFilter`) }}
+          </button>
         </div>
       </div>
     </div>
@@ -78,12 +108,12 @@ export default {
           filterName: "Healthcare",
           selected: false,
         },
-        {
-          id: "04",
-          name: this.$t(`founders.sectors.crypto`),
-          filterName: "Crypto",
-          selected: false,
-        },
+        // {
+        //   id: "04",
+        //   name: this.$t(`founders.sectors.crypto`),
+        //   filterName: "Crypto",
+        //   selected: false,
+        // },
       ],
       status: [
         {
@@ -103,7 +133,7 @@ export default {
       statusState: false,
       check: false,
       sectorFilter: [],
-      // statusFilter: [],
+      statusFilter: [],
     };
   },
   methods: {
@@ -126,8 +156,9 @@ export default {
       this.sectors.forEach((item) => (item.selected = false));
       this.status.forEach((i) => (i.selected = false));
       this.sectorFilter = [];
+      this.statusFilter = [];
       this.$emit("sectorFilter", this.sectorFilter);
-      console.log(this.sectorFilter);
+      this.$emit("statusFilter", this.statusFilter);
     },
     clearSectors() {
       this.sectors.forEach((item) => (item.selected = false));
@@ -144,14 +175,15 @@ export default {
     clearStatus() {
       this.status.forEach((i) => (i.selected = false));
       this.status.forEach((e, i) => {
-        let imd = this.sectorFilter.findIndex((x) => x == e.filterName);
+        let imd = this.statusFilter.findIndex((x) => x == e.filterName);
         if (imd > -1) {
-          this.sectorFilter.splice(imd, 1);
+          this.statusFilter.splice(imd, 1);
         }
       });
-      this.$emit("sectorFilter", this.sectorFilter);
+      this.$emit("statusFilter", this.statusFilter);
     },
     filterIt(event) {
+      console.log(event);
       if (event.target.checked) {
         console.log(event.target.checked);
         this.sectorFilter.push(event.target.value);
@@ -162,7 +194,22 @@ export default {
         }
       }
       this.$emit("sectorFilter", this.sectorFilter);
-      console.log(this.sectorFilter);
+      console.log("items in filter", this.sectorFilter);
+      console.log("status in filter", this.statusFilter);
+    },
+    Statusfilter(event) {
+      console.log(event);
+      if (event.target.checked) {
+        console.log(event.target.checked);
+        this.statusFilter.push(event.target.value);
+      } else if (!event.target.checked) {
+        let index = this.statusFilter.findIndex((x) => x == event.target.value);
+        if (index > -1) {
+          this.statusFilter.splice(index, 1);
+        }
+      }
+      this.$emit("statusFilter", this.statusFilter);
+      console.log("items in filter", this.statusFilter);
     },
   },
   updated() {
@@ -243,6 +290,10 @@ export default {
     color: $purple-2;
     font-size: 14px;
     font-weight: 500;
+    &.disabled{
+      color: $grey-2;
+      cursor: not-allowed;
+    }
   }
 }
 </style>

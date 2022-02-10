@@ -1,28 +1,25 @@
 <template>
   <div>
-    <filters v-on:sectorFilter="filterSector($event)"  />
-    <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
-      <!-- <div>{{$nuxt.$route.path}}</div> -->
-      <!-- <div class="Add-founder">
-      <img src="../assets/images/founder-logo.png" alt="img" class="logo" />
-      <div class="Adding">
-        <div>
-          <h4>하이메디</h4>
-          <p>이정주, 서돈교</p>
-        </div>
-        <img src="../assets/icons/Plus.svg" />
-      </div>
-    </div> -->
-      <TeamCard
-        v-for="(team, i) of teams"
-        :key="team.id || i + 1"
-        :bgImage="team.image"
-        :imgOnHover="team.imgOnHover"
-        :name="team.name"
-        :company="team.company"
-        :companyLink="team.link"
-        v-on:openModal="OpenModal"
-      />
+    <filters
+      v-on:sectorFilter="filterSector($event)"
+      v-on:statusFilter="filterStatus($event)"
+    />
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 sm:gap-2 md:gap-4 lg:gap-8">
+      <template v-for="(team, i) of teams">
+        <TeamCard
+          :key="team.id || i + 1"
+          :bgImage="team.image"
+          :imgOnHover="team.imgOnHover"
+          :name="team.name"
+          :company="team.company"
+          :companyLink="team.link"
+          :status="team.status"
+          :sector="team.sector"
+          v-on:openModal="OpenModal"
+          
+        />
+      </template>
+      <div v-if="teams.length == 0">No Data Found</div>
     </div>
   </div>
 </template>
@@ -36,361 +33,361 @@ export default {
   data() {
     return {
       teams: [
-         {
+        {
           id: 1,
-          company:"하이메디",
+          company: "하이메디",
           name: "이정주, 서돈교",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.himedi.com/en",
           image: "com_ceo_1.png",
           imgOnHover: "com_1.png",
         },
         {
           id: 2,
-          company:"뱅크샐러드",
+          company: "뱅크샐러드",
           name: "김태훈",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.banksalad.com/",
           image: "founder-1.png",
           imgOnHover: "com_2.png",
         },
         {
           id: 3,
-          company:"ImpriMed", //임프리메드
+          company: "ImpriMed", //임프리메드
           name: "임성원",
-          sector: "Current",
-          status: "Healthcare",
+          status: "Current",
+          sector: "Healthcare",
           link: "https://www.imprimedicine.com/",
           image: "com_ceo_3.png",
           imgOnHover: "com_3.png",
         },
         {
           id: 4,
-          company:"야놀자",
+          company: "야놀자",
           name: "이수진",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.yanolja.com/",
           image: "com_ceo_4.png",
           imgOnHover: "com_4.png",
         },
         {
           id: 5,
-          company:"어니스트펀드",
+          company: "어니스트펀드",
           name: "서상훈",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.honestfund.kr/",
           image: "com_ceo_5.png",
           imgOnHover: "com_5.png",
         },
         {
           id: 6,
-          company:"다노",
+          company: "다노",
           name: "정범윤, 이지수",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.mydano.net/",
           image: "com_ceo_6.png",
           imgOnHover: "com_6.png",
         },
         {
           id: 7,
-          company:"펫프렌즈",
+          company: "펫프렌즈",
           name: "김창원",
-          sector: "Alumni",
-          status: "Consumer",
+          status: "Alumni",
+          sector: "Consumer",
           link: "https://www.pet-friends.co.kr/main/tab/2",
           image: "com_ceo_7.png",
           imgOnHover: "com_7.png",
         },
         {
           id: 8,
-          company:"디알코퍼레이션",
+          company: "디알코퍼레이션",
           name: "정종환",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.kiwiblack.kr/",
           image: "com_ceo_8.png",
           imgOnHover: "com_8.png",
         },
         {
           id: 9,
-          company:"패스트파이브",
+          company: "패스트파이브",
           name: "김대일",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.fastfive.co.kr/#enp_mbris",
           image: "com_ceo_9.png",
           imgOnHover: "com_9.png",
         },
         {
           id: 10,
-          company:"팀프레시",
+          company: "팀프레시",
           name: "이성일",
-          sector: "Current",
-          status: "Enterprise",
+          status: "Current",
+          sector: "Enterprise",
           link: "https://www.teamfresh.co.kr/",
           image: "com_ceo_10.png",
           imgOnHover: "com_10.png",
         },
         {
           id: 11,
-          company:"어반플레이",
+          company: "어반플레이",
           name: "홍주석",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.urbanplay.co.kr/",
           image: "com_ceo_11.png",
           imgOnHover: "com_11.png",
         },
         {
           id: 12,
-          company:"스마트레이더시스템",
+          company: "스마트레이더시스템",
           name: "김용환",
-          sector: "Current",
-          status: "Enterprise",
+          status: "Current",
+          sector: "Enterprise",
           link: "https://www.smartradarsystem.com/",
           image: "com_ceo_12.png",
           imgOnHover: "com_12.png",
         },
         {
           id: 13,
-          company:"모노리스",
+          company: "모노리스",
           name: "김종석",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "주식회사 모노리스 – MONOLITH Inc.",
           image: "com_ceo_13.png",
           imgOnHover: "com_13.png",
         },
         {
           id: 14,
-          company:"트렌비",
+          company: "트렌비",
           name: "박경훈",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "전세계 명품 쇼핑은 트렌비 | 트렌비 (trenbe.com)",
           image: "com_ceo_14.png",
           imgOnHover: "com_14.png",
         },
         {
           id: 15,
-          company:"디유닛",
+          company: "디유닛",
           name: "윤반석",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "서울스토어 (seoulstore.com)",
           image: "com_ceo_15.png",
           imgOnHover: "com_15.png",
         },
         {
           id: 16,
-          company:"퍼플랩스헬스케어",
+          company: "퍼플랩스헬스케어",
           name: "전종하",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "serybox.com",
           image: "com_ceo_16.png",
           imgOnHover: "com_16.png",
         },
         {
           id: 17,
-          company:"슈퍼브에이아이",
+          company: "슈퍼브에이아이",
           name: "김현수",
-          sector: "Current",
-          status: "Enterprise",
+          status: "Current",
+          sector: "Enterprise",
           link: "https://www.superb-ai.com/",
           image: "com_ceo_17.png",
           imgOnHover: "com_17.png",
         },
         {
           id: 18,
-          company:"라우드커뮤니케이션즈",
+          company: "라우드커뮤니케이션즈",
           name: "서경종",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://still8.gg/",
           image: "com_ceo_18.png",
           imgOnHover: "com_18.png",
         },
         {
           id: 19,
-          company:"우리엔",
+          company: "우리엔",
           name: "고석빈",
-          sector: "Current",
-          status: "Healthcare",
+          status: "Current",
+          sector: "Healthcare",
           link: "https://www.woorien.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 20,
-          company:"하우빌드",
+          company: "하우빌드",
           name: "이승기",
-          sector: "Current",
-          status: "Consumer",
+          status: "Current",
+          sector: "Consumer",
           link: "https://www.howbuild.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 21,
-          company:"세나클소프트",
+          company: "세나클소프트",
           name: "위의석, 박찬희",
-          sector: "Current",
-          status: "Healthcare",
+          status: "Current",
+          sector: "Healthcare",
           link: "https://cenacle.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 22,
-          company:"에스엠랩",
+          company: "에스엠랩",
           name: "조재필",
-          sector: "Current",
-          status: "Enterprise",
-          link: "", 
+          status: "Current",
+          sector: "Enterprise",
+          link: "",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 23,
-          company:"무신사",
+          company: "무신사",
           name: "강정구, 한문일",
-          sector: "Current",
-          status: "Consumer",
-          link: "https://www.musinsa.com/", 
+          status: "Current",
+          sector: "Consumer",
+          link: "https://www.musinsa.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 24,
-          company:"4DReplay",
+          company: "4DReplay",
           name: "정홍수",
-          sector: "Current",
-          status: "Enterprise",
-          link: "4DREPLAY | Creating Experiences", 
+          status: "Current",
+          sector: "Enterprise",
+          link: "4DREPLAY | Creating Experiences",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 25,
-          company:"퍼플랩스",
+          company: "퍼플랩스",
           name: "전종하",
-          sector: "Current",
-          status: "Consumer",
-          link: "https://www.doremifresh.com/index", 
+          status: "Current",
+          sector: "Consumer",
+          link: "https://www.doremifresh.com/index",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 26,
-          company:"큐픽스",
+          company: "큐픽스",
           name: "배석훈",
-          sector: "Current",
-          status: "Enterprise",
-          link: "큐픽스와 스마트 구축 (cupix.com)", 
+          status: "Current",
+          sector: "Enterprise",
+          link: "큐픽스와 스마트 구축 (cupix.com)",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 27,
-          company:"AmazeVR",
+          company: "AmazeVR",
           name: "이승준, Ernest Lee",
-          sector: "Current",
-          status: "Consumer",
-          link: "https://www.amazevr.com/", 
+          status: "Current",
+          sector: "Consumer",
+          link: "https://www.amazevr.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 28,
-          company:"글로랑",
+          company: "글로랑",
           name: "황태일",
-          sector: "Current",
-          status: "Consumer",
-          link: "Glorang", 
+          status: "Current",
+          sector: "Consumer",
+          link: "Glorang",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 29,
-          company:"케어닥",
+          company: "케어닥",
           name: "박재병",
-          sector: "Current",
-          status: "Healthcare",
-          link: "어르신 돌보미 찾기 (carecoordi.kr)", 
+          status: "Current",
+          sector: "Healthcare",
+          link: "어르신 돌보미 찾기 (carecoordi.kr)",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 30,
-          company:"테크타카",
+          company: "테크타카",
           name: "양수영",
-          sector: "Current",
-          status: "Enterprise",
-          link: "Argo - Anything Anywhere Anytime (argoport.com)", 
+          status: "Current",
+          sector: "Enterprise",
+          link: "Argo - Anything Anywhere Anytime (argoport.com)",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 31,
-          company:"Bobidi",
+          company: "Bobidi",
           name: "최정서, 배수현",
-          sector: "Current",
-          status: "Enterprise",
-          link: "https://www.bobidi.com/", 
+          status: "Current",
+          sector: "Enterprise",
+          link: "https://www.bobidi.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 32,
-          company:"트러스테이",
+          company: "트러스테이",
           name: "김정윤",
-          sector: "Current",
-          status: "Consumer",
-          link: "", 
+          status: "Current",
+          sector: "Consumer",
+          link: "",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 33,
-          company:"Chequer Global, Inc.",
+          company: "Chequer Global, Inc.",
           name: "황인서",
-          sector: "Current",
-          status: "Enterprise",
-          link: "Normalize your Data Governance | QueryPie", 
+          status: "Current",
+          sector: "Enterprise",
+          link: "Normalize your Data Governance | QueryPie",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 34,
-          company:"콘텐츠테크놀로지스",
+          company: "콘텐츠테크놀로지스",
           name: "이장원",
-          sector: "Current",
-          status: "Consumer",
-          link: "", 
+          status: "Current",
+          sector: "Consumer",
+          link: "",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
         {
           id: 35,
-          company:"JNPMedi",
+          company: "JNPMedi",
           name: "정권호",
-          sector: "Current",
-          status: "Healthcare",
-          link: "https://www.jnpmedi.com/", 
+          status: "Current",
+          sector: "Healthcare",
+          link: "https://www.jnpmedi.com/",
           image: "founder-1.png",
           imgOnHover: "company-logoOnHover.png",
         },
-        
-        
       ],
       backupTeam: [],
       clear: [],
+      sectorFilter: [],
+      statusFilter: [],
     };
   },
   mounted() {
@@ -402,41 +399,46 @@ export default {
       console.log("member click passed");
     },
     filterSector(event = []) {
-      // console.log(event,event.includes("Consumer"))
-      this.clear = event;
-      if (event.length > 0) {
-        this.teams = this.backupTeam.filter((x) => {
-          let imd = event.findIndex((y) => y == x.sector || y == x.status); // [Consumer,Enterprice]
-          console.log(imd);
-          if (imd > -1 ) {
-            return true;
-          }
-        });
-        console.log("teams", this.teams);
-      } else {
-        this.teams = [...this.backupTeam];
-      }
+      this.sectorFilter = [...event];
+      this.teams = this.filterTeam();
     },
-    clearFilter(type = "") {
-      console.log(type,this.clear)
-      if (type == "Sector") {
-        this.teams = this.backupTeam.filter((x) => {
-          let imd = this.clear.findIndex((y) => y == x.status); // [Consumer,Enterprice]
-          console.log(imd);
-          if (imd > -1) {
-            return true;
+    filterStatus(event = []) {
+      this.statusFilter = [...event];
+      this.teams = this.filterTeam();
+    },
+    // filter(type) {
+    //   console.log(this.teams, type);
+    //   if (type == "sector") {
+    //     this.teams = this.filterTeam();
+    //   }
+    //   if (type == "status") {
+    //     this.teams = this.filterTeam();
+    //   }
+    // },
+    filterTeam() {
+      let filterTeam = [];
+      filterTeam = this.backupTeam.filter((x) => {
+        if (this.sectorFilter.length || this.statusFilter.length) {
+          if (this.sectorFilter.length && this.statusFilter.length) {
+            console.log("both sector & status");
+            return (
+              this.sectorFilter.includes(x.sector) &&
+              this.statusFilter.includes(x.status)
+            );
+          } else if (this.sectorFilter.length) {
+            console.log("only sector ");
+            return this.sectorFilter.includes(x.sector);
+          } else if (this.statusFilter.length) {
+            console.log("only status ");
+            return this.statusFilter.includes(x.status);
+          } else {
           }
-        });
-      }
-      if (type == "Status") {
-        this.teams = this.backupTeam.filter((x) => {
-          let imd = this.clear.findIndex((y) => y == x.sector); // [current,alumini]
-          console.log(imd);
-          if (imd > -1) {
-            return true;
-          }
-        });
-      }
+        } else {
+          return x;
+        }
+      });
+      console.log("filtered teams", filterTeam);
+      return filterTeam;
     },
   },
 };

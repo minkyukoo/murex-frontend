@@ -4,22 +4,38 @@
       <div class="header-wrap">
         <div class="left-panel">
           <router-link to="/" v-if="bgClass === 'bg-transparent'">
-            <img src="../assets/images/site-logo-white.svg" class="logo" alt="Logo" />
+            <img
+              src="../assets/images/site-logo-white.svg"
+              class="logo"
+              alt="Logo"
+            />
           </router-link>
           <router-link to="/" v-else>
-            <img src="../assets/images/site-logo.svg" class="logo" alt="Logo" />
+            <img src="../assets/images/site-logo.png" class="logo" alt="Logo" />
           </router-link>
         </div>
         <div class="right-panel">
           <div v-if="mobileView">
             <button type="button" @click="mobileToggle">
-              <i :class="bgClass === 'bg-transparent' ? 'icon-menu' : 'icon-menu-violet-bg'"></i>
+              <i
+                :class="
+                  bgClass === 'bg-transparent'
+                    ? 'icon-menu'
+                    : 'icon-menu-violet-bg'
+                "
+              ></i>
             </button>
           </div>
           <div class="flex jc-center" v-if="!mobileView">
             <ul class="nav-wrap">
-              <li class="nav-item" v-for="(item, i) of menu" :key="item.label || i">
-                <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">{{ item.label }}</NuxtLink>
+              <li
+                class="nav-item"
+                v-for="(item, i) of menu"
+                :key="item.label || i"
+              >
+                <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">{{
+                  item.label
+                }}</NuxtLink>
               </li>
             </ul>
             <LanguageInput />
@@ -34,7 +50,12 @@
         </button>
       </div>
       <ul>
-        <li class="Mobnav-item" v-for="(item, i) of menu" :key="item.label || i" @click="closeMenu">
+        <li
+          class="Mobnav-item"
+          v-for="(item, i) of menu"
+          :key="item.label || i"
+          @click="closeMenu"
+        >
           <NuxtLink :to="item.to" class="nav-link">{{ item.label }}</NuxtLink>
         </li>
       </ul>
@@ -95,8 +116,11 @@ export default {
 .header {
   // background: $white;
   .logo {
-    width: calc(100px + 3vw);
+    width: 160px;
     height: auto;
+    @media screen and (max-width: 640px) {
+      width: 105px;
+    }
   }
   .container {
     @media screen and (max-width: 640px) {
@@ -106,7 +130,9 @@ export default {
   .header-wrap {
     @include dflex-align-justify-between;
     height: 80px;
-
+    @media screen and (max-width: 640px) {
+      height: 60px;
+    }
     .right-panel {
       @include dflex-align-center;
       .nav-wrap {

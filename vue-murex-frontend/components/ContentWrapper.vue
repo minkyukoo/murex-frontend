@@ -7,6 +7,7 @@
       :author="item.written_by"
       :image="item.cms_image"
       :link="item.article_url"
+      :status="item.status"
     />
     <!-- <jw-pagination
       :items="itemList"
