@@ -97,3 +97,19 @@ html {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.no-data-div {
+  min-height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $default-font;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  color: $black-1;
+  text-align: center;
+}
