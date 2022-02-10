@@ -8,7 +8,7 @@
       <div class="container">
         <div class="contact-us-cont md:grid grid-cols-2">
           <div class="md:w-1/2 left-panel col-span-1">
-          <p>Current language: {{$i18n.locale }}</p>
+          <!-- <p>Current language: {{$i18n.locale }}</p> -->
             <h2 class="heading-2">{{ $t(`contact.content.title1`) }}</h2>
             <ul class="inf-cont">
               <ContactInfoItem
