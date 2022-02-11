@@ -1,10 +1,10 @@
 {
   "message": "Hello!",
   "contact": {
-    "pageTitle": "서울시",
+    "pageTitle": "Contact",
     "content": {
       "title1": "Information",
-      "title2": "How to come 서울시",
+      "title2": "How to come",
       "address": "주소",
       "addressInfo": "서울시 강남구 도산대로45길 18-6, 2층",
       "call": "Call",
@@ -18,36 +18,36 @@
     }
   },
   "contents": {
-    "pageTitle": "Contents kr",
+    "pageTitle": "Contents",
     "tabs": {
       "allTab": "All",
-      "newTab": "News kr",
-      "insightTab": "Insights kr"
+      "newTab": "News",
+      "insightTab": "Insights"
     }
   },
   "founders": {
     "pageTitle": "창립자",
     "filters": {
       "allFilters": "All",
-      "sectorFilters": "창립자",
+      "sectorFilters": "Sector",
       "statusFilters": "Status"
     },
     "sectors": {
-      "consumer": "창립자",
+      "consumer": "Consumer",
       "enterprise": "Enterprise",
       "healthcare": "Healthcare",
       "crypto": "Crypto"
     },
     "status": {
-      "current": "창립자",
+      "current": "Current",
       "alumni": "Alumni"
     },
     "button": {
-      "clearFilter": "창립자"
+      "clearFilter": "Clear Filter"
     }
   },
   "team": {
-    "pageTitle1": "Our Team kr",
-    "pageTitle2": "Venture Partner / Advisory kr"
+    "pageTitle1": "Our Team",
+    "pageTitle2": "Venture Partner / Advisory"
   }
 }

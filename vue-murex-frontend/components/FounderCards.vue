@@ -19,8 +19,8 @@
           
         />
       </template>
-      <div v-if="teams.length == 0">No Data Found</div>
     </div>
+    <div v-if="teams.length == 0" class="no-data-div">No Founders Found</div>
   </div>
 </template>
 
