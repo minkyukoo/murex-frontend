@@ -10,7 +10,7 @@
         v-on:setPage="PageElement($event)"
         v-if="contentList.length > 0"
       />
-      <content-empty v-else-if="contentList.length == 0" />
+      <content-empty v-if="nodata" />
     </div>
   </div>
 </template>
@@ -31,6 +31,7 @@ export default {
         perPage: 10,
         pageNo: 0,
       },
+      nodata: false,
     };
   },
   mounted() {
@@ -51,6 +52,7 @@ export default {
       this.getContent();
     },
     async getContent() {
+      this.$nuxt.$loading.start();
       this.pagination.pageNo = this.pagination.pageNo.toString();
       const contentList = await this.$axios.$get("getcontentlist", {
         params: {
@@ -59,12 +61,20 @@ export default {
           type: this.tabState,
         },
       });
-      console.log("content", contentList);
-      this.contentList = contentList.data;
-      this.pagination.totalRecords = Math.ceil(
-        contentList.total_records / this.pagination.perPage
-      );
-      console.log("pagination", this.pagination.totalRecords);
+      if (contentList.status === 200) {
+        this.$nuxt.$loading.finish();
+        console.log("content", contentList);
+        this.contentList = contentList.data;
+        this.pagination.totalRecords = Math.ceil(
+          contentList.total_records / this.pagination.perPage
+        );
+        console.log("pagination", this.pagination.totalRecords);
+      }
+      else {
+        this.$nuxt.$loading.finish();
+        alert(contentList.message);
+        this.nodata = true;
+      }
     },
   },
   // watch: {
@@ -76,9 +86,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contentWrap{
+.contentWrap {
   max-width: 1520px;
   margin: 0 auto;
 }
-
 </style>

@@ -1,12 +1,18 @@
 import i18n from "./config/i18n.js";
-import webpack from 'webpack';
+import webpack from "webpack";
 export default {
-  target: 'server',
+  target: "server",
   server: {
     // host: '0',
     // port: 3002,
   },
   loading: "~/components/LoadingBar.vue",
+
+  loadingIndicator: {
+    name: "circle",
+    color: "#3B8070",
+    background: "white",
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Murex Partners",
@@ -35,17 +41,17 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // css
-    '~/assets/css/main.css',
-    '~/assets/css/tailwind.css',
+    "~/assets/css/main.css",
+    "~/assets/css/tailwind.css",
     // scss
-    '~/assets/scss/general.scss',
+    "~/assets/scss/general.scss",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/vue-carousel', mode: 'client' },
-    { src: '~/plugins/jw-vue-pagination', mode: 'client' },
-    { src: '~/plugins/i18n.js' },
+    { src: "~/plugins/vue-carousel", mode: "client" },
+    { src: "~/plugins/jw-vue-pagination", mode: "client" },
+    { src: "~/plugins/i18n.js" },
     // '~/plugins/router'
   ],
 
@@ -55,30 +61,27 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/style-resources',
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/style-resources",
   ],
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
-    configPath: 'tailwind.config.js',
+    cssPath: "~/assets/css/tailwind.css",
+    configPath: "tailwind.config.js",
     exposeConfig: false,
     config: {},
     injectPosition: 0,
   },
   styleResources: {
     scss: [
-      '~/assets/scss/general.scss',
-      '~/assets/scss/variables.scss',
-      '~/assets/scss/mixins.scss',
-      '~/assets/scss/mixins.scss'
+      "~/assets/scss/general.scss",
+      "~/assets/scss/variables.scss",
+      "~/assets/scss/mixins.scss",
+      "~/assets/scss/mixins.scss",
     ],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/i18n',
-    '@nuxtjs/axios',
-  ],
+  modules: ["@nuxtjs/i18n", "@nuxtjs/axios"],
   i18n: {
     vueI18nLoader: true,
     defaultLocale: "kr",
@@ -95,19 +98,19 @@ export default {
     vueI18n: i18n,
   },
   axios: {
-    baseURL: 'http://murex-backend.dvconsulting.org/api/', // Used as fallback if no runtime config is provided
+    baseURL: "http://murex-backend.dvconsulting.org/api/", // Used as fallback if no runtime config is provided
   },
 
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL
-    }
+      browserBaseURL: process.env.BROWSER_BASE_URL,
+    },
   },
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: process.env.BASE_URL
-    }
+      baseURL: process.env.BASE_URL,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -115,15 +118,15 @@ export default {
     plugins: [
       new webpack.ProvidePlugin({
         // global modules
-        $: 'jquery',
-        _: 'lodash',
+        $: "jquery",
+        _: "lodash",
         rules: [
           {
             test: /\.css$/i,
             use: ["style-loader", "css-loader"],
           },
         ],
-      })
+      }),
     ],
     loaders: {
       sass: {
@@ -134,4 +137,4 @@ export default {
       },
     },
   },
-}
+};

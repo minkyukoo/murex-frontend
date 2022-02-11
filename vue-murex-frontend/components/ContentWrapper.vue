@@ -1,14 +1,16 @@
 <template>
   <div>
-    <ContentBox
-      v-for="(item, index) in itemList"
-      :key="index || item.id"
-      :desc="item.title"
-      :author="item.written_by"
-      :image="item.cms_image"
-      :link="item.article_url"
-      :status="item.status"
-    />
+    <template v-for="(item, index) in itemList">
+      <ContentBox
+        :key="index || item.id"
+        :desc="item.title"
+        :author="item.written_by"
+        :image="item.cms_image"
+        :link="item.article_url"
+        :status="item.status"
+        :id="index || item.id"
+      />
+    </template>
     <!-- <jw-pagination
       :items="itemList"
       :labels="customLabels"

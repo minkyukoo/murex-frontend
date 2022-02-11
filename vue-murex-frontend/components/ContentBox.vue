@@ -37,6 +37,7 @@ export default {
     image: String,
     link: String,
     status: String,
+    id: Number,
   },
   // mounted() {
   //   console.log("images" , author)

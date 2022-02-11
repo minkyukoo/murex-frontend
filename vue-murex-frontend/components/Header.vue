@@ -62,11 +62,14 @@
       <div class="lang-select">
         <div class="elements">
           <span
-            :class="`active`"
-            v-for="(locale, index) in $i18n.locales"
-            :key="index"
-            @click="setLang(locale.code)"
-            >{{ locale.name }}</span
+            :class="`${selectedValue === 'kr' ? 'active' : ''}`"
+            @click="setLang('kr')"
+            >KO</span
+          >
+          <span
+            :class="`${selectedValue === 'en' ? 'active' : ''}`"
+            @click="setLang('en')"
+            >EN</span
           >
         </div>
       </div>
@@ -91,10 +94,12 @@ export default {
       ],
       mobileView: false,
       mobileMenu: false,
+      selectedValue: "",
     };
   },
   created() {
     this.getDimensions();
+    this.selectedValue = this.$i18n.locale;
   },
   mounted() {
     window.addEventListener("resize", this.getDimensions);
@@ -108,13 +113,19 @@ export default {
     },
     mobileToggle() {
       this.mobileMenu = !this.mobileMenu;
+      if(this.mobileMenu) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
     },
     closeMenu() {
       this.mobileMenu = false;
     },
     setLang(event) {
-      console.log("see event",event);
-      this.$router.replace(this.switchLocalePath(event));
+      console.log("see event", event);
+      this.selectedValue = event;
+      this.$router.replace(this.switchLocalePath(this.selectedValue));
     },
   },
 };
