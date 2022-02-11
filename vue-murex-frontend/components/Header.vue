@@ -61,8 +61,13 @@
       </ul>
       <div class="lang-select">
         <div class="elements">
-          <span class="active">KO</span>
-          <span>EN</span>
+          <span
+            :class="`active`"
+            v-for="(locale, index) in $i18n.locales"
+            :key="index"
+            @click="setLang(locale.code)"
+            >{{ locale.name }}</span
+          >
         </div>
       </div>
     </div>
@@ -84,7 +89,6 @@ export default {
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
       ],
-      // width: document.documentElement.clientWidth,
       mobileView: false,
       mobileMenu: false,
     };
@@ -107,6 +111,10 @@ export default {
     },
     closeMenu() {
       this.mobileMenu = false;
+    },
+    setLang(event) {
+      console.log("see event",event);
+      this.$router.replace(this.switchLocalePath(event));
     },
   },
 };

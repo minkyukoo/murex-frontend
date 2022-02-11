@@ -4,21 +4,28 @@
       v-on:sectorFilter="filterSector($event)"
       v-on:statusFilter="filterStatus($event)"
     />
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 sm:gap-2 md:gap-4 lg:gap-8">
-      <template v-for="(team, i) of teams">
-        <TeamCard
-          :key="team.id || i + 1"
-          :bgImage="team.image"
-          :imgOnHover="team.imgOnHover"
-          :name="team.name"
-          :company="team.company"
-          :companyLink="team.link"
-          :status="team.status"
-          :sector="team.sector"
-          v-on:openModal="OpenModal"
-          
-        />
-      </template>
+    <div
+      class="
+        grid grid-cols-2
+        sm:grid-cols-3
+        lg:grid-cols-4
+        sm:gap-2
+        md:gap-4
+        lg:gap-8
+      "
+    >
+      <TeamCard
+        v-for="(team, i) of teams"
+        :key="team.id || i + 1"
+        :bgImage="team.image"
+        :imgOnHover="team.imgOnHover"
+        :name="team.name"
+        :company="team.company"
+        :companyLink="team.link"
+        :status="team.status"
+        :sector="team.sector"
+        v-on:openModal="OpenModal"
+      />
     </div>
     <div v-if="teams.length == 0" class="no-data-div">No Founders Found</div>
   </div>
