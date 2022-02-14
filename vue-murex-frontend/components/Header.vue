@@ -37,7 +37,7 @@
                 <NuxtLink
                   :to="localePath(`${item.to}`)"
                   class="nav-link"
-                  @click="() => (this.mobileMenu = false)"
+                  @click="closeMenu"
                   >{{ item.label }}</NuxtLink
                 >
               </li>
@@ -120,6 +120,12 @@ export default {
     },
     closeMenu() {
       this.mobileMenu = false;
+      if (this.mobileMenu) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+        console.log("mobileMenu recheck", this.mobileMenu);
+      }
     },
     setLang(event) {
       console.log("see event", event);
@@ -133,6 +139,7 @@ export default {
         document.body.style.overflow = "hidden";
       } else {
         document.body.style.overflow = "auto";
+        console.log("mobileMenu recheck", this.mobileMenu);
       }
     },
   },
