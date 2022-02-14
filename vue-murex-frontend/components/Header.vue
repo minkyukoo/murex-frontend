@@ -12,7 +12,7 @@
           </router-link>
 
           <router-link to="/" v-else>
-            <img src="../assets/images/site-logo.png" class="logo" alt="Logo" />
+            <img src="../assets/images/site-logo.svg" class="logo" alt="Logo" />
           </router-link>
         </div>
         <div class="right-panel">
