@@ -87,7 +87,7 @@ export default {
 
 <style lang="scss" scoped>
 .contentWrap {
-  max-width: 1520px;
+  max-width: 1612px;
   margin: 0 auto;
 }
 </style>

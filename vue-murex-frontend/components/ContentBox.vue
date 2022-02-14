@@ -100,12 +100,16 @@ export default {
     height: 300px;
     background-position: center center;
     background-size: cover;
-    @media screen and (max-width: 992px) {
-      height: 200px;
-    }
     @media screen and (max-width: 1600px) {
       height: 250px;
     }
+    @media screen and (max-width: 992px) {
+      height: 200px;
+    }
+    @media screen and (max-width: 767px) {
+      height: 173px;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -116,11 +120,14 @@ export default {
     height: 300px;
     background-color: #cecece;
     @include dflex-align-justify-center;
+    @media screen and (max-width: 1600px) {
+      height: 250px;
+    }
     @media screen and (max-width: 992px) {
       height: 200px;
     }
-    @media screen and (max-width: 1600px) {
-      height: 250px;
+    @media screen and (max-width: 767px) {
+      height: 173px;
     }
   }
 }

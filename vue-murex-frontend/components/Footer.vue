@@ -8,8 +8,8 @@
 
 <script>
 export default {
-  name: 'Footer',
-}
+  name: "Footer",
+};
 </script>
 
 <style lang="scss" scoped>
@@ -18,6 +18,9 @@ export default {
   border-top: 1px solid $grey-1;
   height: 60px;
   overflow: hidden;
+  @media screen and (max-width: 767px) {
+    height: 50px;
+  }
   p {
     font-family: $default-font;
     font-style: normal;
@@ -26,6 +29,9 @@ export default {
     line-height: 18px;
     text-align: center;
     color: $grey-2;
+    @media screen and (max-width: 567px) {
+      font-size: 10px;
+    }
   }
 }
 </style>

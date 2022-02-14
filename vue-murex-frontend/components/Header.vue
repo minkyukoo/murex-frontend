@@ -10,6 +10,7 @@
               alt="Logo"
             />
           </router-link>
+
           <router-link to="/" v-else>
             <img src="../assets/images/site-logo.png" class="logo" alt="Logo" />
           </router-link>
@@ -33,9 +34,12 @@
                 v-for="(item, i) of menu"
                 :key="item.label || i"
               >
-                <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">{{
-                  item.label
-                }}</NuxtLink>
+                <NuxtLink
+                  :to="localePath(`${item.to}`)"
+                  class="nav-link"
+                  @click="() => (this.mobileMenu = false)"
+                  >{{ item.label }}</NuxtLink
+                >
               </li>
             </ul>
             <LanguageInput />
@@ -113,11 +117,6 @@ export default {
     },
     mobileToggle() {
       this.mobileMenu = !this.mobileMenu;
-      if(this.mobileMenu) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
     },
     closeMenu() {
       this.mobileMenu = false;
@@ -126,6 +125,15 @@ export default {
       console.log("see event", event);
       this.selectedValue = event;
       this.$router.replace(this.switchLocalePath(this.selectedValue));
+    },
+  },
+  watch: {
+    mobileMenu: function () {
+      if (this.mobileMenu) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
     },
   },
 };
@@ -239,6 +247,7 @@ export default {
   }
   .Mobnav-item {
     width: fit-content;
+    width: -moz-fit-content;
   }
   .Nav-container {
     width: 100%;
