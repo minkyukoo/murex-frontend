@@ -10,8 +10,9 @@
               alt="Logo"
             />
           </router-link>
+
           <router-link to="/" v-else>
-            <img src="../assets/images/site-logo.png" class="logo" alt="Logo" />
+            <img src="../assets/images/site-logo.svg" class="logo" alt="Logo" />
           </router-link>
         </div>
         <div class="right-panel">
@@ -33,9 +34,12 @@
                 v-for="(item, i) of menu"
                 :key="item.label || i"
               >
-                <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">{{
-                  item.label
-                }}</NuxtLink>
+                <NuxtLink
+                  :to="localePath(`${item.to}`)"
+                  class="nav-link"
+                  @click="closeMenu"
+                  >{{ item.label }}</NuxtLink
+                >
               </li>
             </ul>
             <LanguageInput />
@@ -61,8 +65,16 @@
       </ul>
       <div class="lang-select">
         <div class="elements">
-          <span class="active">KO</span>
-          <span>EN</span>
+          <span
+            :class="`${selectedValue === 'kr' ? 'active' : ''}`"
+            @click="setLang('kr')"
+            >KO</span
+          >
+          <span
+            :class="`${selectedValue === 'en' ? 'active' : ''}`"
+            @click="setLang('en')"
+            >EN</span
+          >
         </div>
       </div>
     </div>
@@ -84,13 +96,14 @@ export default {
         { label: "Contents", to: "/contents" },
         { label: "Contact", to: "/contact" },
       ],
-      // width: document.documentElement.clientWidth,
       mobileView: false,
       mobileMenu: false,
+      selectedValue: "",
     };
   },
   created() {
     this.getDimensions();
+    this.selectedValue = this.$i18n.locale;
   },
   mounted() {
     window.addEventListener("resize", this.getDimensions);
@@ -107,6 +120,27 @@ export default {
     },
     closeMenu() {
       this.mobileMenu = false;
+      if (this.mobileMenu) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+        console.log("mobileMenu recheck", this.mobileMenu);
+      }
+    },
+    setLang(event) {
+      console.log("see event", event);
+      this.selectedValue = event;
+      this.$router.replace(this.switchLocalePath(this.selectedValue));
+    },
+  },
+  watch: {
+    mobileMenu: function () {
+      if (this.mobileMenu) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+        console.log("mobileMenu recheck", this.mobileMenu);
+      }
     },
   },
 };
@@ -220,6 +254,7 @@ export default {
   }
   .Mobnav-item {
     width: fit-content;
+    width: -moz-fit-content;
   }
   .Nav-container {
     width: 100%;

@@ -194,8 +194,7 @@ export default {
         }
       }
       this.$emit("sectorFilter", this.sectorFilter);
-      console.log("items in filter", this.sectorFilter);
-      console.log("status in filter", this.statusFilter);
+      console.log("sector in filter", this.sectorFilter);
     },
     Statusfilter(event) {
       console.log(event);
@@ -209,7 +208,7 @@ export default {
         }
       }
       this.$emit("statusFilter", this.statusFilter);
-      console.log("items in filter", this.statusFilter);
+      console.log("status in filter", this.statusFilter);
     },
   },
   updated() {

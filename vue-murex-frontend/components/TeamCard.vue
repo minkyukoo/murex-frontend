@@ -74,6 +74,8 @@ export default {
     product: Object,
     status: String,
     sector: String,
+    snsFbLink: String,
+    snsLnLink: String,
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div class="home-layout">
-    <client-only placeholder="loading...">
+    <client-only>
       <Header bgClass="bg-transparent" />
     </client-only>
     <div class="main-body">

@@ -78,7 +78,9 @@ export default {
       this.progressValue = (this.number / this.bannerArr.length) * 100;
     },
     async getBanner() {
+      this.$nuxt.$loading.start();
       const BannerItem = await this.$axios.$get("getbannerlist");
+      this.$nuxt.$loading.finish();
       console.log("Items", BannerItem.data);
       this.bannerArr = BannerItem.data;
     },

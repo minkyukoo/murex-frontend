@@ -4,21 +4,28 @@
       v-on:sectorFilter="filterSector($event)"
       v-on:statusFilter="filterStatus($event)"
     />
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 sm:gap-2 md:gap-4 lg:gap-8">
-      <template v-for="(team, i) of teams">
-        <TeamCard
-          :key="team.id || i + 1"
-          :bgImage="team.image"
-          :imgOnHover="team.imgOnHover"
-          :name="team.name"
-          :company="team.company"
-          :companyLink="team.link"
-          :status="team.status"
-          :sector="team.sector"
-          v-on:openModal="OpenModal"
-          
-        />
-      </template>
+    <div
+      class="
+        grid grid-cols-2
+        sm:grid-cols-3
+        lg:grid-cols-4
+        sm:gap-2
+        md:gap-4
+        lg:gap-8
+      "
+    >
+      <TeamCard
+        v-for="(team, i) of teams"
+        :key="team.id || i + 1"
+        :bgImage="team.image"
+        :imgOnHover="team.imgOnHover"
+        :name="team.name"
+        :company="team.company"
+        :companyLink="team.link"
+        :status="team.status"
+        :sector="team.sector"
+        v-on:openModal="OpenModal"
+      />
     </div>
     <div v-if="teams.length == 0" class="no-data-div">No Founders Found</div>
   </div>
@@ -220,8 +227,8 @@ export default {
           status: "Current",
           sector: "Healthcare",
           link: "https://www.woorien.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_19.png",
+          imgOnHover: "com_19.png",
         },
         {
           id: 20,
@@ -230,8 +237,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "https://www.howbuild.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_20.png",
+          imgOnHover: "com_20.png",
         },
         {
           id: 21,
@@ -240,8 +247,8 @@ export default {
           status: "Current",
           sector: "Healthcare",
           link: "https://cenacle.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_21.png",
+          imgOnHover: "com_21.png",
         },
         {
           id: 22,
@@ -250,8 +257,8 @@ export default {
           status: "Current",
           sector: "Enterprise",
           link: "",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_22.png",
+          imgOnHover: "com_22.png",
         },
         {
           id: 23,
@@ -260,8 +267,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "https://www.musinsa.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_23.png",
+          imgOnHover: "com_23.png",
         },
         {
           id: 24,
@@ -270,8 +277,8 @@ export default {
           status: "Current",
           sector: "Enterprise",
           link: "4DREPLAY | Creating Experiences",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_24.png",
+          imgOnHover: "com_24.png",
         },
         {
           id: 25,
@@ -280,8 +287,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "https://www.doremifresh.com/index",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_25.png",
+          imgOnHover: "com_25.png",
         },
         {
           id: 26,
@@ -290,8 +297,8 @@ export default {
           status: "Current",
           sector: "Enterprise",
           link: "큐픽스와 스마트 구축 (cupix.com)",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_26.png",
+          imgOnHover: "com_26.png",
         },
         {
           id: 27,
@@ -300,8 +307,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "https://www.amazevr.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_27.png",
+          imgOnHover: "com_27.png",
         },
         {
           id: 28,
@@ -310,8 +317,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "Glorang",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_28.png",
+          imgOnHover: "com_28.png",
         },
         {
           id: 29,
@@ -320,8 +327,8 @@ export default {
           status: "Current",
           sector: "Healthcare",
           link: "어르신 돌보미 찾기 (carecoordi.kr)",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_29.png",
+          imgOnHover: "com_29.png",
         },
         {
           id: 30,
@@ -330,8 +337,8 @@ export default {
           status: "Current",
           sector: "Enterprise",
           link: "Argo - Anything Anywhere Anytime (argoport.com)",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_30.png",
+          imgOnHover: "com_30.png",
         },
         {
           id: 31,
@@ -340,8 +347,8 @@ export default {
           status: "Current",
           sector: "Enterprise",
           link: "https://www.bobidi.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_31.png",
+          imgOnHover: "com_31.png",
         },
         {
           id: 32,
@@ -350,8 +357,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_32.png",
+          imgOnHover: "com_32.png",
         },
         {
           id: 33,
@@ -360,8 +367,8 @@ export default {
           status: "Current",
           sector: "Enterprise",
           link: "Normalize your Data Governance | QueryPie",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_33.png",
+          imgOnHover: "com_33.png",
         },
         {
           id: 34,
@@ -370,8 +377,8 @@ export default {
           status: "Current",
           sector: "Consumer",
           link: "",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_34.png",
+          imgOnHover: "com_34.png",
         },
         {
           id: 35,
@@ -380,8 +387,8 @@ export default {
           status: "Current",
           sector: "Healthcare",
           link: "https://www.jnpmedi.com/",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "com_ceo_35.png",
+          imgOnHover: "com_35.png",
         },
       ],
       backupTeam: [],

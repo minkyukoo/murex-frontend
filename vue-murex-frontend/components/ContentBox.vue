@@ -1,9 +1,9 @@
 <template>
   <div
-    class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-x-0 md:gap-x-4 content-box"
+    class="flex flex-col md:flex-row gap-4 gap-x-0 md:gap-x-4 content-box"
     v-if="status != 'inactive'"
   >
-    <div class="col-span-2 content-desc">
+    <div class="content-desc">
       <a :href="link" target="_blank">
         <h3>
           {{ desc }}
@@ -37,6 +37,7 @@ export default {
     image: String,
     link: String,
     status: String,
+    id: Number,
   },
   // mounted() {
   //   console.log("images" , author)
@@ -62,8 +63,11 @@ export default {
     padding-bottom: 20px;
     border-bottom: 1px solid $grey-2;
     overflow-x: auto;
+    width: calc(100% - 594px);
+    flex-grow: 1;
     @media screen and (max-width: 767px) {
       order: 3;
+      width: 100%;
     }
     h3 {
       width: 85%;
@@ -95,31 +99,44 @@ export default {
     }
   }
   .content-img {
-    width: 100%;
+    width: 594px;
     height: 300px;
     background-position: center center;
     background-size: cover;
-    @media screen and (max-width: 992px) {
-      height: 200px;
-    }
     @media screen and (max-width: 1600px) {
+      width: 394px;
       height: 250px;
     }
+    @media screen and (max-width: 992px) {
+      width: 310px;
+      height: 200px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      height: 173px;
+    }
+
     img {
       width: 100%;
       height: 100%;
     }
   }
   .no-img {
-    width: 100%;
+    width: 594px;
     height: 300px;
     background-color: #cecece;
     @include dflex-align-justify-center;
+    @media screen and (max-width: 1600px) {
+      width: 394px;
+      height: 250px;
+    }
     @media screen and (max-width: 992px) {
+      width: 310px;
       height: 200px;
     }
-    @media screen and (max-width: 1600px) {
-      height: 250px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      height: 173px;
     }
   }
 }
