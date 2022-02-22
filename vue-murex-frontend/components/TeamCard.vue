@@ -54,7 +54,7 @@
       </div>
       <div class="sns-links" v-else-if="`${$nuxt.$route.path}` === '/founders'">
         <a class="sns-link" :href="companyLink" target="_blank">
-          <img class="plus-icon" src="../assets/icons/Plus.svg" />
+          <img class="plus-icon" src="../assets/icons/plus.svg" />
         </a>
       </div>
     </div>
