@@ -14,9 +14,7 @@
         <div
           class="slider-item"
           :style="{
-            backgroundImage: `url(${
-              mobileView ? slide.mob_image : slide.pc_image
-            })`,
+            backgroundImage: `url(${mobileView ? slide.mob_image : slide.pc_image})`,
           }"
         >
           <!-- <div class="container">
@@ -24,11 +22,12 @@
               <h2>{{ slide.title }}</h2>
               <h6>{{ slide.subtext }}</h6>
             </div>
-          </div> -->
+          </div>-->
         </div>
       </slide>
     </carousel>
     <BannerState
+      v-if="this.bannerArr.length > 1"
       :slideNumber="this.number"
       :TotalSlides="this.bannerArr.length"
       :progressValue="this.progressValue"
@@ -50,9 +49,9 @@ export default {
       pauseIcon: true,
       number: "1",
       progressValue: null,
-      bannerArr: [],
+      bannerArr: [],     
       mobileView: false,
-     
+
     };
   },
   mounted() {
