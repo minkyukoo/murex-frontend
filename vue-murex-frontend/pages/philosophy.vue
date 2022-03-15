@@ -107,6 +107,18 @@
       &:nth-child(5){
         background: #28A6CE;
       }
+      &:nth-child(2){
+        background: url("~/assets/images/phil1.png") no-repeat center center;
+        background-size: cover;
+      }
+      &:nth-child(3){
+        background: url("~/assets/images/phil2.png") no-repeat center center;
+        background-size: cover;
+      }
+      &:nth-child(6){
+        background: url("~/assets/images/phil3.png") no-repeat center center;
+        background-size: cover;
+      }
       h4{
         font-size: 30px;
         line-height: 40px;
