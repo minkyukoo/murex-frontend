@@ -41,6 +41,7 @@ export default {
 .lang-dropdown{
   select{
     @include grey-text-1;
+    color: #BDBDBD;
     background-color: transparent;
   }
 }
