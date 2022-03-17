@@ -1,5 +1,5 @@
 <template>
-  <div class="flex mb-10">
+  <div class="flex mb-50">
     <div class="filters" role="button" @click="ClearAll">
       {{ $t(`founders.filters.allFilters`) }}
     </div>
@@ -221,6 +221,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mb-50{
+  margin-bottom: 50px;
+  @media screen and (max-width: 640px) {
+    margin-bottom: 20px;
+  }
+}
 .filters {
   margin-right: 50px;
   font-weight: 300;

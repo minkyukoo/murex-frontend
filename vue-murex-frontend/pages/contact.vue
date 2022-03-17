@@ -113,6 +113,9 @@ export default {
   @media screen and (max-width: 767px) {
     padding-bottom: 25px;
   }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 0;
+  }
 }
 .contact-us-cont {
   max-width: 1520px;
@@ -121,6 +124,9 @@ export default {
   @media screen and (max-width: 767px) {
     padding: 50px 0;
   }
+   @media screen and (max-width: 767px) {
+    padding: 50px 0 30px;
+  }
   .left-panel {
     @media screen and (max-width: 767px) {
       margin-bottom: 60px;
@@ -128,9 +134,15 @@ export default {
   }
   .inf-cont {
     margin-top: 40px;
+    @media screen and (max-width: 640px) {
+      margin-top: 20px;
+    }
     .inf-item {
       display: flex;
       margin-bottom: 29px;
+      @media screen and (max-width: 640px) {
+        margin-bottom: 20px;
+      }
       &:last-child {
         margin-bottom: 0px;
       }

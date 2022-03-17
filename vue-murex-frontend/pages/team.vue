@@ -28,7 +28,7 @@
       </template>
       <template v-slot:body>
         <div class="w-full team-modal-body">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 sm:gap-30">
             <div class="img-holder" v-if="modalData.image">
               <img
                 :src="`${require('../assets/images/' + modalData.image)}`"
@@ -60,7 +60,7 @@
                     </li>
                   </ul>
                 </div>
-                <div>
+                <div class="desc-sec-2">
                   <ul>
                     <li
                       v-for="(item, index) in modalData.investmentExp2"
@@ -133,13 +133,21 @@ export default {
   .name {
     @include dflex-align-center;
     font-weight: 600;
-    font-size: calc(10px + 2.3vw);
+    // font-size: calc(10px + 2.3vw);
+    font-size: 52px;
+    color: #181818;
+    @media screen and (max-width: 640px) {
+      font-size: 24px;
+    }
     span {
       display: inline-block;
       font-weight: 600;
       font-size: 16px;
       line-height: 19px;
       padding-left: 24px;
+      @media screen and (max-width: 640px) {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -161,30 +169,48 @@ export default {
     border-bottom: 2px solid #000000;
     padding-bottom: 12px;
     margin-bottom: 12px;
+    @media screen and (max-width: 640px) {
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
   .desc-sec {
     margin-bottom: calc(20px + 2vw);
+    @media screen and (max-width: 640px) {
+      margin-bottom: 40px;
+    }
   }
   .main-desc {
     font-weight: normal;
     font-size: 24px;
     line-height: 150%;
+    font-weight: 500;
     @media screen and (max-width: 767px) {
       font-size: 15px;
     }
   }
   .sub-desc {
-    font-weight: normal;
+    font-weight: 500;
     font-size: 16px;
     line-height: 180%;
     color: $grey-5;
     @media screen and (max-width: 767px) {
       font-size: 14px;
+      font-weight: 300;
     }
   }
   .social-icon {
     display: inline-block;
     margin-right: 12px;
   }
+}
+
+.desc-sec-2{
+  ul{
+    li{
+      color: #4c4c4c;
+    }
+  }
+  
 }
 </style>

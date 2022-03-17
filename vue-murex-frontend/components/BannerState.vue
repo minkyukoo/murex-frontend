@@ -14,7 +14,7 @@
           <progress id="file" :value="progressValue" max="100"></progress>
         </div>
         <div>
-          <h5>
+          <h5 class="pagination">
             <span>{{ slideNumber > 9 ? slideNumber : 0 + slideNumber }}</span> /
             <span>{{ TotalSlides > 9 ? TotalSlides : `0${TotalSlides}` }}</span>
           </h5>
@@ -52,6 +52,15 @@ export default {
   position: absolute;
   bottom: 15%;
   color: $white;
+}
+.pagination{
+  font-family: $secondery-font;
+  color: #E0E0E0;
+  span{
+    &:nth-child(2){
+      color: #666666;
+    }
+  }
 }
 .slideCon {
   img {
