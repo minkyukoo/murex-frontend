@@ -33,7 +33,7 @@ export default {
   .label {
     @include black-text-1;
     margin-bottom: 7px;
-    font-weight: 600;
+    font-weight: 500;
   }
   .cont {
     @include black-text-2;

@@ -190,6 +190,8 @@ export default {
   }
   &.bg-white {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
   }
   &.bg-transparent {
     position: absolute;

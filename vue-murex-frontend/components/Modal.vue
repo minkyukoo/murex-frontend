@@ -68,7 +68,10 @@ export default {
 }
 
 .modal-content {
-  padding: calc(10px + 4.5vw) calc(5px + 7.75vw) calc(15px + 1vw);
+  padding: calc(10px + 4.5vw) calc(5px + 7.75vw) calc(15px + 1vw);  
+  @media screen and (max-width: 640px) {
+    padding: 16px;
+  }
 }
 
 .modal-footer {
@@ -108,6 +111,10 @@ export default {
     width: 100%;
     text-align: right;
     order: -1;
+  }
+  @media screen and (max-width: 640px) {
+    position: relative;
+    top: 50px;
   }
 }
 </style>

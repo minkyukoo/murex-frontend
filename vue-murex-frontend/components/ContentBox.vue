@@ -49,6 +49,9 @@ export default {
 .content-box {
   margin-bottom: calc(60px + 3vw);
   overflow-x: auto;
+  @media screen and (max-width: 640px) {
+    margin-bottom: 40px;
+  }
   &:hover {
     .content-desc {
       h3 {
