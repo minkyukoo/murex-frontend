@@ -87,6 +87,9 @@
 <script>
 export default {
   name: "Filters",
+  props: {
+    isclose: Boolean,
+  },
   data() {
     return {
       sectors: [
@@ -135,6 +138,14 @@ export default {
       sectorFilter: [],
       statusFilter: [],
     };
+  },
+  watch: {
+    isclose: function (val) {
+      if (val) {
+        this.sectorState = false;
+        this.statusState = false;
+      }
+    },
   },
   methods: {
     openSector() {

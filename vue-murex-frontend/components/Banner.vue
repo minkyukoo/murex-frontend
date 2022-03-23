@@ -29,6 +29,7 @@
       </slide>
     </carousel>
     <BannerState
+    v-if="this.bannerArr.length > 1"
       :slideNumber="this.number"
       :TotalSlides="this.bannerArr.length"
       :progressValue="this.progressValue"
@@ -60,6 +61,7 @@ export default {
     console.log(this.slide);
     this.progressValue = (this.number / this.bannerArr.length) * 100;
     this.getBanner();
+    this.getDimensions();
     window.addEventListener("resize", this.getDimensions);
   },
   unmounted() {
@@ -99,6 +101,7 @@ export default {
   // background-image: url("../assets/images/banner-img.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 .slider-item::before {

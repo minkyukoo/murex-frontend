@@ -28,8 +28,9 @@ export default {
           id: 1,
           name: "이범석",
           designation: "CEO / Co-Founder",
-          image: "founder-1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "Teams/1.png",
+          imgOnHover: "Teams/1-h.png",
+          imgDetails: "Teams/1-d.png",
           basicDesc:
             "강동민 부사장은 +14년 경력의 벤처캐피탈리스트로 야놀자, 펫프렌즈, 바디텍메드, 패스트파이브 등에 투자하였습니다. 현대증권에서 근무한 금융 출신 경험을 바탕으로 투자 기업 분석, 투자 전략 수립 등에 전문성을 가지고 있습니다.",
           EducationList: [
@@ -42,8 +43,8 @@ export default {
           investmentExp1: ["펫프렌즈", "다노", "솔트룩스", "모아이게임즈"],
           investmentExp2: ["스틸에잇", "야놀자", "바디텍메드", "루멘스"],
           sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            fb: "https://www.linkedin.com/in/brandon-bumsuk-lee-9a624a12",
+            ln: "https://www.facebook.com/people/%EC%9D%B4%EB%B2%94%EC%84%9D/1616244428/",
           },
         },
         {

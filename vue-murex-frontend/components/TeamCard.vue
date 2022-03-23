@@ -2,8 +2,18 @@
   <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
   <div
     :class="`team-item ${$nuxt.$route.path === '/team' ? 'gradient' : ''}`"
-    @mouseenter="() => (changeImg = true)"
-    @mouseleave="() => (changeImg = false)"
+    @mouseenter="
+      () => {
+        changeImg = true;
+        this.$emit('hover', true);
+      }
+    "
+    @mouseleave="
+      () => {
+        changeImg = false;
+        this.$emit('hover', false);
+      }
+    "
   >
     <div class="img-holder" @click="MemberInfo">
       <img
@@ -23,7 +33,6 @@
       <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team'">
         <p class="name">{{ name }}</p>
         <p class="designation">{{ designation }}</p>
-        
       </div>
       <div
         class="team-desc-cont"
