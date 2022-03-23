@@ -64,7 +64,7 @@ export default {
           },
           sns_links: {
             fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            ln: "",
           },
         },
         {
