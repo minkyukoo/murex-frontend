@@ -29,7 +29,7 @@
       </slide>
     </carousel>
     <BannerState
-    v-if="this.bannerArr.length > 0"
+    v-if="this.bannerArr.length > 1"
       :slideNumber="this.number"
       :TotalSlides="this.bannerArr.length"
       :progressValue="this.progressValue"

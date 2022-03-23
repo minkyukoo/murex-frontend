@@ -3,6 +3,7 @@
     <filters
       v-on:sectorFilter="filterSector($event)"
       v-on:statusFilter="filterStatus($event)"
+      :isclose="close"
     />
     <div
       class="
@@ -25,6 +26,7 @@
         :status="team.status"
         :sector="team.sector"
         v-on:openModal="OpenModal"
+        v-on:hover="hoverEffect($event)"
       />
     </div>
     <div v-if="teams.length == 0" class="no-data-div">No Founders Found</div>
@@ -395,6 +397,7 @@ export default {
       clear: [],
       sectorFilter: [],
       statusFilter: [],
+      close: false,
     };
   },
   mounted() {
@@ -412,6 +415,9 @@ export default {
     filterStatus(event = []) {
       this.statusFilter = [...event];
       this.teams = this.filterTeam();
+    },
+    hoverEffect(event) {
+      this.close = event;
     },
     // filter(type) {
     //   console.log(this.teams, type);
