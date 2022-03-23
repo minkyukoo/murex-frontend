@@ -29,6 +29,7 @@
       </slide>
     </carousel>
     <BannerState
+    v-if="this.bannerArr.length > 0"
       :slideNumber="this.number"
       :TotalSlides="this.bannerArr.length"
       :progressValue="this.progressValue"
@@ -60,6 +61,7 @@ export default {
     console.log(this.slide);
     this.progressValue = (this.number / this.bannerArr.length) * 100;
     this.getBanner();
+    this.getDimensions();
     window.addEventListener("resize", this.getDimensions);
   },
   unmounted() {
