@@ -99,6 +99,7 @@ export default {
   // background-image: url("../assets/images/banner-img.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 .slider-item::before {
