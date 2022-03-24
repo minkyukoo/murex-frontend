@@ -29,55 +29,55 @@ export default {
           id: 1,
           name: "김택동",
           designation: "벤처파트너 / 레이크투자자문 대표이사",
-          image: "advisory1.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "Advisory/1.png",
+          imgOnHover: "Advisory/1.png",
           sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            fb: "",
+            ln: "",
           }
         },
         {
           id: 2,
           name: "강동민",
           designation: "부사장 / Co-Founder",
-          image: "advisory2.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "Advisory/2.png",
+          imgOnHover: "Advisory/2.png",
           sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            fb: "",
+            ln: "",
           }
         },
         {
           id: 3,
           name: "오지성",
           designation: "부사장 / Co-Founder",
-          image: "advisory3.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "Advisory/3.png",
+          imgOnHover: "Advisory/3.png",
           sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            fb: "",
+            ln: "",
           }
         },
         {
           id: 4,
           name: "박진영",
           designation: "수석",
-          image: "advisory4.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "Advisory/4.png",
+          imgOnHover: "Advisory/4.png",
           sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            fb: "",
+            ln: "",
           }
         },
         {
           id: 5,
           name: "김세진",
           designation: "수석",
-          image: "advisory5.png",
-          imgOnHover: "company-logoOnHover.png",
+          image: "Advisory/5.png",
+          imgOnHover: "Advisory/5.png",
           sns_links: {
-            fb: "https://facebook.com",
-            ln: "https://linkedin.com",
+            fb: "",
+            ln: "",
           }
         },
       ]
@@ -85,8 +85,8 @@ export default {
   },
   methods : {
     OpenModal(event) {
-      this.$emit("openModal", event);
-      console.log("member click passed")
+      this.$emit("openModal", false);
+      console.log("member click passed",event)
     }
   }
 }

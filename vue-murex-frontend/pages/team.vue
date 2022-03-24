@@ -41,36 +41,45 @@
               <p class="desc-sec main-desc">
                 {{ modalData.basicDesc }}
               </p>
-              <h4 class="heading">학력 / 경력</h4>
-              <ul class="sub-desc desc-sec">
-                <li
-                  v-for="(item, index) in modalData.EducationList"
-                  :key="index"
-                >
-                  {{ item }}
-                </li>
-              </ul>
-              <h4 class="heading">투자경력</h4>
-              <div class="grid grid-rows-1 grid-flow-col">
-                <div>
-                  <ul class="sub-desc desc-sec">
-                    <li
-                      v-for="(item, index) in modalData.investmentExp1"
-                      :key="index"
-                    >
-                      {{ item }}
-                    </li>
-                  </ul>
-                </div>
-                <div class="desc-sec-2">
-                  <ul>
-                    <li
-                      v-for="(item, index) in modalData.investmentExp2"
-                      :key="index"
-                    >
-                      {{ item }}
-                    </li>
-                  </ul>
+              <div v-if="modalData.EducationList.length > 0">
+                <h4 class="heading">학력 / 경력</h4>
+                <ul class="sub-desc desc-sec">
+                  <li
+                    v-for="(item, index) in modalData.EducationList"
+                    :key="index"
+                  >
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
+              <div
+                v-if="
+                  modalData.investmentExp1.length > 0 ||
+                  modalData.investmentExp2.length > 0
+                "
+              >
+                <h4 class="heading">투자경력</h4>
+                <div class="grid grid-rows-1 grid-flow-col">
+                  <div>
+                    <ul class="sub-desc desc-sec">
+                      <li
+                        v-for="(item, index) in modalData.investmentExp1"
+                        :key="index"
+                      >
+                        {{ item }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="desc-sec-2">
+                    <ul>
+                      <li
+                        v-for="(item, index) in modalData.investmentExp2"
+                        :key="index"
+                      >
+                        {{ item }}
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div>
