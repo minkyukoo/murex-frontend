@@ -28,10 +28,12 @@
       </template>
       <template v-slot:body>
         <div class="w-full team-modal-body">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 sm:gap-30">
-            <div class="img-holder" v-if="modalData.image">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 sm:gap-30"
+          >
+            <div class="img-holder" v-if="modalData.imgDetails">
               <img
-                :src="`${require('../assets/images/' + modalData.image)}`"
+                :src="`${require('../assets/images/' + modalData.imgDetails)}`"
                 alt="img"
               />
             </div>
@@ -72,10 +74,20 @@
                 </div>
               </div>
               <div>
-                <a :href="modalData.sns_links.ln" class="social-icon">
+                <a
+                  :href="modalData.sns_links.ln"
+                  class="social-icon"
+                  target="_blank"
+                  v-if="modalData.sns_links.ln"
+                >
                   <i class="icon-linkedin-dark"></i>
                 </a>
-                <a :href="modalData.sns_links.fb" class="social-icon">
+                <a
+                  :href="modalData.sns_links.fb"
+                  class="social-icon"
+                  target="_blank"
+                  v-if="modalData.sns_links.fb"
+                >
                   <i class="icon-facebook-dark"></i>
                 </a>
               </div>
@@ -126,7 +138,7 @@ export default {
 <style lang="scss" scoped>
 .team {
   padding-bottom: calc(60px + 2vw);
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 .team-modal-header {
   margin-bottom: calc(10px + 2.5vw);
@@ -205,12 +217,11 @@ export default {
   }
 }
 
-.desc-sec-2{
-  ul{
-    li{
+.desc-sec-2 {
+  ul {
+    li {
       color: #4c4c4c;
     }
   }
-  
 }
 </style>
