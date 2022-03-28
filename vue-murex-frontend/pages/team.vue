@@ -28,16 +28,14 @@
       </template>
       <template v-slot:body>
         <div class="w-full team-modal-body">
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 sm:gap-30"
-          >
+          <div class="flex flex-col md:flex-row gap-10 justify-between">
             <div class="img-holder" v-if="modalData.imgDetails">
               <img
                 :src="`${require('../assets/images/' + modalData.imgDetails)}`"
                 alt="img"
               />
             </div>
-            <div>
+            <div class="total-desc">
               <p class="desc-sec main-desc">
                 {{ modalData.basicDesc }}
               </p>
@@ -70,8 +68,8 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="desc-sec-2">
-                    <ul>
+                  <div>
+                    <ul class="sub-desc desc-sec">
                       <li
                         v-for="(item, index) in modalData.investmentExp2"
                         :key="index"
@@ -156,6 +154,7 @@ export default {
     font-weight: 600;
     // font-size: calc(10px + 2.3vw);
     font-size: 52px;
+    line-height: 52px;
     color: #181818;
     @media screen and (max-width: 640px) {
       font-size: 24px;
@@ -173,13 +172,24 @@ export default {
   }
 }
 .team-modal-body {
+  .total-desc {
+    width: 594px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
   .img-holder {
+    width: 750px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
     img {
       width: 100%;
       height: auto;
       // aspect-ratio: 1/1.15;
-      max-width: 750px;
-      max-height: 800px;
+      object-fit: cover;
+      // max-width: 750px;
+      // max-height: 800px;
     }
   }
   .heading {
@@ -208,6 +218,7 @@ export default {
     font-weight: 500;
     @media screen and (max-width: 767px) {
       font-size: 15px;
+      font-weight: 400;
     }
   }
   .sub-desc {

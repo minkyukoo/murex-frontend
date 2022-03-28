@@ -62,7 +62,7 @@
         </a>
       </div>
       <div class="sns-links" v-else-if="`${$nuxt.$route.path}` === '/founders'">
-        <a class="sns-link" :href="companyLink" target="_blank">
+        <a class="sns-link" :href="companyLink" target="_blank" v-if="companyLink">
           <img class="plus-icon" src="../assets/icons/Plus.svg" />
         </a>
       </div>
@@ -139,7 +139,7 @@ export default {
   .member-img {
     // height: 100%;
     aspect-ratio: 2/2.15;
-    max-height: 438px;
+    max-height: 480px;
     object-fit: cover;
     @media screen and (max-width: 1560px) {
       max-height: 300px;
@@ -173,14 +173,14 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 25px 5px 25px 25px;
+    padding: 25px 28px 25px 25px;
     @media screen and (max-width: 767px) {
       padding: 15px;
     }
     .team-desc-cont {
       .name {
         @include white-text-1;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
       }
       .designation {
         @include white-text-2;

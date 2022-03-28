@@ -65,6 +65,7 @@ export default {
     @include dflex-column-between;
     padding-bottom: 20px;
     border-bottom: 1px solid $grey-2;
+    // line-height: 48px;
     overflow-x: auto;
     width: calc(100% - 594px);
     flex-grow: 1;
@@ -77,7 +78,7 @@ export default {
       word-break: break-all;
       font-weight: 300;
       font-size: 32px;
-      line-height: 140%;
+      line-height: 150%;
       color: $black-3;
       margin-bottom: 20px;
       text-decoration: 2px solid underline;

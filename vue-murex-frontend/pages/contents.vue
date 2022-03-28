@@ -29,7 +29,7 @@ export default {
       pagination: {
         totalRecords: 4,
         perPage: 10,
-        pageNo: 0,
+        pageNo: 1,
       },
       nodata: false,
     };

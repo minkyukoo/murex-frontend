@@ -146,6 +146,9 @@ export default {
       &:last-child {
         margin-bottom: 0px;
       }
+      .cont{
+        font-size: 14px;
+      }
     }
   }
   .heading-2 {

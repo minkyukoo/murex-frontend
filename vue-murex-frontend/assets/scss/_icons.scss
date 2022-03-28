@@ -82,6 +82,10 @@
   height: 40px;
   width: 40px;
   display: inline-block;
+  @media screen and (max-width: 767px) {
+    height: 19.2px;
+    width: 19.2px;
+  }
 }
 .icon-linkedin-dark {
   background: url("~/assets/icons/linkedin-dark.svg") no-repeat center center;

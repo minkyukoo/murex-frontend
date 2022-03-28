@@ -34,7 +34,9 @@
         </div>
         <div>
           <button
-            :class="`clear-filter ${sectorFilter.length == 0 ? 'disabled' : ''}`"
+            :class="`clear-filter ${
+              sectorFilter.length == 0 ? 'disabled' : ''
+            }`"
             @click="clearSectors"
             :disabled="sectorFilter.length == 0"
           >
@@ -232,14 +234,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.mb-50{
+.mb-50 {
   margin-bottom: 50px;
   @media screen and (max-width: 640px) {
     margin-bottom: 20px;
   }
 }
 .filters {
-  margin-right: 50px;
+  margin-right: 72px;
   font-weight: 300;
   font-size: 20px;
   &:last-child {
@@ -247,8 +249,8 @@ export default {
   }
   @media screen and (max-width: 767px) {
     font-size: 15px;
-    padding: 0 16px;
-    margin-right: 26px;
+    padding: 0 24px 0 16px;
+    margin-right: 0px;
   }
 }
 .dropdown {
@@ -267,7 +269,7 @@ export default {
       content: "";
       width: 8px;
       height: 8px;
-      border: 5px solid $purple-3;
+      border: 4px solid $purple-3;
       border-color: $purple-3 transparent transparent transparent;
       position: absolute;
       left: 0;
@@ -289,24 +291,30 @@ export default {
   background: $white;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   border-top: 1px solid #000000;
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 375px) {
     left: -30px;
+    padding: 12px;
   }
   &.active {
     display: block;
   }
   .dropdown-item {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     label {
       font-size: 14px;
       line-height: 21px;
+      @media screen and (max-width: 360px) {
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 16px;
+      }
     }
   }
   .clear-filter {
     color: $purple-2;
     font-size: 14px;
     font-weight: 500;
-    &.disabled{
+    &.disabled {
       color: $grey-2;
       cursor: not-allowed;
     }
