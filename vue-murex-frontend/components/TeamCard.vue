@@ -30,9 +30,14 @@
       />
     </div>
     <div class="team-desc">
-      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team'">
+      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team' && setLang === 'kr'">
         <p class="name">{{ name }}</p>
         <p class="designation">{{ designation }}</p>
+      </div>
+      
+      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team' && setLang === 'en'">
+        <p class="name">{{ engName }}</p>
+        <p class="designation">{{ engDesignation }}</p>
       </div>
       <div
         class="team-desc-cont"
@@ -76,6 +81,8 @@ export default {
   props: {
     bgImage: String,
     name: String,
+    engName: String,
+    engDesignation: String,
     company: String,
     designation: String,
     companyLink: String,
@@ -89,7 +96,11 @@ export default {
   data() {
     return {
       changeImg: false,
+      setLang: "",
     };
+  },
+  created() {
+    this.setLang = this.$i18n.locale;
   },
   methods: {
     MemberInfo() {

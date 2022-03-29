@@ -48,6 +48,9 @@
   },
   "team": {
     "pageTitle1": "Our Team",
-    "pageTitle2": "Venture Partner / Advisory"
+    "pageTitle2": "Venture Partner / Advisory",
+    "user": {
+      "User1": "이범석"
+    }
   }
 }
