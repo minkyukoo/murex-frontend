@@ -44,7 +44,7 @@ export default {
         },
         {
           id: 2,
-          name: "강동민",
+          name: "김기봉",
           designation: "부사장 / Co-Founder",
           image: "Advisory/2.png",
           imgOnHover: "Advisory/2.png",
@@ -59,7 +59,7 @@ export default {
         },
         {
           id: 3,
-          name: "오지성",
+          name: "이수진",
           designation: "부사장 / Co-Founder",
           image: "Advisory/3.png",
           imgOnHover: "Advisory/3.png",
@@ -74,7 +74,7 @@ export default {
         },
         {
           id: 4,
-          name: "박진영",
+          name: "송치형",
           designation: "수석",
           image: "Advisory/4.png",
           imgOnHover: "Advisory/4.png",
@@ -89,7 +89,7 @@ export default {
         },
         {
           id: 5,
-          name: "김세진",
+          name: "하용호",
           designation: "수석",
           image: "Advisory/5.png",
           imgOnHover: "Advisory/5.png",
