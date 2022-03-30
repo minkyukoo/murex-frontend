@@ -2,25 +2,27 @@
   <div class="modal-backdrop">
     <div class="modal">
       <div class="modal-content">
-        <header class="modal-header">
-          <slot name="header"> This is the default title! </slot>
-          <button
-            type="button"
-            class="btn-close"
-            @click="close"
-            v-if="showCloseBtn"
-          >
-            <i class="icon-cross"></i>
-          </button>
-        </header>
+        <div class="set-width">
+          <header class="modal-header">
+            <slot name="header"> This is the default title! </slot>
+            <button
+              type="button"
+              class="btn-close"
+              @click="close"
+              v-if="showCloseBtn"
+            >
+              <i class="icon-cross"></i>
+            </button>
+          </header>
 
-        <section class="modal-body">
-          <slot name="body"> This is the default body! </slot>
-        </section>
+          <section class="modal-body">
+            <slot name="body"> This is the default body! </slot>
+          </section>
 
-        <footer class="modal-footer">
-          <slot name="footer"> This is the default footer! </slot>
-        </footer>
+          <footer class="modal-footer">
+            <slot name="footer"> This is the default footer! </slot>
+          </footer>
+        </div>
       </div>
     </div>
   </div>
@@ -51,6 +53,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  z-index: 99;
   //   backdrop-filter: blur(2px);
 }
 
@@ -61,14 +64,19 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  z-index: 99;
+  z-index: 99999;
+  .set-width{
+    width: 100%;
+    max-width: 1518px;
+    margin: 0 auto;
+  }
   //   max-width: 330px;
   //   color: $black-3;
   //   border-radius: 20px;
 }
 
 .modal-content {
-  padding: calc(10px + 4.5vw) calc(5px + 7.75vw) calc(15px + 1vw);  
+  padding: calc(10px + 4.5vw) calc(5px + 7.75vw) calc(15px + 1vw);
   @media screen and (max-width: 640px) {
     padding: 16px;
   }
@@ -86,6 +94,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 0 0 10px;
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }
@@ -94,6 +103,9 @@ export default {
 .modal-body {
   position: relative;
   padding: 10px 10px;
+  @media screen and (max-width: 640px) {
+    padding: 0;
+  }
 }
 
 .btn-close {
@@ -112,9 +124,9 @@ export default {
     text-align: right;
     order: -1;
   }
-  @media screen and (max-width: 640px) {
-    position: relative;
-    top: 50px;
-  }
+  // @media screen and (max-width: 640px) {
+  //   position: relative;
+  //   top: 50px;
+  // }
 }
 </style>

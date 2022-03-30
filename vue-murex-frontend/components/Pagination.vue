@@ -7,7 +7,12 @@
           @click="FindPageNo(pagiNo - 1)"
           :disabled="pagiNo <= 0"
         >
-          <img src="../assets/icons/arrow-prev.svg" alt="img" />
+          <img
+            src="../assets/icons/arrow-prev.svg"
+            alt="img"
+            v-if="pagiNo > 0"
+          />
+          <img src="../assets/icons/arrow-prev-disabled.svg" alt="img" v-else />
         </button>
       </li>
       <li v-for="(item, index) in totalPaginator" :key="index">
@@ -24,7 +29,16 @@
           @click="FindPageNo(pagiNo + 1)"
           :disabled="pagiNo >= totalPaginator.length - 1"
         >
-          <img src="../assets/icons/arrow-next.svg" alt="img" />
+          <img
+            src="../assets/icons/arrow-next.svg"
+            alt="img"
+            v-if="pagiNo < totalPaginator.length - 1"
+          />
+          <img
+            src="../assets/icons/arrow-next-disabled.svg"
+            alt="img"
+            v-else
+          />
         </button>
       </li>
     </ul>

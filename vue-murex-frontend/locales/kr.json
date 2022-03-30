@@ -5,7 +5,7 @@
     "content": {
       "title1": "Information",
       "title2": "How to come",
-      "address": "주소",
+      "address": "Address",
       "addressInfo": "서울시 강남구 도산대로45길 18-6, 2층",
       "call": "Call",
       "fax": "Fax",
@@ -26,7 +26,7 @@
     }
   },
   "founders": {
-    "pageTitle": "창립자",
+    "pageTitle": "Our Founders",
     "filters": {
       "allFilters": "All",
       "sectorFilters": "Sector",
@@ -48,6 +48,9 @@
   },
   "team": {
     "pageTitle1": "Our Team",
-    "pageTitle2": "Venture Partner / Advisory"
+    "pageTitle2": "Venture Partner / Advisory",
+    "user": {
+      "User1": "이범석"
+    }
   }
 }

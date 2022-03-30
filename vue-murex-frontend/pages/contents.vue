@@ -54,12 +54,10 @@ export default {
     async getContent() {
       this.$nuxt.$loading.start();
       this.pagination.pageNo = this.pagination.pageNo.toString();
-      const contentList = await this.$axios.$get("getcontentlist", {
-        params: {
-          per_page: "10",
-          page_no: this.pagination.pageNo,
-          type: this.tabState,
-        },
+      const contentList = await this.$axios.$post("getcontentlist", {
+        per_page: "10",
+        page_no: this.pagination.pageNo,
+        type: this.tabState,
       });
       if (contentList.status === 200) {
         this.$nuxt.$loading.finish();
@@ -69,8 +67,7 @@ export default {
           contentList.total_records / this.pagination.perPage
         );
         console.log("pagination", this.pagination.totalRecords);
-      }
-      else {
+      } else {
         this.$nuxt.$loading.finish();
         alert(contentList.message);
         this.nodata = true;

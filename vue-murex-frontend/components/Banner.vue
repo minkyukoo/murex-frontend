@@ -14,7 +14,9 @@
         <div
           class="slider-item"
           :style="{
-            backgroundImage: `url(${mobileView ? slide.mob_image : slide.pc_image})`,
+            backgroundImage: `url(${
+              mobileView ? slide.mob_image : slide.pc_image
+            })`,
           }"
         >
           <!-- <div class="container">
@@ -22,7 +24,7 @@
               <h2>{{ slide.title }}</h2>
               <h6>{{ slide.subtext }}</h6>
             </div>
-          </div>-->
+          </div> -->
         </div>
       </slide>
     </carousel>
@@ -49,9 +51,8 @@ export default {
       pauseIcon: true,
       number: "1",
       progressValue: null,
-      bannerArr: [],     
+      bannerArr: [],
       mobileView: false,
-
     };
   },
   mounted() {
@@ -59,6 +60,7 @@ export default {
     console.log(this.slide);
     this.progressValue = (this.number / this.bannerArr.length) * 100;
     this.getBanner();
+    this.getDimensions();
     window.addEventListener("resize", this.getDimensions);
   },
   unmounted() {
@@ -98,6 +100,7 @@ export default {
   // background-image: url("../assets/images/banner-img.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 .slider-item::before {

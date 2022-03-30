@@ -3,6 +3,7 @@
     <filters
       v-on:sectorFilter="filterSector($event)"
       v-on:statusFilter="filterStatus($event)"
+      :isclose="close"
     />
     <div
       class="
@@ -24,7 +25,11 @@
         :companyLink="team.link"
         :status="team.status"
         :sector="team.sector"
+        :engCompany="team.DescEng.company"
+        :engName="team.DescEng.name"
+        type="founder"
         v-on:openModal="OpenModal"
+        v-on:hover="hoverEffect($event)"
       />
     </div>
     <div v-if="teams.length == 0" class="no-data-div">No Founders Found</div>
@@ -49,6 +54,10 @@ export default {
           link: "https://www.himedi.com/en",
           image: "com_ceo_1.png",
           imgOnHover: "com_1.png",
+          DescEng: {
+            company: "Himedi",
+            name: "Jengju Lee, Donkyo Seo",
+          },
         },
         {
           id: 2,
@@ -59,6 +68,10 @@ export default {
           link: "https://www.banksalad.com/",
           image: "founder-1.png",
           imgOnHover: "com_2.png",
+          DescEng: {
+            company: "Banksalad",
+            name: "Taehoon Kim",
+          },
         },
         {
           id: 3,
@@ -69,6 +82,10 @@ export default {
           link: "https://www.imprimedicine.com/",
           image: "com_ceo_3.png",
           imgOnHover: "com_3.png",
+          DescEng: {
+            company: "ImpriMed",
+            name: "Sungwon Im",
+          },
         },
         {
           id: 4,
@@ -79,6 +96,10 @@ export default {
           link: "https://www.yanolja.com/",
           image: "com_ceo_4.png",
           imgOnHover: "com_4.png",
+          DescEng: {
+            company: "Yanolja",
+            name: "Sujin Lee",
+          },
         },
         {
           id: 5,
@@ -89,6 +110,10 @@ export default {
           link: "https://www.honestfund.kr/",
           image: "com_ceo_5.png",
           imgOnHover: "com_5.png",
+          DescEng: {
+            company: "Honestfund",
+            name: "Sanghoon Seo",
+          },
         },
         {
           id: 6,
@@ -99,6 +124,10 @@ export default {
           link: "https://www.mydano.net/",
           image: "com_ceo_6.png",
           imgOnHover: "com_6.png",
+          DescEng: {
+            company: "Dano",
+            name: "Bumyoon Jung, Jisoo Lee",
+          },
         },
         {
           id: 7,
@@ -109,6 +138,10 @@ export default {
           link: "https://www.pet-friends.co.kr/main/tab/2",
           image: "com_ceo_7.png",
           imgOnHover: "com_7.png",
+          DescEng: {
+            company: "Pet-friends",
+            name: "Changwon Kim",
+          },
         },
         {
           id: 8,
@@ -119,6 +152,10 @@ export default {
           link: "https://www.kiwiblack.kr/",
           image: "com_ceo_8.png",
           imgOnHover: "com_8.png",
+          DescEng: {
+            company: "DR corporation",
+            name: "Jongwhan Chung",
+          },
         },
         {
           id: 9,
@@ -129,6 +166,10 @@ export default {
           link: "https://www.fastfive.co.kr/#enp_mbris",
           image: "com_ceo_9.png",
           imgOnHover: "com_9.png",
+          DescEng: {
+            company: "Fastfive",
+            name: "Daeil Kim",
+          },
         },
         {
           id: 10,
@@ -139,6 +180,10 @@ export default {
           link: "https://www.teamfresh.co.kr/",
           image: "com_ceo_10.png",
           imgOnHover: "com_10.png",
+          DescEng: {
+            company: "Teamfresh",
+            name: "Seongil Lee",
+          },
         },
         {
           id: 11,
@@ -149,6 +194,10 @@ export default {
           link: "https://www.urbanplay.co.kr/",
           image: "com_ceo_11.png",
           imgOnHover: "com_11.png",
+          DescEng: {
+            company: "Urbanplay",
+            name: "Juseok Hong",
+          },
         },
         {
           id: 12,
@@ -159,6 +208,10 @@ export default {
           link: "https://www.smartradarsystem.com/",
           image: "com_ceo_12.png",
           imgOnHover: "com_12.png",
+          DescEng: {
+            company: "Smart Radar System",
+            name: "Paul Kim",
+          },
         },
         {
           id: 13,
@@ -169,6 +222,10 @@ export default {
           link: "주식회사 모노리스 – MONOLITH Inc.",
           image: "com_ceo_13.png",
           imgOnHover: "com_13.png",
+          DescEng: {
+            company: "Monolith",
+            name: "Jongseok Kim",
+          },
         },
         {
           id: 14,
@@ -179,6 +236,10 @@ export default {
           link: "전세계 명품 쇼핑은 트렌비 | 트렌비 (trenbe.com)",
           image: "com_ceo_14.png",
           imgOnHover: "com_14.png",
+          DescEng: {
+            company: "Trenbe",
+            name: "Kyunghoon Park",
+          },
         },
         {
           id: 15,
@@ -189,6 +250,10 @@ export default {
           link: "서울스토어 (seoulstore.com)",
           image: "com_ceo_15.png",
           imgOnHover: "com_15.png",
+          DescEng: {
+            company: "D-unit",
+            name: "Banseok Yoon",
+          },
         },
         {
           id: 16,
@@ -199,6 +264,10 @@ export default {
           link: "serybox.com",
           image: "com_ceo_16.png",
           imgOnHover: "com_16.png",
+          DescEng: {
+            company: "PurpleLabs Healthcare",
+            name: "Jongha Jeon",
+          },
         },
         {
           id: 17,
@@ -209,6 +278,10 @@ export default {
           link: "https://www.superb-ai.com/",
           image: "com_ceo_17.png",
           imgOnHover: "com_17.png",
+          DescEng: {
+            company: "Superb AI",
+            name: "Hyunsoo Kim",
+          },
         },
         {
           id: 18,
@@ -219,6 +292,10 @@ export default {
           link: "https://still8.gg/",
           image: "com_ceo_18.png",
           imgOnHover: "com_18.png",
+          DescEng: {
+            company: "Loud Communications",
+            name: "Kyungjong Seo",
+          },
         },
         {
           id: 19,
@@ -229,6 +306,10 @@ export default {
           link: "https://www.woorien.com/",
           image: "com_ceo_19.png",
           imgOnHover: "com_19.png",
+          DescEng: {
+            company: "Woorien",
+            name: "Seokbin Ko",
+          },
         },
         {
           id: 20,
@@ -239,6 +320,10 @@ export default {
           link: "https://www.howbuild.com/",
           image: "com_ceo_20.png",
           imgOnHover: "com_20.png",
+          DescEng: {
+            company: "Howbuild",
+            name: "Seungki Lee",
+          },
         },
         {
           id: 21,
@@ -249,6 +334,10 @@ export default {
           link: "https://cenacle.com/",
           image: "com_ceo_21.png",
           imgOnHover: "com_21.png",
+          DescEng: {
+            company: "Cenacle",
+            name: "Euiseok Wi, Chanhee Park",
+          },
         },
         {
           id: 22,
@@ -259,6 +348,10 @@ export default {
           link: "",
           image: "com_ceo_22.png",
           imgOnHover: "com_22.png",
+          DescEng: {
+            company: "SMLAB",
+            name: "Jaepil Cho",
+          },
         },
         {
           id: 23,
@@ -269,6 +362,10 @@ export default {
           link: "https://www.musinsa.com/",
           image: "com_ceo_23.png",
           imgOnHover: "com_23.png",
+          DescEng: {
+            company: "Musinsa",
+            name: "Jungkoo Kang, Moonil Han",
+          },
         },
         {
           id: 24,
@@ -279,6 +376,10 @@ export default {
           link: "4DREPLAY | Creating Experiences",
           image: "com_ceo_24.png",
           imgOnHover: "com_24.png",
+          DescEng: {
+            company: "4DReplay",
+            name: "Hongsoo Jung",
+          },
         },
         {
           id: 25,
@@ -289,6 +390,10 @@ export default {
           link: "https://www.doremifresh.com/index",
           image: "com_ceo_25.png",
           imgOnHover: "com_25.png",
+          DescEng: {
+            company: "PurpleLabs",
+            name: "Jongha Jeon",
+          },
         },
         {
           id: 26,
@@ -299,6 +404,10 @@ export default {
           link: "큐픽스와 스마트 구축 (cupix.com)",
           image: "com_ceo_26.png",
           imgOnHover: "com_26.png",
+          DescEng: {
+            company: "Cupix",
+            name: "Simon Bae",
+          },
         },
         {
           id: 27,
@@ -309,6 +418,10 @@ export default {
           link: "https://www.amazevr.com/",
           image: "com_ceo_27.png",
           imgOnHover: "com_27.png",
+          DescEng: {
+            company: "AmazeVR",
+            name: "Steve Lee, Ernest Lee",
+          },
         },
         {
           id: 28,
@@ -319,6 +432,10 @@ export default {
           link: "Glorang",
           image: "com_ceo_28.png",
           imgOnHover: "com_28.png",
+          DescEng: {
+            company: "Glorang",
+            name: "Taeil Hwang",
+          },
         },
         {
           id: 29,
@@ -329,6 +446,10 @@ export default {
           link: "어르신 돌보미 찾기 (carecoordi.kr)",
           image: "com_ceo_29.png",
           imgOnHover: "com_29.png",
+          DescEng: {
+            company: "Caredoc",
+            name: "Jaebyung Park",
+          },
         },
         {
           id: 30,
@@ -339,6 +460,10 @@ export default {
           link: "Argo - Anything Anywhere Anytime (argoport.com)",
           image: "com_ceo_30.png",
           imgOnHover: "com_30.png",
+          DescEng: {
+            company: "Techtaka",
+            name: "Sooyoung Yang",
+          },
         },
         {
           id: 31,
@@ -349,6 +474,10 @@ export default {
           link: "https://www.bobidi.com/",
           image: "com_ceo_31.png",
           imgOnHover: "com_31.png",
+          DescEng: {
+            company: "Bobidi",
+            name: "Jungseo Choi, Soohyun Bae",
+          },
         },
         {
           id: 32,
@@ -359,6 +488,10 @@ export default {
           link: "",
           image: "com_ceo_32.png",
           imgOnHover: "com_32.png",
+          DescEng: {
+            company: "Trustay",
+            name: "Jungyun Kim",
+          },
         },
         {
           id: 33,
@@ -369,6 +502,10 @@ export default {
           link: "Normalize your Data Governance | QueryPie",
           image: "com_ceo_33.png",
           imgOnHover: "com_33.png",
+          DescEng: {
+            company: "Chequer Global, Inc.",
+            name: "Brant Hwang",
+          },
         },
         {
           id: 34,
@@ -379,6 +516,10 @@ export default {
           link: "",
           image: "com_ceo_34.png",
           imgOnHover: "com_34.png",
+          DescEng: {
+            company: "Contents Technologies",
+            name: "Jangwon Lee",
+          },
         },
         {
           id: 35,
@@ -389,12 +530,17 @@ export default {
           link: "https://www.jnpmedi.com/",
           image: "com_ceo_35.png",
           imgOnHover: "com_35.png",
+          DescEng: {
+            company: "JNPMedi",
+            name: "Kwunho Jeong",
+          },
         },
       ],
       backupTeam: [],
       clear: [],
       sectorFilter: [],
       statusFilter: [],
+      close: false,
     };
   },
   mounted() {
@@ -412,6 +558,9 @@ export default {
     filterStatus(event = []) {
       this.statusFilter = [...event];
       this.teams = this.filterTeam();
+    },
+    hoverEffect(event) {
+      this.close = event;
     },
     // filter(type) {
     //   console.log(this.teams, type);

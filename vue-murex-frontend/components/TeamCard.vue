@@ -1,10 +1,21 @@
 <template>
   <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
   <div
-    :class="`team-item ${$nuxt.$route.path === '/team' ? 'gradient' : ''}`"
-    @mouseenter="() => (changeImg = true)"
-    @mouseleave="() => (changeImg = false)"
+    :class="`team-item ${type === 'team' ? 'gradient' : ''}`"
+    @mouseenter="
+      () => {
+        changeImg = true;
+        this.$emit('hover', true);
+      }
+    "
+    @mouseleave="
+      () => {
+        changeImg = false;
+        this.$emit('hover', false);
+      }
+    "
   >
+    <!-- {{ engName + engDesignation + setLang }} -->
     <div class="img-holder" @click="MemberInfo">
       <img
         :src="`${require('../assets/images/' + bgImage)}`"
@@ -20,42 +31,70 @@
       />
     </div>
     <div class="team-desc">
-      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team'">
-        <p class="name">{{ name }}</p>
-        <p class="designation">{{ designation }}</p>
-        
-      </div>
-      <div
-        class="team-desc-cont"
-        v-else-if="`${$nuxt.$route.path}` === '/founders'"
-      >
-        <p class="name">{{ company }}</p>
-        <p class="designation">{{ name }}</p>
-        <!-- <p class="designation">{{ status }}</p>
+      <div>
+        <div
+          class="team-desc-cont"
+          v-if="type === 'team' && setLang === 'kr'"
+        >
+          <p class="name">{{ name }}</p>
+          <p class="designation">{{ designation }}</p>
+        </div>
+
+        <div class="team-desc-cont" v-else-if="type === 'team' && setLang === 'en'">
+          <p class="name">{{ engName }}</p>
+          <p class="designation">{{ engDesignation }}</p>
+        </div>
+        <div
+          class="team-desc-cont"
+          v-else-if="type === 'founder' && setLang === 'kr'"
+        >
+          <p class="name">{{ company }}</p>
+          <p class="designation">{{ name }}</p>
+          <!-- <p class="designation">{{ status }}</p>
         <p class="designation">{{ sector }}</p> -->
-      </div>
-      <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
-        <a
-          class="sns-link"
-          :href="`${snsLnLink}`"
-          target="_blank"
-          v-if="snsLnLink"
+        </div>
+        <div
+          class="team-desc-cont"
+          v-else
         >
-          <i class="icon-ln"></i>
-        </a>
-        <a
-          class="sns-link"
-          :href="`${snsFbLink}`"
-          target="_blank"
-          v-if="snsFbLink"
-        >
-          <i class="icon-fb"></i>
-        </a>
+          <p class="name">{{ engCompany }}</p>
+          <p class="designation">{{ engName }}</p>
+          <!-- <p class="designation">{{ status }}</p>
+        <p class="designation">{{ sector }}</p> -->
+        </div>
       </div>
-      <div class="sns-links" v-else-if="`${$nuxt.$route.path}` === '/founders'">
-        <a class="sns-link" :href="companyLink" target="_blank">
-          <img class="plus-icon" src="../assets/icons/plus.svg" />
-        </a>
+      <div>
+        <div class="sns-links" v-if="type === 'team'">
+          <a
+            class="sns-link"
+            :href="`${snsLnLink}`"
+            target="_blank"
+            v-if="snsLnLink"
+          >
+            <i class="icon-ln"></i>
+          </a>
+          <a
+            class="sns-link"
+            :href="`${snsFbLink}`"
+            target="_blank"
+            v-if="snsFbLink"
+          >
+            <i class="icon-fb"></i>
+          </a>
+        </div>
+        <div
+          class="sns-links"
+          v-else-if="type === 'founder'"
+        >
+          <a
+            class="sns-link"
+            :href="companyLink"
+            target="_blank"
+            v-if="companyLink"
+          >
+            <img class="plus-icon" src="../assets/icons/Plus.svg" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -67,6 +106,9 @@ export default {
   props: {
     bgImage: String,
     name: String,
+    engName: String,
+    engDesignation: String,
+    engCompany: String,
     company: String,
     designation: String,
     companyLink: String,
@@ -76,11 +118,16 @@ export default {
     sector: String,
     snsFbLink: String,
     snsLnLink: String,
+    type: String,
   },
   data() {
     return {
       changeImg: false,
+      setLang: "",
     };
+  },
+  created() {
+    this.setLang = this.$i18n.locale;
   },
   methods: {
     MemberInfo() {
@@ -130,7 +177,7 @@ export default {
   .member-img {
     // height: 100%;
     aspect-ratio: 2/2.15;
-    max-height: 438px;
+    max-height: 480px;
     object-fit: cover;
     @media screen and (max-width: 1560px) {
       max-height: 300px;
@@ -164,14 +211,14 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 25px 5px 25px 25px;
+    padding: 25px 28px 25px 25px;
     @media screen and (max-width: 767px) {
       padding: 15px;
     }
     .team-desc-cont {
       .name {
         @include white-text-1;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
       }
       .designation {
         @include white-text-2;

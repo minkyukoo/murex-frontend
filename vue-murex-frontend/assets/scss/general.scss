@@ -32,10 +32,11 @@ html {
 .custom-checkbox {
   display: block;
   position: relative;
-  padding-left: 30px;
-  margin-bottom: 12px;
+  padding-left: 24px;
+  // margin-bottom: 12px;
   cursor: pointer;
   font-size: 22px;
+  font-weight: 400;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -54,12 +55,16 @@ html {
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 0;
+  top: 2px;
   left: 0;
   height: 16px;
   width: 16px;
   background-color: $white;
   border: 1px solid $grey-6;
+  @media screen and (max-width: 767px) {
+    top: 0;
+    left: 0;
+  }
 }
 
 /* On mouse-over, add a grey background color */
