@@ -18,7 +18,7 @@ export default {
 .top-heading {
   @include dflex-align-justify-center;
   // border: 1px solid red;
-  padding: 140px 0;
+  padding: 100px 0;
   @media screen and (max-width: 767px) {
     padding: 40px 0;
   }

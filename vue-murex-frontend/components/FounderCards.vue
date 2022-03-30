@@ -219,7 +219,7 @@ export default {
           name: "김종석",
           status: "Current",
           sector: "Consumer",
-          link: "주식회사 모노리스 – MONOLITH Inc.",
+          link: "https://www.monolith.co.kr/",
           image: "com_ceo_13.png",
           imgOnHover: "com_13.png",
           DescEng: {
@@ -373,7 +373,7 @@ export default {
           name: "정홍수",
           status: "Current",
           sector: "Enterprise",
-          link: "4DREPLAY | Creating Experiences",
+          link: "https://4dreplay.com/",
           image: "com_ceo_24.png",
           imgOnHover: "com_24.png",
           DescEng: {
@@ -429,7 +429,7 @@ export default {
           name: "황태일",
           status: "Current",
           sector: "Consumer",
-          link: "Glorang",
+          link: "https://www.glorang.com/",
           image: "com_ceo_28.png",
           imgOnHover: "com_28.png",
           DescEng: {
@@ -457,7 +457,7 @@ export default {
           name: "양수영",
           status: "Current",
           sector: "Enterprise",
-          link: "Argo - Anything Anywhere Anytime (argoport.com)",
+          link: "https://www.argoport.com/",
           image: "com_ceo_30.png",
           imgOnHover: "com_30.png",
           DescEng: {
