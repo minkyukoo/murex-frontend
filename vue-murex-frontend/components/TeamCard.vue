@@ -15,6 +15,7 @@
       }
     "
   >
+    {{ engName + engDesignation + setLang }}
     <div class="img-holder" @click="MemberInfo">
       <img
         :src="`${require('../assets/images/' + bgImage)}`"
@@ -30,46 +31,61 @@
       />
     </div>
     <div class="team-desc">
-      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team' && setLang === 'kr'">
-        <p class="name">{{ name }}</p>
-        <p class="designation">{{ designation }}</p>
-      </div>
-      
-      <div class="team-desc-cont" v-if="`${$nuxt.$route.path}` === '/team' && setLang === 'en'">
-        <p class="name">{{ engName }}</p>
-        <p class="designation">{{ engDesignation }}</p>
-      </div>
-      <div
-        class="team-desc-cont"
-        v-else-if="`${$nuxt.$route.path}` === '/founders'"
-      >
-        <p class="name">{{ company }}</p>
-        <p class="designation">{{ name }}</p>
-        <!-- <p class="designation">{{ status }}</p>
+      <div>
+        <div
+          class="team-desc-cont"
+          v-if="`${$nuxt.$route.path}` === '/team' && setLang === 'kr'"
+        >
+          <p class="name">{{ name }}</p>
+          <p class="designation">{{ designation }}</p>
+        </div>
+
+        <div class="team-desc-cont" v-else>
+          <p class="name">{{ engName }}</p>
+          <p class="designation">{{ engDesignation }}</p>
+        </div>
+        <div
+          class="team-desc-cont"
+          v-if="`${$nuxt.$route.path}` === '/founders'"
+        >
+          <p class="name">{{ company }}</p>
+          <p class="designation">{{ name }}</p>
+          <!-- <p class="designation">{{ status }}</p>
         <p class="designation">{{ sector }}</p> -->
+        </div>
       </div>
-      <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
-        <a
-          class="sns-link"
-          :href="`${snsLnLink}`"
-          target="_blank"
-          v-if="snsLnLink"
+      <div>
+        <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
+          <a
+            class="sns-link"
+            :href="`${snsLnLink}`"
+            target="_blank"
+            v-if="snsLnLink"
+          >
+            <i class="icon-ln"></i>
+          </a>
+          <a
+            class="sns-link"
+            :href="`${snsFbLink}`"
+            target="_blank"
+            v-if="snsFbLink"
+          >
+            <i class="icon-fb"></i>
+          </a>
+        </div>
+        <div
+          class="sns-links"
+          v-else-if="`${$nuxt.$route.path}` === '/founders'"
         >
-          <i class="icon-ln"></i>
-        </a>
-        <a
-          class="sns-link"
-          :href="`${snsFbLink}`"
-          target="_blank"
-          v-if="snsFbLink"
-        >
-          <i class="icon-fb"></i>
-        </a>
-      </div>
-      <div class="sns-links" v-else-if="`${$nuxt.$route.path}` === '/founders'">
-        <a class="sns-link" :href="companyLink" target="_blank" v-if="companyLink">
-          <img class="plus-icon" src="../assets/icons/Plus.svg" />
-        </a>
+          <a
+            class="sns-link"
+            :href="companyLink"
+            target="_blank"
+            v-if="companyLink"
+          >
+            <img class="plus-icon" src="../assets/icons/Plus.svg" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
