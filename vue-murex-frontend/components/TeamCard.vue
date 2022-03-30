@@ -46,7 +46,7 @@
         </div>
         <div
           class="team-desc-cont"
-          v-if="type === 'founder' && setLang === 'kr'"
+          v-else-if="type === 'founder' && setLang === 'kr'"
         >
           <p class="name">{{ company }}</p>
           <p class="designation">{{ name }}</p>

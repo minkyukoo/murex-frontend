@@ -268,9 +268,12 @@ export default {
     &::before {
       content: "";
       width: 8px;
-      height: 8px;
-      border: 4px solid $purple-3;
-      border-color: $purple-3 transparent transparent transparent;
+      height: 11px;
+      background-image: url("../assets/icons/arrow-down.svg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      // border: 4px solid $purple-3;
+      // border-color: $purple-3 transparent transparent transparent;
       position: absolute;
       left: 0;
       top: 12px;
