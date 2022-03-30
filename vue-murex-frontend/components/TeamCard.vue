@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="team-item" :style="{backgroundImage: `url(${require('../assets/images/'+bgImage)})`}"> -->
   <div
-    :class="`team-item ${$nuxt.$route.path === '/team' ? 'gradient' : ''}`"
+    :class="`team-item ${type === 'team' ? 'gradient' : ''}`"
     @mouseenter="
       () => {
         changeImg = true;
@@ -15,7 +15,7 @@
       }
     "
   >
-    {{ engName + engDesignation + setLang }}
+    <!-- {{ engName + engDesignation + setLang }} -->
     <div class="img-holder" @click="MemberInfo">
       <img
         :src="`${require('../assets/images/' + bgImage)}`"
@@ -34,28 +34,37 @@
       <div>
         <div
           class="team-desc-cont"
-          v-if="`${$nuxt.$route.path}` === '/team' && setLang === 'kr'"
+          v-if="type === 'team' && setLang === 'kr'"
         >
           <p class="name">{{ name }}</p>
           <p class="designation">{{ designation }}</p>
         </div>
 
-        <div class="team-desc-cont" v-else>
+        <div class="team-desc-cont" v-else-if="type === 'team' && setLang === 'en'">
           <p class="name">{{ engName }}</p>
           <p class="designation">{{ engDesignation }}</p>
         </div>
         <div
           class="team-desc-cont"
-          v-if="`${$nuxt.$route.path}` === '/founders'"
+          v-if="type === 'founder' && setLang === 'kr'"
         >
           <p class="name">{{ company }}</p>
           <p class="designation">{{ name }}</p>
           <!-- <p class="designation">{{ status }}</p>
         <p class="designation">{{ sector }}</p> -->
         </div>
+        <div
+          class="team-desc-cont"
+          v-else
+        >
+          <p class="name">{{ engCompany }}</p>
+          <p class="designation">{{ engName }}</p>
+          <!-- <p class="designation">{{ status }}</p>
+        <p class="designation">{{ sector }}</p> -->
+        </div>
       </div>
       <div>
-        <div class="sns-links" v-if="`${$nuxt.$route.path}` === '/team'">
+        <div class="sns-links" v-if="type === 'team'">
           <a
             class="sns-link"
             :href="`${snsLnLink}`"
@@ -75,7 +84,7 @@
         </div>
         <div
           class="sns-links"
-          v-else-if="`${$nuxt.$route.path}` === '/founders'"
+          v-else-if="type === 'founder'"
         >
           <a
             class="sns-link"
@@ -99,6 +108,7 @@ export default {
     name: String,
     engName: String,
     engDesignation: String,
+    engCompany: String,
     company: String,
     designation: String,
     companyLink: String,
@@ -108,6 +118,7 @@ export default {
     sector: String,
     snsFbLink: String,
     snsLnLink: String,
+    type: String,
   },
   data() {
     return {

@@ -10,8 +10,10 @@
       :designation="team.designation"
       :snsFbLink="team.sns_links.fb"
       :snsLnLink="team.sns_links.ln"
+      :engName="team.DescEng.name"
+      :engDesignation="team.DescEng.designation"
+      type="team"
       v-on:openModal="OpenModal($event)"
-      
     />
   </div>
 </template>
@@ -34,7 +36,11 @@ export default {
           sns_links: {
             fb: "",
             ln: "",
-          }
+          },
+          DescEng: {
+            name: "Taekdong Kim",
+            designation: "Venture Partner",
+          },
         },
         {
           id: 2,
@@ -45,7 +51,11 @@ export default {
           sns_links: {
             fb: "",
             ln: "",
-          }
+          },
+          DescEng: {
+            name: "Gibong Kim",
+            designation: "Venture Partner",
+          },
         },
         {
           id: 3,
@@ -56,7 +66,11 @@ export default {
           sns_links: {
             fb: "",
             ln: "",
-          }
+          },
+          DescEng: {
+            name: "Sujin Lee",
+            designation: "Venture Partner",
+          },
         },
         {
           id: 4,
@@ -67,7 +81,11 @@ export default {
           sns_links: {
             fb: "",
             ln: "",
-          }
+          },
+          DescEng: {
+            name: "Chihyung Song",
+            designation: "Venture Partner",
+          },
         },
         {
           id: 5,
@@ -78,20 +96,23 @@ export default {
           sns_links: {
             fb: "",
             ln: "",
-          }
+          },
+          DescEng: {
+            name: "Yongho Ha",
+            designation: "Venture Partner",
+          },
         },
-      ]
+      ],
     };
   },
-  methods : {
+  methods: {
     OpenModal(event) {
       this.$emit("openModal", false);
-      console.log("member click passed",event)
-    }
-  }
-}
+      console.log("member click passed", event);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

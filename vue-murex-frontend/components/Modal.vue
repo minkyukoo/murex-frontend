@@ -94,6 +94,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding: 0 0 10px;
   @media screen and (max-width: 767px) {
     flex-direction: column;
   }

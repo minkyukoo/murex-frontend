@@ -10,7 +10,6 @@
     <div class="container">
       <TopHeading :heading="pageHeading2" />
     </div>
-    {{ selectedLang }}
     <div class="fluidContainer">
       <AdvisoryCards v-on:openModal="changeState($event)" />
     </div>
@@ -112,101 +111,6 @@
       </Modal>
     </section>
 
-    <!-- <Modal
-        v-show="TeamModal"
-        @close="closeModal"
-        v-bind:showCloseBtn="true"
-        v-if="Object.keys(modalData).length > 0"
-      >
-        <template v-slot:header>
-          <div class="w-full team-modal-header">
-            <h1 class="name">
-              {{ modalData.name }} <span>{{ modalData.designation }}</span>
-            </h1>
-          </div>
-        </template>
-        <template v-slot:body>
-          <div class="w-full team-modal-body">
-            <div class="flex flex-col md:flex-row gap-10 justify-between">
-              <div class="img-holder" v-if="modalData.imgDetails">
-                <img
-                  :src="`${require('../assets/images/' +
-                    modalData.imgDetails)}`"
-                  alt="img"
-                />
-              </div>
-              <div class="total-desc">
-                <p class="desc-sec main-desc">
-                  {{ modalData.basicDesc }}
-                </p>
-                <div v-if="modalData.EducationList.length > 0">
-                  <h4 class="heading">학력 / 경력</h4>
-                  <ul class="sub-desc desc-sec">
-                    <li
-                      v-for="(item, index) in modalData.EducationList"
-                      :key="index"
-                    >
-                      {{ item }}
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  v-if="
-                    modalData.investmentExp1.length > 0 ||
-                    modalData.investmentExp2.length > 0
-                  "
-                >
-                  <h4 class="heading">투자경력</h4>
-                  <div class="grid grid-rows-1 grid-flow-col">
-                    <div>
-                      <ul class="sub-desc desc-sec">
-                        <li
-                          v-for="(item, index) in modalData.investmentExp1"
-                          :key="index"
-                        >
-                          {{ item }}
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <ul class="sub-desc desc-sec">
-                        <li
-                          v-for="(item, index) in modalData.investmentExp2"
-                          :key="index"
-                        >
-                          {{ item }}
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <a
-                    :href="modalData.sns_links.ln"
-                    class="social-icon"
-                    target="_blank"
-                    v-if="modalData.sns_links.ln"
-                  >
-                    <i class="icon-linkedin-dark"></i>
-                  </a>
-                  <a
-                    :href="modalData.sns_links.fb"
-                    class="social-icon"
-                    target="_blank"
-                    v-if="modalData.sns_links.fb"
-                  >
-                    <i class="icon-facebook-dark"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </template>
-        <template v-slot:footer>
-          <div class="flex justify-around"></div>
-        </template>
-      </Modal> -->
-
     <section v-if="selectedLang === 'en'">
       <Modal
         v-show="TeamModal"
@@ -258,11 +162,10 @@
               </div>
             </div>
             <div class="below-details">
-              <p>
-                {{ modalData.DescEng.basicDesc }}
+              <p v-html="modalData.DescEng.basicDesc">
               </p>
-              <h3>Prior to founding Murex</h3>
-              <p>{{ modalData.DescEng.beforeMurex }}</p>
+              <h3 v-if="modalData.DescEng.beforeMurex">Prior to founding Murex</h3>
+              <p v-html="modalData.DescEng.beforeMurex"></p>
             </div>
           </div>
         </template>
