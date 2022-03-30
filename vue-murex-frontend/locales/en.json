@@ -49,5 +49,22 @@
     "team": {
       "pageTitle1": "Our Team",
       "pageTitle2": "Venture Partner / Advisory"
+    },
+    "phylosophy" : {
+      "text1": "Murex Partners is a Korean venture capital firm focusing on an",
+      "text1Bold": "early & mid-growth stage investments.",
+      "text1Part2": "",
+      "text2": "Our investment strategy is based on a",
+      "text2Bold": "unique set of theses and thinking that extends beyond conventional limits.",
+      "text2Part2": "",
+      "text3": "We invest in extraordinary entrepreneurs arising from Korea’s unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",
+      "cards" : {
+        "first" : "We invest in People",
+        "second" : "houghtfulness and deep conviction, and relationships endure",
+        "third" : "We invest Differently",
+        "fourth" : "Thesis driven",
+        "fifth" : "We support with Integrity",
+        "sixth" : "We take deep-dive into challenges facing entrepreneurs and help them to get thorough"
+      }
     }
   }

@@ -7,17 +7,16 @@
       </div>
       <div class="philCont">
         <p>
-          뮤렉스파트너스는 <span>초기, 성장단계의 스타트업</span>에 투자합니다.
+          {{ $t(`phylosophy.text1`) }}
+          <span>{{ $t(`phylosophy.text1Bold`) }}</span
+          >{{ $t(`phylosophy.text1Part2`) }}
         </p>
         <p>
-          뮤렉스파트너스는
-          <span>차별적인 투자 전략, 이론, 근거에 기반</span>하여 시장을
-          읽습니다.
+          {{ $t(`phylosophy.text2`) }}
+          <span>{{ $t(`phylosophy.text2Bold`) }}</span>{{ $t(`phylosophy.text2Part2`) }}
         </p>
         <p>
-          새롭고 비범한 창업가들에게 뮤렉스파트너스는 우선 투자합니다.
-          뮤렉스파트너스와 함께 성장의 여정을 일궈낸 창업가들은 뮤렉스파트너스의
-          벤처파트너로 새로운 스타트업 생태계를 열고 있습니다.
+          {{ $t(`phylosophy.text3`) }}
         </p>
       </div>
     </div>
@@ -26,32 +25,32 @@
         <li>
           <div>
             <h4>People</h4>
-            <h2>사람에 투자합니다</h2>
+            <h2>{{ $t(`phylosophy.cards.first`) }}</h2>
           </div>
         </li>
         <li>
           <h3>
-            호기심과 집요함으로 일궈낸 비전과 확신,<br/>창업자와 VC간의 신뢰와 협력
+            {{ $t(`phylosophy.cards.second`) }}
           </h3>
         </li>
         <li>
           <h4>Differently</h4>
-          <h2>다르게 투자합니다</h2>
+          <h2>{{ $t(`phylosophy.cards.third`) }}</h2>
         </li>
         <li>
           <div>
-            <h3>한국 최초, 유일의 <br/>이론기반 투자 벤처캐피탈</h3>
+            <h3>{{ $t(`phylosophy.cards.fourth`) }}</h3>
           </div>
         </li>
         <li>
           <div>
             <h4>Integrity</h4>
-            <h2>깊게 돕습니다</h2>
+            <h2>{{ $t(`phylosophy.cards.fifth`) }}</h2>
           </div>
         </li>
         <li>
           <h3>
-            스타트업/창업자의 문제에 대한 분석,<br/>극복과 성취를 위한 끊임없는 지원
+            {{ $t(`phylosophy.cards.sixth`) }}
           </h3>
         </li>
       </ul>
@@ -72,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.philosophy{
+.philosophy {
   padding: 0 16px;
 }
 .philoHolder {

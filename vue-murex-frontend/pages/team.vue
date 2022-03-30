@@ -218,6 +218,9 @@ export default {
 .team {
   padding-bottom: calc(60px + 2vw);
   background: #e5e5e5;
+  @media screen and (max-width: 768px) {
+    padding-bottom: 40px;    
+  }
 }
 .team-modal-header {
   margin-bottom: calc(10px + 2.5vw);

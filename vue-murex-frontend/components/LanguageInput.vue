@@ -39,6 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .lang-dropdown{
+  padding-left: 17px;
   select{
     @include grey-text-1;
     color: #BDBDBD;

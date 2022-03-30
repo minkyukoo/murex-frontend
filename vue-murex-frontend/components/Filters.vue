@@ -276,9 +276,9 @@ export default {
       // border-color: $purple-3 transparent transparent transparent;
       position: absolute;
       left: 0;
-      top: 12px;
+      top: 10px;
       @media screen and (max-width: 767px) {
-        top: 9px;
+        top: 6px;
       }
     }
   }
@@ -289,7 +289,7 @@ export default {
   top: 35px;
   left: 0;
   z-index: 9;
-  padding: 12px 24px;
+  padding: 15px 24px;
   min-width: 150px;
   background: $white;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
@@ -302,11 +302,11 @@ export default {
     display: block;
   }
   .dropdown-item {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     label {
       font-size: 14px;
       line-height: 21px;
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 567px) {
         font-weight: 400;
         font-size: 11px;
         line-height: 16px;
@@ -320,6 +320,9 @@ export default {
     &.disabled {
       color: $grey-2;
       cursor: not-allowed;
+    }
+    @media screen and (max-width: 567px) {
+      font-size: 11px;
     }
   }
 }

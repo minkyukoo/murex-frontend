@@ -219,6 +219,9 @@ export default {
       .name {
         @include white-text-1;
         margin-bottom: 10px;
+        @media screen and (max-width: 767px) {
+          margin-bottom: 3px;
+        }
       }
       .designation {
         @include white-text-2;
