@@ -232,6 +232,7 @@ export default {
       opacity: 0;
       transition: all 0.3s ease;
       width: 82px;
+      text-align: right;
       @media screen and (max-width: 767px) {
         width: 65px;
       }
@@ -246,6 +247,7 @@ export default {
         .plus-icon {
           width: 55px;
           height: 60px;
+          // margin-left: auto;
           @media screen and (max-width: 1600px) {
             width: 40px;
             height: 45px;
