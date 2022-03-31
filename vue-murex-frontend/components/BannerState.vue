@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 .Banner-state {
   position: absolute;
-  bottom: 15%;
+  bottom: 13%;
   color: $white;
 }
 .pagination{
