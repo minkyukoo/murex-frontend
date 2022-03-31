@@ -231,6 +231,10 @@ export default {
       transform: translateY(100%);
       opacity: 0;
       transition: all 0.3s ease;
+      width: 82px;
+      @media screen and (max-width: 767px) {
+        width: 65px;
+      }
 
       .sns-link {
         display: inline-block;

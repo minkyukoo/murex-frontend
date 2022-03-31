@@ -123,7 +123,7 @@
         </template>
         <template v-slot:body>
           <div class="w-full team-modal-body design-2">
-            <div class="flex flex-col lg:flex-row gap-10 justify-between">
+            <div class="flex flex-col lg:flex-row gap-8 justify-between">
               <div class="img-holder" v-if="modalData.imgDetails">
                 <img
                   :src="`${require('../assets/images/' +
@@ -418,5 +418,8 @@ export default {
 }
 .addPad-40 {
   padding-bottom: 40px !important;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 0px !important;
+  }
 }
 </style>
