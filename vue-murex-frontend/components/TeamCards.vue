@@ -268,10 +268,8 @@ export default {
           DescEng: {
             name: "Yunna Kim",
             designation: "Staff",
-            catchPhrase:
-              "I am always a loyal partner with Murex Partners and demonstrate an attentive and cooperative attitude ",
             basicDesc:
-              "I am in charge of accounting, fund, and management support duties. ",
+              "I am in charge of LP reporting, fund, and investment management duties.",
             beforeMurex: "",
           },
         },
@@ -294,8 +292,10 @@ export default {
             name: "Jihye Shin",
             designation: "Staff",
             catchPhrase: "",
+            catchPhrase:
+              "I am always a loyal partner with Murex Partners and demonstrate an attentive and cooperative attitude ",
             basicDesc:
-              "I am in charge of LP reporting, fund, and investment management duties.",
+              "I am in charge of accounting, fund, and management support duties. ",
             beforeMurex: "",
           },
         },
