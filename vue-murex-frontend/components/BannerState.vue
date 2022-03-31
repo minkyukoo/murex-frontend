@@ -55,10 +55,19 @@ export default {
 }
 .pagination{
   font-family: $secondery-font;
-  color: #E0E0E0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #666666;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
   span{
+    padding-right: 8px;
+    color: #E0E0E0;
     &:nth-child(2){
       color: #666666;
+      padding: 0 0 0 8px;
     }
   }
 }
@@ -72,7 +81,7 @@ progress {
   vertical-align: baseline;
   min-width: 400px;
   color: white;
-  height: 2px;
+  height: 1px;
 
   @media screen and (max-width: 765px) {
     min-width: 280px;

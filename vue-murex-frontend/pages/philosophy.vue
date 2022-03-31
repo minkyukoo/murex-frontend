@@ -1,7 +1,7 @@
 <template>
   <div class="philosophy">
     <div class="container philoHolder">
-      <TopHeading :heading="pageHeading" padbottom="bottom-60" />
+      <TopHeading :heading="pageHeading" padbottom="bottom-50" />
       <div class="slash-violet">
         <img src="../assets/icons/slash-violet.svg" alt="img" />
       </div>
@@ -13,7 +13,8 @@
         </p>
         <p>
           {{ $t(`phylosophy.text2`) }}
-          <span>{{ $t(`phylosophy.text2Bold`) }}</span>{{ $t(`phylosophy.text2Part2`) }}
+          <span>{{ $t(`phylosophy.text2Bold`) }}</span
+          >{{ $t(`phylosophy.text2Part2`) }}
         </p>
         <p>
           {{ $t(`phylosophy.text3`) }}
@@ -39,7 +40,7 @@
         </li>
         <li>
           <div>
-            <h3>{{ $t(`phylosophy.cards.fourth`) }}</h3>
+            <h5>{{ $t(`phylosophy.cards.fourth`) }}</h5>
           </div>
         </li>
         <li>
@@ -72,7 +73,9 @@ export default {
 
 <style lang="scss" scoped>
 .philosophy {
-  padding: 0 16px;
+  @media screen and (max-width: 767px) {
+    padding: 0 16px;
+  }
 }
 .philoHolder {
   border-bottom: 1px solid #828282;
@@ -84,7 +87,7 @@ export default {
   }
 }
 .philCont {
-  max-width: 819px;
+  max-width: 820px;
   margin: 0 auto;
   text-align: center;
   font-size: 27px;
@@ -106,7 +109,10 @@ export default {
   }
 }
 .slash-violet {
-  padding-bottom: 26px;
+  padding-bottom: 50px;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 20px;
+  }
   img {
     margin: 0 auto;
   }
@@ -142,6 +148,7 @@ export default {
         width: 100%;
         margin: 0 0 16px 0;
         height: 343px;
+        padding: 10px;
       }
       div {
         width: 100%;
@@ -187,17 +194,31 @@ export default {
       h2 {
         font-size: 60px;
         line-height: 150%;
+        max-width: 600px;
         font-weight: 600;
         @media screen and (max-width: 768px) {
           font-size: 30px;
+          max-width: 303px;
         }
       }
       h3 {
-        font-size: 45px;
+        font-size: 38px;
         line-height: 150%;
+        max-width: 600px;
         font-weight: 500;
         @media screen and (max-width: 768px) {
           font-size: 18px;
+          max-width: 303px;
+        }
+      }
+      h5 {
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 150%;
+        max-width: 600px;
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+          max-width: 303px;
         }
       }
     }

@@ -22,10 +22,10 @@ export default {
   @media screen and (max-width: 767px) {
     padding: 40px 0;
   }
-  &.bottom-60 {
-    padding-bottom: 60px;
+  &.bottom-50 {
+    padding-bottom: 50px;
     @media screen and (max-width: 767px) {
-      padding: 45px 0;
+      padding: 40px 0;
     }
   }
   .main-heading {

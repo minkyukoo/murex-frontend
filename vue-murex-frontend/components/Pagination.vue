@@ -99,7 +99,7 @@ export default {
     padding-bottom: 50px;
   }
   .pagi-item {
-    padding: 8px 12px;
+    padding: 8px 16px;
     font-size: 16px;
     line-height: 150%;
     color: $grey-2;

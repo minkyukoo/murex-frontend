@@ -331,6 +331,7 @@ export default {
     .catch-phrase {
       font-weight: 380;
       font-size: 20px;
+      font-family: $third-font;
       line-height: 180%;
       letter-spacing: -0.05em;
       color: $black-2;
@@ -401,6 +402,7 @@ export default {
       @media screen and (max-width: 767px) {
         font-size: 20px;
         line-height: 170%;
+        padding: 30px 0;
       }
     }
     P {
