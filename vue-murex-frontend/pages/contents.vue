@@ -63,6 +63,7 @@ export default {
         this.$nuxt.$loading.finish();
         console.log("content", contentList);
         this.contentList = contentList.data;
+        this.nodata = this.contentList.length ? false : true;
         this.pagination.totalRecords = Math.ceil(
           contentList.total_records / this.pagination.perPage
         );
