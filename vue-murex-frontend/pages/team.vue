@@ -3,7 +3,7 @@
     <div class="container">
       <TopHeading :heading="pageHeading" />
     </div>
-    <div class="fluidContainer">
+    <div class="fluidContainer addPad-40">
       <!-- <div class="divider-1"></div> -->
       <TeamCards v-on:openModal="changeState($event)" />
     </div>
@@ -30,7 +30,7 @@
         </template>
         <template v-slot:body>
           <div class="w-full team-modal-body">
-            <div class="flex flex-col md:flex-row gap-10 justify-between">
+            <div class="flex flex-col md:flex-row gap-8 justify-between">
               <div class="img-holder" v-if="modalData.imgDetails">
                 <img
                   :src="`${require('../assets/images/' +
@@ -162,9 +162,10 @@
               </div>
             </div>
             <div class="below-details">
-              <p v-html="modalData.DescEng.basicDesc">
-              </p>
-              <h3 v-if="modalData.DescEng.beforeMurex">Prior to founding Murex</h3>
+              <p v-html="modalData.DescEng.basicDesc"></p>
+              <h3 v-if="modalData.DescEng.beforeMurex">
+                Prior to founding Murex
+              </h3>
               <p v-html="modalData.DescEng.beforeMurex"></p>
             </div>
           </div>
@@ -217,9 +218,9 @@ export default {
 <style lang="scss" scoped>
 .team {
   padding-bottom: calc(60px + 2vw);
-  background: #e5e5e5;
+  background: #f6f6f6;
   @media screen and (max-width: 768px) {
-    padding-bottom: 40px;    
+    padding-bottom: 40px;
   }
 }
 .team-modal-header {
@@ -233,6 +234,7 @@ export default {
     color: #181818;
     @media screen and (max-width: 640px) {
       font-size: 24px;
+      line-height: 24px;
     }
     span {
       display: inline-block;
@@ -242,6 +244,7 @@ export default {
       padding-left: 24px;
       @media screen and (max-width: 640px) {
         font-size: 12px;
+        padding-left: 18px;
       }
     }
   }
@@ -278,6 +281,7 @@ export default {
     @media screen and (max-width: 640px) {
       font-size: 18px;
       font-weight: 500;
+      border-bottom: 1px solid #000000;
     }
   }
   .desc-sec {
@@ -339,7 +343,7 @@ export default {
     .short-desc {
       height: 100%;
       min-height: 540px;
-      padding-bottom: 40px;
+      padding-bottom: 30px;
       border-bottom: 1px solid #000000;
       @include dflex-column-between;
       @media screen and (max-width: 1600px) {
@@ -358,8 +362,9 @@ export default {
       // font-size: calc(10px + 2.3vw);
       font-size: 52px;
       line-height: 52px;
+      letter-spacing: -0.02rem;
       color: #181818;
-      padding-bottom: 52px;
+      padding-bottom: 66px;
       border-bottom: 1px solid #000000;
       margin-bottom: 42px;
       @media screen and (max-width: 640px) {
@@ -377,12 +382,13 @@ export default {
         @media screen and (max-width: 640px) {
           font-size: 12px;
           line-height: 14px;
+          padding-left: 18px;
         }
       }
     }
   }
   .below-details {
-    padding: 80px 0 0px;
+    padding: 60px 0 0px;
     color: $black-1;
     @media screen and (max-width: 767px) {
       padding: 40px 0 0;
@@ -391,7 +397,7 @@ export default {
       font-weight: 600;
       font-size: 30px;
       line-height: 170%;
-      padding: 40px 0;
+      padding: 36px 0;
       @media screen and (max-width: 767px) {
         font-size: 20px;
         line-height: 170%;
@@ -407,5 +413,8 @@ export default {
       }
     }
   }
+}
+.addPad-40 {
+  padding-bottom: 40px !important;
 }
 </style>

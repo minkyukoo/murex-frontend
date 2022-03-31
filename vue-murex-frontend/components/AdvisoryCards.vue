@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-8">
+  <div class="grid grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-6">
     <TeamCard
       v-for="(team, i) of teams"
       :key="team.id || i + 1"

@@ -147,19 +147,19 @@ export default {
   overflow: hidden;
   &.gradient {
     .img-holder {
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0) 59.11%,
-          #272727 100%
-        );
-      }
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: linear-gradient(
+      //     180deg,
+      //     rgba(0, 0, 0, 0) 59.11%,
+      //     #272727 100%
+      //   );
+      // }
     }
     &:hover {
       .team-desc {

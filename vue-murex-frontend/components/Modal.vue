@@ -102,7 +102,7 @@ export default {
 
 .modal-body {
   position: relative;
-  padding: 10px 10px;
+  padding: 10px 0px;
   @media screen and (max-width: 640px) {
     padding: 0;
   }
