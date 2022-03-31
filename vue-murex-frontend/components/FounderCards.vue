@@ -233,7 +233,7 @@ export default {
           name: "박경훈",
           status: "Current",
           sector: "Consumer",
-          link: "전세계 명품 쇼핑은 트렌비 | 트렌비 (trenbe.com)",
+          link: "https://www.trenbe.com/",
           image: "com_ceo_14.png",
           imgOnHover: "com_14.png",
           DescEng: {
@@ -247,7 +247,7 @@ export default {
           name: "윤반석",
           status: "Current",
           sector: "Consumer",
-          link: "서울스토어 (seoulstore.com)",
+          link: "https://www.seoulstore.com/",
           image: "com_ceo_15.png",
           imgOnHover: "com_15.png",
           DescEng: {
@@ -261,7 +261,7 @@ export default {
           name: "전종하",
           status: "Current",
           sector: "Consumer",
-          link: "serybox.com",
+          link: "https://www.serybox.com/",
           image: "com_ceo_16.png",
           imgOnHover: "com_16.png",
           DescEng: {
@@ -289,7 +289,7 @@ export default {
           name: "서경종",
           status: "Current",
           sector: "Consumer",
-          link: "https://still8.gg/",
+          link: "https://loudcorp.com/",
           image: "com_ceo_18.png",
           imgOnHover: "com_18.png",
           DescEng: {
@@ -401,7 +401,7 @@ export default {
           name: "배석훈",
           status: "Current",
           sector: "Enterprise",
-          link: "큐픽스와 스마트 구축 (cupix.com)",
+          link: "https://www.cupix.com/",
           image: "com_ceo_26.png",
           imgOnHover: "com_26.png",
           DescEng: {
@@ -443,7 +443,7 @@ export default {
           name: "박재병",
           status: "Current",
           sector: "Healthcare",
-          link: "어르신 돌보미 찾기 (carecoordi.kr)",
+          link: "https://carecoordi.kr/",
           image: "com_ceo_29.png",
           imgOnHover: "com_29.png",
           DescEng: {
@@ -499,7 +499,7 @@ export default {
           name: "황인서",
           status: "Current",
           sector: "Enterprise",
-          link: "Normalize your Data Governance | QueryPie",
+          link: "https://www.querypie.com/en",
           image: "com_ceo_33.png",
           imgOnHover: "com_33.png",
           DescEng: {
