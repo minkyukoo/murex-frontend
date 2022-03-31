@@ -256,9 +256,8 @@ export default {
           image: "Teams/8.png",
           imgOnHover: "Teams/8-h.png",
           imgDetails: "Teams/8-d.png",
-          basicDesc:
-            "약 15년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
-          EducationList: ["파트너스인베스트먼트 ('04~'18)"],
+          basicDesc: "회계, 자금, 경영지원 업무를 담당하고 있습니다.",
+          EducationList: [],
           investmentExp1: [],
           investmentExp2: [],
           sns_links: {
@@ -268,8 +267,10 @@ export default {
           DescEng: {
             name: "Yunna Kim",
             designation: "Staff",
+            catchPhrase:
+              "I am always a loyal partner with Murex Partners and demonstrate an attentive and cooperative attitude ",
             basicDesc:
-              "I am in charge of LP reporting, fund, and investment management duties.",
+              "I am in charge of accounting, fund, and management support duties. ",
             beforeMurex: "",
           },
         },
@@ -280,8 +281,9 @@ export default {
           image: "Teams/9.png",
           imgOnHover: "Teams/9-h.png",
           imgDetails: "Teams/9-d.png",
-          basicDesc: "회계, 자금, 경영지원 업무를 담당하고 있습니다.",
-          EducationList: [],
+          basicDesc:
+            "약 15년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
+          EducationList: ["파트너스인베스트먼트 ('04~'18)"],
           investmentExp1: [],
           investmentExp2: [],
           sns_links: {
@@ -292,10 +294,8 @@ export default {
             name: "Jihye Shin",
             designation: "Staff",
             catchPhrase: "",
-            catchPhrase:
-              "I am always a loyal partner with Murex Partners and demonstrate an attentive and cooperative attitude ",
             basicDesc:
-              "I am in charge of accounting, fund, and management support duties. ",
+              "I am in charge of LP reporting, fund, and investment management duties.",
             beforeMurex: "",
           },
         },
