@@ -1,0 +1,70 @@
+  {
+    "message": "Hello!",
+    "contact": {
+      "pageTitle": "Contact",
+      "content": {
+        "title1": "Information",
+        "title2": "How to come",
+        "address": "Address",
+        "addressInfo": "2nd floor, 18-6, Dosan-daero 45-gil, Gangnam-gu, Seoul",
+        "call": "Call",
+        "fax": "Fax",
+        "email": "E-mail",
+        "textCont": "Let us guide you how to visit us.",
+        "label1": "Subway",
+        "label2": "Bus",
+        "label1Info": "Apgujeong Rodeo Station Exit 5 or toward Dosan Park from Apgujeong Station Exit 3",
+        "label2Info": "Dosan Park Intersection Bus stop (23-155)"
+      }
+    },
+    "contents": {
+      "pageTitle": "Contents",
+      "tabs": {
+        "allTab": "All",
+        "newTab": "News",
+        "insightTab": "Insights"
+      }
+    },
+    "founders": {
+      "pageTitle": "Our Founders",
+      "filters": {
+        "allFilters": "All",
+        "sectorFilters": "Sector",
+        "statusFilters": "Status"
+      },
+      "sectors": {
+        "consumer": "Consumer",
+        "enterprise": "Enterprise",
+        "healthcare": "Healthcare",
+        "crypto": "Crypto"
+      },
+      "status": {
+        "current": "Current",
+        "alumni": "Alumni"
+      },
+      "button": {
+        "clearFilter": "Clear Filter"
+      }
+    },
+    "team": {
+      "pageTitle1": "Our Team",
+      "pageTitle2": "Venture Partner / Advisory"
+    },
+    "phylosophy" : {
+      "text1": "Murex Partners is a Korean venture capital firm focusing on an",
+      "text1Bold": "early & mid-growth stage investments.",
+      "text1Part2": "",
+      "text2": "Our investment strategy is based on a",
+      "text2Bold": "unique set of theses and thinking that extends beyond conventional limits.",
+      "text2Part2": "",
+      "text3": "We invest in extraordinary entrepreneurs arising from Korea’s unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",
+      "cards" : {
+        "first" : "We invest in People",
+        "second" : "Curiosity, thoughtfulness and deep conviction, and relationships endure",
+        "third" : "We invest Differently",
+        "fourth" : "Thesis driven",
+        "fifth" : "We support with Integrity",
+        "sixth" : "We take deep-dive into challenges facing entrepreneurs and help them to get thorough"
+      }
+    }
+  }

@@ -92,7 +92,7 @@
             target="_blank"
             v-if="companyLink"
           >
-            <img class="plus-icon" src="../assets/icons/Plus.svg" />
+            <img class="plus-icon" src="../assets/icons/plus.svg" />
           </a>
         </div>
       </div>
