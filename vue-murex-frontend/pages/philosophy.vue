@@ -16,9 +16,8 @@
           <span>{{ $t(`phylosophy.text2Bold`) }}</span
           >{{ $t(`phylosophy.text2Part2`) }}
         </p>
-        <p>
-          {{ $t(`phylosophy.text3`) }}
-        </p>
+        <p class="desktop-third" v-html="$t(`phylosophy.text3`)"></p>
+        <p class="mobile-third" v-html="$t(`phylosophy.mobileText3`)"></p>
       </div>
     </div>
     <div class="philBody">
@@ -30,8 +29,7 @@
           </div>
         </li>
         <li>
-          <h3>
-            {{ $t(`phylosophy.cards.second`) }}
+          <h3 v-html="$t(`phylosophy.cards.second`)">
           </h3>
         </li>
         <li>
@@ -40,7 +38,7 @@
         </li>
         <li>
           <div>
-            <h5>{{ $t(`phylosophy.cards.fourth`) }}</h5>
+            <h5 v-html="$t(`phylosophy.cards.fourth`)"></h5>
           </div>
         </li>
         <li>
@@ -50,8 +48,7 @@
           </div>
         </li>
         <li>
-          <h3>
-            {{ $t(`phylosophy.cards.sixth`) }}
+          <h3 v-html="$t(`phylosophy.cards.sixth`)">
           </h3>
         </li>
       </ul>
@@ -82,7 +79,7 @@ export default {
   padding-bottom: 100px;
   margin-bottom: 90px;
   @media screen and (max-width: 768px) {
-    padding-bottom: 40px;
+    padding: 0 10px 40px;
     margin-bottom: 40px;
   }
 }
@@ -106,6 +103,18 @@ export default {
   span {
     font-weight: 600;
     color: $purple-1;
+  }
+  .desktop-third{
+    display: block;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .mobile-third{
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
   }
 }
 .slash-violet {
