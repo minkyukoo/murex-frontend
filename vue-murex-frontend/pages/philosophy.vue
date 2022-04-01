@@ -1,24 +1,23 @@
 <template>
   <div class="philosophy">
     <div class="container philoHolder">
-      <TopHeading :heading="pageHeading" padbottom="bottom-60" />
+      <TopHeading :heading="pageHeading" padbottom="bottom-50" />
       <div class="slash-violet">
         <img src="../assets/icons/slash-violet.svg" alt="img" />
       </div>
       <div class="philCont">
         <p>
-          뮤렉스파트너스는 <span>초기, 성장단계의 스타트업</span>에 투자합니다.
+          {{ $t(`phylosophy.text1`) }}
+          <span>{{ $t(`phylosophy.text1Bold`) }}</span
+          >{{ $t(`phylosophy.text1Part2`) }}
         </p>
         <p>
-          뮤렉스파트너스는
-          <span>차별적인 투자 전략, 이론, 근거에 기반</span>하여 시장을
-          읽습니다.
+          {{ $t(`phylosophy.text2`) }}
+          <span>{{ $t(`phylosophy.text2Bold`) }}</span
+          >{{ $t(`phylosophy.text2Part2`) }}
         </p>
-        <p>
-          새롭고 비범한 창업가들에게 뮤렉스파트너스는 우선 투자합니다.
-          뮤렉스파트너스와 함께 성장의 여정을 일궈낸 창업가들은 뮤렉스파트너스의
-          벤처파트너로 새로운 스타트업 생태계를 열고 있습니다.
-        </p>
+        <p class="desktop-third" v-html="$t(`phylosophy.text3`)"></p>
+        <p class="mobile-third" v-html="$t(`phylosophy.mobileText3`)"></p>
       </div>
     </div>
     <div class="philBody">
@@ -26,32 +25,30 @@
         <li>
           <div>
             <h4>People</h4>
-            <h2>사람에 투자합니다</h2>
+            <h2>{{ $t(`phylosophy.cards.first`) }}</h2>
           </div>
         </li>
         <li>
-          <h3>
-            호기심과 집요함으로 일궈낸 비전과 확신,<br/>창업자와 VC간의 신뢰와 협력
+          <h3 v-html="$t(`phylosophy.cards.second`)">
           </h3>
         </li>
         <li>
           <h4>Differently</h4>
-          <h2>다르게 투자합니다</h2>
+          <h2>{{ $t(`phylosophy.cards.third`) }}</h2>
         </li>
         <li>
           <div>
-            <h3>한국 최초, 유일의 <br/>이론기반 투자 벤처캐피탈</h3>
+            <h5 v-html="$t(`phylosophy.cards.fourth`)"></h5>
           </div>
         </li>
         <li>
           <div>
             <h4>Integrity</h4>
-            <h2>깊게 돕습니다</h2>
+            <h2>{{ $t(`phylosophy.cards.fifth`) }}</h2>
           </div>
         </li>
         <li>
-          <h3>
-            스타트업/창업자의 문제에 대한 분석,<br/>극복과 성취를 위한 끊임없는 지원
+          <h3 v-html="$t(`phylosophy.cards.sixth`)">
           </h3>
         </li>
       </ul>
@@ -72,20 +69,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.philosophy{
-  padding: 0 16px;
+.philosophy {
+  @media screen and (max-width: 767px) {
+    padding: 0 16px;
+  }
 }
 .philoHolder {
   border-bottom: 1px solid #828282;
   padding-bottom: 100px;
   margin-bottom: 90px;
   @media screen and (max-width: 768px) {
-    padding-bottom: 40px;
+    padding: 0 12px 40px;
     margin-bottom: 40px;
   }
 }
 .philCont {
-  max-width: 819px;
+  max-width: 840px;
   margin: 0 auto;
   text-align: center;
   font-size: 27px;
@@ -105,9 +104,24 @@ export default {
     font-weight: 600;
     color: $purple-1;
   }
+  .desktop-third{
+    display: block;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .mobile-third{
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
 }
 .slash-violet {
-  padding-bottom: 26px;
+  padding-bottom: 50px;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 20px;
+  }
   img {
     margin: 0 auto;
   }
@@ -143,6 +157,7 @@ export default {
         width: 100%;
         margin: 0 0 16px 0;
         height: 343px;
+        padding: 10px;
       }
       div {
         width: 100%;
@@ -188,17 +203,31 @@ export default {
       h2 {
         font-size: 60px;
         line-height: 150%;
+        max-width: 600px;
         font-weight: 600;
         @media screen and (max-width: 768px) {
           font-size: 30px;
+          max-width: 303px;
         }
       }
       h3 {
-        font-size: 45px;
+        font-size: 38px;
         line-height: 150%;
+        max-width: 600px;
         font-weight: 500;
         @media screen and (max-width: 768px) {
           font-size: 18px;
+          max-width: 303px;
+        }
+      }
+      h5 {
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 150%;
+        max-width: 600px;
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+          max-width: 303px;
         }
       }
     }

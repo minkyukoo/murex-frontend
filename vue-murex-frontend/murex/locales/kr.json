@@ -1,0 +1,73 @@
+{
+  "message": "Hello!",
+  "contact": {
+    "pageTitle": "Contact",
+    "content": {
+      "title1": "Information",
+      "title2": "How to come",
+      "address": "Address",
+      "addressInfo": "서울시 강남구 도산대로45길 18-6, 2층",
+      "call": "Call",
+      "fax": "Fax",
+      "email": "E-mail",
+      "textCont": "뮤렉스 파트너스에 오시는 방법을 안내해 드립니다.",
+      "label1": "지하철 이용 시",
+      "label2": "버스 이용시",
+      "label1Info": "압구정로데오역 5번 출구 혹은 압구정역 3번 출구에서 도산공원 방향",
+      "label2Info": "도산공원사거리 정류장(23-155)에서 하차"
+    }
+  },
+  "contents": {
+    "pageTitle": "Contents",
+    "tabs": {
+      "allTab": "All",
+      "newTab": "News",
+      "insightTab": "Insights"
+    }
+  },
+  "founders": {
+    "pageTitle": "Our Founders",
+    "filters": {
+      "allFilters": "All",
+      "sectorFilters": "Sector",
+      "statusFilters": "Status"
+    },
+    "sectors": {
+      "consumer": "Consumer",
+      "enterprise": "Enterprise",
+      "healthcare": "Healthcare",
+      "crypto": "Crypto"
+    },
+    "status": {
+      "current": "Current",
+      "alumni": "Alumni"
+    },
+    "button": {
+      "clearFilter": "Clear Filter"
+    }
+  },
+  "team": {
+    "pageTitle1": "Our Team",
+    "pageTitle2": "Venture Partner / Advisory",
+    "user": {
+      "User1": "이범석"
+    }
+  },
+  "phylosophy" : {
+    "text1": "뮤렉스파트너스는",
+    "text1Bold": "초기, 성장단계의 스타트업",
+    "text1Part2": "에 투자합니다.",
+    "text2": "뮤렉스파트너스는",
+    "text2Bold": "차별적인 투자 전략, 이론, 근거에 기반",
+    "text2Part2": "하여 시장을 읽습니다.",
+    "text3": "새롭고 비범한 창업가들에게 뮤렉스파트너스는 우선 투자합니다.뮤렉스파트너스와 함께 성장의 여정을 일궈낸 창업가들은뮤렉스파트너스의 벤처파트너로 새로운 스타트업 생태계를 열고 있습니다.",
+    "cards" : {
+      "first" : "사람에 투자합니다",
+      "second" : "호기심과 집요함으로 일궈낸 비전과 확신,창업자와 VC간의 신뢰와 협력",
+      "third" : "다르게 투자합니다",
+      "fourth" : "한국 최초, 유일의이론기반 투자 벤처캐피탈",
+      "fifth" : "깊게 돕습니다",
+      "sixth" : "스타트업/창업자의 문제에 대한 분석,극복과 성취를 위한 끊임없는 지원"
+    }
+  }
+}

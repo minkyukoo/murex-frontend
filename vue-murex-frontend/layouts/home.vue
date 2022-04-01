@@ -1,7 +1,7 @@
 <template>
   <div class="home-layout">
     <client-only>
-      <Header bgClass="bg-transparent" />
+      <Header bgClass="bg-light" />
     </client-only>
     <div class="main-body">
       <Nuxt />

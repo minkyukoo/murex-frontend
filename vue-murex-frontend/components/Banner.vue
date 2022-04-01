@@ -103,20 +103,20 @@ export default {
   background-repeat: no-repeat;
   position: relative;
 }
-.slider-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      180deg,
-      rgba(92, 25, 66, 0.3) 0%,
-      rgba(92, 25, 66, 0.3) 32.03%
-    ),
-    rgba(48, 42, 85, 0.3);
-}
+// .slider-item::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(
+//       180deg,
+//       rgba(92, 25, 66, 0.3) 0%,
+//       rgba(92, 25, 66, 0.3) 32.03%
+//     ),
+//     rgba(48, 42, 85, 0.3);
+// }
 .slider-item {
   h2 {
     font-weight: 600;
