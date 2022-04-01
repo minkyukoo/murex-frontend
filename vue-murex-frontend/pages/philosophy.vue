@@ -79,7 +79,7 @@ export default {
   padding-bottom: 100px;
   margin-bottom: 90px;
   @media screen and (max-width: 768px) {
-    padding: 0 10px 40px;
+    padding: 0 12px 40px;
     margin-bottom: 40px;
   }
 }
