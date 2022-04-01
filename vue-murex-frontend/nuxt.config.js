@@ -97,7 +97,8 @@ export default {
     vueI18n: i18n,
   },
   axios: {
-    baseURL: "http://murexpartners.com/api/", // Used as fallback if no runtime config is provided
+    // baseURL: "http://murexpartners.com/api/", // Used as fallback if no runtime config is provided
+    baseURL: "http://murex-backend.dvconsulting.org/api/", // local
   },
 
   publicRuntimeConfig: {

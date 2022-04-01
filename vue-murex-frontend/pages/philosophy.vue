@@ -87,7 +87,7 @@ export default {
   }
 }
 .philCont {
-  max-width: 820px;
+  max-width: 840px;
   margin: 0 auto;
   text-align: center;
   font-size: 27px;
