@@ -193,6 +193,14 @@ export default {
     position: relative;
     z-index: 1;
   }
+  &.bg-light{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    background: transparent;
+  }
   &.bg-transparent {
     position: absolute;
     top: 0;
