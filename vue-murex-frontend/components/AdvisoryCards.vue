@@ -39,7 +39,7 @@ export default {
           },
           DescEng: {
             name: "Taekdong Kim",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Lake Investment CEO",
           },
         },
         {
@@ -54,7 +54,7 @@ export default {
           },
           DescEng: {
             name: "Gibong Kim",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Global Networks President",
           },
         },
         {
@@ -69,7 +69,7 @@ export default {
           },
           DescEng: {
             name: "Sujin Lee",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Yanolja CEO",
           },
         },
         {
@@ -84,7 +84,7 @@ export default {
           },
           DescEng: {
             name: "Chihyung Song",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Dunamu Chairman",
           },
         },
         {
@@ -99,7 +99,7 @@ export default {
           },
           DescEng: {
             name: "Yongho Ha",
-            designation: "Venture Partner",
+            designation: "Advisor / DataOven CEO",
           },
         },
       ],
