@@ -1,11 +1,11 @@
 import i18n from "./config/i18n.js";
 import webpack from "webpack";
 export default {
-  // target: "server",
-  // server: {
-  //   // host: '0',
-  //   // port: 3002,
-  // },
+  target: "server",
+  server: {
+    // host: '0',
+    // port: 3002,
+  },
   loading: "~/components/LoadingBar.vue",
 
   loadingIndicator: {
