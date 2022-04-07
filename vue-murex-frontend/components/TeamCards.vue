@@ -230,7 +230,7 @@ export default {
           imgOnHover: "Teams/7-h.png",
           imgDetails: "Teams/7-d.png",
           basicDesc:
-            "약 15년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
+            "약 14년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
           EducationList: ["파트너스인베스트먼트 ('04~'18)"],
           investmentExp1: [],
           investmentExp2: [],
