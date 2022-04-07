@@ -295,7 +295,7 @@ export default {
             designation: "Staff",
             catchPhrase: "",
             basicDesc:
-              "I am in charge of LP reporting, fund, and investment management duties. I majored in business and economics at Hanyang University.",
+              "I am in charge of LP reporting, fund, and investment management duties.<br> I majored in business and economics at Hanyang University.",
             beforeMurex: "",
           },
         },
