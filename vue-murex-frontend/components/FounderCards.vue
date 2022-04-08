@@ -526,7 +526,7 @@ export default {
           company: "하이메디",
           name: "이정주, 서돈교",
           status: "Current",
-          sector: "Consumer",
+          sector: "Health Care",
           link: "https://www.himedi.com/en",
           image: "com_ceo_1.png",
           imgOnHover: "com_1.png",
