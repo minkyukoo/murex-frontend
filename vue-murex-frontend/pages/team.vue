@@ -201,6 +201,16 @@ export default {
   created() {
     this.selectedLang = this.$i18n.locale;
   },
+  watch: {
+    TeamModal: function (val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+      }
+      else if (!val) {
+        document.body.style.overflow = "auto";
+      }
+    },
+  },
   methods: {
     changeState(event) {
       this.TeamModal = true;
