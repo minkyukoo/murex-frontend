@@ -122,7 +122,7 @@ export default {
             basicDesc:
               "I am in charge of early stage investment in Murex Partners.<br/> Nowadays, I enjoy discovering early IT start-up opportunities in South Korea in fields of AI, Mobility, Cloud, Blockchain. ",
             beforeMurex:
-              "My career background started from strategic consulting in Kearney. After I moved to VC industry, I was responsible for internet mobile sector early investment in Stonebridge Ventures.<br/><br/>I majored in IT Business at KAIST. <br/><br/>I wrote a book called <New Money (2017)>, which was about the VC ecosystem in South Korea.",
+              "My career background started from strategic consulting in Kearney. After I moved to VC industry, I was responsible for internet mobile sector early investment in Stonebridge Ventures.<br/><br/>I majored in IT Business at KAIST. <br/><br/>I wrote a book called <span><</span>New Money (2017)<span>></span>, which was about the VC ecosystem in South Korea.",
           },
         },
         {
