@@ -58,7 +58,7 @@ export default {
             basicDesc:
               "I am a managing partner in Murex Partners to prepare for the future of VC.",
             beforeMurex:
-              "Before joined to VC industry, I started first career at LG electronics and played a product management role in LG Electronics America. Afterward, I moved to Samsung Display where I was in charge of strategic investment.<br/> I have more than 10 years of experiences as VC and initiated the growth of Yanolja from a start-up company into a company with $10B valuation. I majored in mechanical engineering at Busan University and completed MBA at Dartmouth College. ",
+              "Before joined to VC industry, I started first career at LG electronics and played a product management role in LG Electronics America. Afterward, I moved to Samsung Display where I was in charge of strategic investment.<br/><br/> I have more than 10 years of experiences as VC and initiated the growth of Yanolja from a start-up company into a company with $10B valuation. <br/><br/>I majored in mechanical engineering at Busan University and completed MBA at Dartmouth College. ",
           },
         },
         {
@@ -122,7 +122,7 @@ export default {
             basicDesc:
               "I am in charge of early stage investment in Murex Partners.<br/> Nowadays, I enjoy discovering early IT start-up opportunities in South Korea in fields of AI, Mobility, Cloud, Blockchain. ",
             beforeMurex:
-              "My career background started from strategic consulting in A.T Kearney. After I moved to VC industry, I was responsible for internet mobile sector early investment in Stonebridge Ventures.<br/><br/>I majored in IT Business at KAIST. <br/><br/>I wrote a book called <New Money (2017)>, which was about the VC ecosystem in South Korea.",
+              "My career background started from strategic consulting in Kearney. After I moved to VC industry, I was responsible for internet mobile sector early investment in Stonebridge Ventures.<br/><br/>I majored in IT Business at KAIST. <br/><br/>I wrote a book called <New Money (2017)>, which was about the VC ecosystem in South Korea.",
           },
         },
         {
@@ -136,7 +136,7 @@ export default {
             "삼성전자에서 딥러닝 기반 자율주행 알고리즘을 개발한 경험을 기반으로, 기술 기반 스트타업에 많은 관심을 가지고 있습니다.",
           EducationList: [
             "삼성전자 C-lab, Project Manager ('17~'18)",
-            "삼성전자 무선사업부, Enginner ('14~'17)",
+            "삼성전자 무선사업부, Engineer ('14~'17)",
             "고려대 기계공학부",
           ],
           investmentExp1: ["스마트레이더시스템", "Bobidi"],
@@ -197,7 +197,7 @@ export default {
           basicDesc:
             "커리어 초기에는 M&A 자문 업무를 시작으로, 이후 뮤렉스파트너스 입사 전까지 삼성전자 경영지원실에서 Investor Relation 업무를 수행하며 글로벌 투자자와의 커뮤니케이션을 담당하였습니다.",
           EducationList: [
-            "삼성전자 경영지원실 IR팀, Senior Professional ('13~`21),",
+            "삼성전자 경영지원실 IR팀, Senior Professional ('13~`21)",
             "삼성전자 영상전략마케팅팀, 과장 (`10~12)",
             "소시어스어드바이저, 차장 (`09~`10)",
             "맥쿼리증권, Business Analyst (`08~`08)",
@@ -219,7 +219,7 @@ export default {
             basicDesc:
               "I am in charge of relationship management with LP and also support the portfolio companies to attract overseas investment. ",
             beforeMurex:
-              "I started first career in Samil PwC Consulting Firm, and subsequently in Macquarie in Korea. In my early career stage, I mostly handled various M&A advisory projects and implemented investor relation duty in Samsung Electronics’ IR team. For more than 9 years, he was responsible for communicating with global investors before entering Murex Partners.<br/><br/>I majored in business and economics at Carnegie Mellon University and completed MBA at Korea University.",
+              "I started first career in Samil PwC Consulting Firm, and subsequently in Macquarie in Korea. In my early career stage, I mostly handled various M&A advisory projects and implemented investor relation duty in Samsung Electronics’ IR team. For more than 9 years, I was responsible for communicating with global investors before entering Murex Partners.",
           },
         },
         {
@@ -230,7 +230,7 @@ export default {
           imgOnHover: "Teams/7-h.png",
           imgDetails: "Teams/7-d.png",
           basicDesc:
-            "약 15년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
+            "약 14년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
           EducationList: ["파트너스인베스트먼트 ('04~'18)"],
           investmentExp1: [],
           investmentExp2: [],
@@ -282,8 +282,8 @@ export default {
           imgOnHover: "Teams/9-h.png",
           imgDetails: "Teams/9-d.png",
           basicDesc:
-            "약 15년 간 파트너스인베스트먼트에서 LP 보고 및 펀드 운용 관리를 담당하였습니다.",
-          EducationList: ["파트너스인베스트먼트 ('04~'18)"],
+            "LP 보고, 펀드 및 투자 관리 업무를 담당하고 있습니다.",
+          EducationList: ["한양대 경영학"],
           investmentExp1: [],
           investmentExp2: [],
           sns_links: {
@@ -295,7 +295,7 @@ export default {
             designation: "Staff",
             catchPhrase: "",
             basicDesc:
-              "I am in charge of LP reporting, fund, and investment management duties.",
+              "I am in charge of LP reporting, fund, and investment management duties.<br> I majored in business and economics at Hanyang University.",
             beforeMurex: "",
           },
         },
