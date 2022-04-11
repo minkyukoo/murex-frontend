@@ -60,7 +60,9 @@
           :key="item.label || i"
           @click="closeMenu"
         >
-          <NuxtLink :to="item.to" class="nav-link">{{ item.label }}</NuxtLink>
+          <NuxtLink :to="localePath(`${item.to}`)" class="nav-link">{{
+            item.label
+          }}</NuxtLink>
         </li>
       </ul>
       <div class="lang-select">
@@ -193,7 +195,7 @@ export default {
     position: relative;
     z-index: 1;
   }
-  &.bg-light{
+  &.bg-light {
     position: absolute;
     top: 0;
     left: 0;

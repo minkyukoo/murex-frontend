@@ -15,7 +15,7 @@
           :key="index"
           :value="locale.code"
         >{{locale.name}}</option>
-      </select>
+    </select>
 
   </div>
 </template>

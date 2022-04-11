@@ -201,6 +201,16 @@ export default {
   created() {
     this.selectedLang = this.$i18n.locale;
   },
+  watch: {
+    TeamModal: function (val) {
+      if (val) {
+        document.body.style.overflow = "hidden";
+      }
+      else if (!val) {
+        document.body.style.overflow = "auto";
+      }
+    },
+  },
   methods: {
     changeState(event) {
       this.TeamModal = true;
@@ -294,7 +304,7 @@ export default {
     font-weight: normal;
     font-size: 24px;
     line-height: 150%;
-    font-weight: 500;
+    font-weight: 400;
     @media screen and (max-width: 767px) {
       font-size: 15px;
       font-weight: 400;
@@ -329,7 +339,7 @@ export default {
     height: 100%;
     // min-height: 526px;
     .catch-phrase {
-      font-weight: 380;
+      font-weight: 400;
       font-size: 20px;
       font-family: $third-font;
       line-height: 180%;

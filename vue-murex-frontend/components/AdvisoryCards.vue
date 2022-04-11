@@ -39,13 +39,13 @@ export default {
           },
           DescEng: {
             name: "Taekdong Kim",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Lake Investment CEO",
           },
         },
         {
           id: 2,
           name: "김기봉",
-          designation: "부사장 / Co-Founder",
+          designation: "벤처파트너 / 글로벌네트웍스 대표이사",
           image: "Advisory/2.png",
           imgOnHover: "Advisory/2.png",
           sns_links: {
@@ -54,13 +54,13 @@ export default {
           },
           DescEng: {
             name: "Gibong Kim",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Global Networks President",
           },
         },
         {
           id: 3,
           name: "이수진",
-          designation: "부사장 / Co-Founder",
+          designation: "벤처파트너 / 야놀자 대표이사",
           image: "Advisory/3.png",
           imgOnHover: "Advisory/3.png",
           sns_links: {
@@ -69,13 +69,13 @@ export default {
           },
           DescEng: {
             name: "Sujin Lee",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Yanolja CEO",
           },
         },
         {
           id: 4,
           name: "송치형",
-          designation: "수석",
+          designation: "벤처파트너 / 두나무 의장",
           image: "Advisory/4.png",
           imgOnHover: "Advisory/4.png",
           sns_links: {
@@ -84,13 +84,13 @@ export default {
           },
           DescEng: {
             name: "Chihyung Song",
-            designation: "Venture Partner",
+            designation: "Venture Partner / Dunamu Chairman",
           },
         },
         {
           id: 5,
           name: "하용호",
-          designation: "수석",
+          designation: "자문 / 데이터오븐 대표",
           image: "Advisory/5.png",
           imgOnHover: "Advisory/5.png",
           sns_links: {
@@ -99,7 +99,7 @@ export default {
           },
           DescEng: {
             name: "Yongho Ha",
-            designation: "Venture Partner",
+            designation: "Advisor / DataOven CEO",
           },
         },
       ],
