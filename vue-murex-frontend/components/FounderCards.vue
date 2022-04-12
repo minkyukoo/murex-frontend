@@ -32,7 +32,7 @@
         v-on:hover="hoverEffect($event)"
       />
     </div>
-    <div v-if="teams.length == 0" class="no-data-div">No Founders Found</div>
+    <div v-if="teams.length == 0" class="no-data-div">{{$t(`founders.NoFounders`)}}</div>
   </div>
 </template>
 
@@ -526,7 +526,7 @@ export default {
           company: "하이메디",
           name: "이정주, 서돈교",
           status: "Current",
-          sector: "Healthcare",
+          sector: "Consumer",
           link: "https://www.himedi.com/en",
           image: "com_ceo_1.png",
           imgOnHover: "com_1.png",
