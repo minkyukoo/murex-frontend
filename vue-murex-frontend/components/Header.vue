@@ -9,10 +9,12 @@
               class="logo"
               alt="Logo"
             />
+            <img src="../assets/images/mob-logo.svg" class="mobLogo" alt="Moblogo">
           </router-link>
 
           <router-link to="/" v-else>
             <img src="../assets/images/site-logo.svg" class="logo" alt="Logo" />
+            <img src="../assets/images/mob-logo.svg" class="mobLogo" alt="Moblogo">
           </router-link>
         </div>
         <div class="right-panel">
@@ -150,12 +152,18 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  // background: $white;
+  background: $white;
   .logo {
-    width: 160px;
+    // width: 160px;
     height: auto;
     @media screen and (max-width: 640px) {
-      width: 105px;
+      display: none;
+    }
+  }
+  .mobLogo{
+    display: none;
+    @media screen and (max-width: 640px) {
+      display: block;
     }
   }
   .container {
