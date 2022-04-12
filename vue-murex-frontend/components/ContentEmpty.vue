@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h3>업로드 된 컨텐츠가 없습니다.</h3>
+      <h3>{{$t(`contents.emptyError`)}}</h3>
   </div>
 </template>
 
