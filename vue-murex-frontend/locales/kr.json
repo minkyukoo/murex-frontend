@@ -23,7 +23,8 @@
       "allTab": "All",
       "newTab": "News",
       "insightTab": "Insights"
-    }
+    },
+    "emptyError": "업로드 된 컨텐츠가 없습니다."
   },
   "founders": {
     "pageTitle": "Our Founders",
@@ -44,7 +45,8 @@
     },
     "button": {
       "clearFilter": "Clear Filter"
-    }
+    },
+    "NoFounders": "등록된 Founders이/가 없습니다."
   },
   "team": {
     "pageTitle1": "Our Team",
