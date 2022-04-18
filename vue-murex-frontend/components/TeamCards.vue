@@ -56,7 +56,7 @@ export default {
             catchPhrase:
               "I invest in extraordinary entrepreneurs and think beyond the conventional limits.",
             basicDesc:
-              "I am a managing partner in Murex Partners to prepare for the future of VC.",
+              "When I started this company, my main goal was to create a place where I and the people that I work with will be happy. We want to do something meaningful for us and the people that we work with.",
             beforeMurex:
               "Before joined to VC industry, I started first career at LG electronics and played a product management role in LG Electronics America. Afterward, I moved to Samsung Display where I was in charge of strategic investment.<br/><br/> I have more than 10 years of experiences as VC and initiated the growth of Yanolja from a start-up company into a company with $10B valuation. <br/><br/>I majored in mechanical engineering at Busan University and completed MBA at Dartmouth College. ",
           },

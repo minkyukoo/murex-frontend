@@ -285,7 +285,7 @@ export default {
         },
         {
           id: 18,
-          company: "라우드커뮤니케이션즈",
+          company: "라우드코퍼레이션",
           name: "서경종",
           status: "Current",
           sector: "Consumer",
@@ -293,7 +293,7 @@ export default {
           image: "com_ceo_18.png",
           imgOnHover: "com_18.png",
           DescEng: {
-            company: "Loud Communications",
+            company: "LOUD CORPORATION",
             name: "Kyungjong Seo",
           },
         },
