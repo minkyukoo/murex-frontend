@@ -9,7 +9,7 @@
               class="logo"
               alt="Logo"
             />
-            <img src="../assets/images/mob-logo.svg" class="mobLogo" alt="Moblogo">
+            <img src="../assets/images/mob-logo-white.svg" class="mobLogoWhite" alt="MoblogoWhite">
           </router-link>
 
           <router-link to="/" v-else>
@@ -160,7 +160,8 @@ export default {
       display: none;
     }
   }
-  .mobLogo{
+  .mobLogo,
+  .mobLogoWhite{
     display: none;
     @media screen and (max-width: 640px) {
       display: block;
