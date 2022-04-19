@@ -25,6 +25,7 @@
         :companyLink="team.link"
         :status="team.status"
         :sector="team.sector"
+        :aboveName="team.aboveName"
         :engCompany="team.DescEng.company"
         :engName="team.DescEng.name"
         type="founder"
@@ -441,6 +442,7 @@ export default {
           id: 7,
           company: "펫프렌즈",
           name: "김창원",
+          aboveName: "M&A",
           status: "Alumni",
           sector: "Consumer",
           link: "https://www.pet-friends.co.kr/main/tab/2",
