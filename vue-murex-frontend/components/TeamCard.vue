@@ -32,15 +32,15 @@
     </div>
     <div class="team-desc">
       <div>
-        <div
-          class="team-desc-cont"
-          v-if="type === 'team' && setLang === 'kr'"
-        >
+        <div class="team-desc-cont" v-if="type === 'team' && setLang === 'kr'">
           <p class="name">{{ name }}</p>
           <p class="designation">{{ designation }}</p>
         </div>
 
-        <div class="team-desc-cont" v-else-if="type === 'team' && setLang === 'en'">
+        <div
+          class="team-desc-cont"
+          v-else-if="type === 'team' && setLang === 'en'"
+        >
           <p class="name">{{ engName }}</p>
           <p class="designation">{{ engDesignation }}</p>
         </div>
@@ -48,15 +48,15 @@
           class="team-desc-cont"
           v-else-if="type === 'founder' && setLang === 'kr'"
         >
-          <p class="name">{{ company }}</p>
+          <p class="name">
+            {{ aboveName }} <br />
+            {{ company }}
+          </p>
           <p class="designation">{{ name }}</p>
           <!-- <p class="designation">{{ status }}</p>
         <p class="designation">{{ sector }}</p> -->
         </div>
-        <div
-          class="team-desc-cont"
-          v-else
-        >
+        <div class="team-desc-cont" v-else>
           <p class="name">{{ engCompany }}</p>
           <p class="designation">{{ engName }}</p>
           <!-- <p class="designation">{{ status }}</p>
@@ -82,10 +82,7 @@
             <i class="icon-fb"></i>
           </a>
         </div>
-        <div
-          class="sns-links"
-          v-else-if="type === 'founder'"
-        >
+        <div class="sns-links" v-else-if="type === 'founder'">
           <a
             class="sns-link"
             :href="companyLink"
@@ -119,6 +116,7 @@ export default {
     snsFbLink: String,
     snsLnLink: String,
     type: String,
+    aboveName: String,
   },
   data() {
     return {
