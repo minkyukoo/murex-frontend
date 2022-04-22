@@ -3,7 +3,7 @@ import webpack from "webpack";
 export default {
   target: "server",
   server: {
-    // host: '0',
+    host: '0',
     // port: 3002,
   },
   loading: "~/components/LoadingBar.vue",
@@ -97,8 +97,8 @@ export default {
     vueI18n: i18n,
   },
   axios: {
-    // baseURL: "http://murexpartners.com/api/", // Used as fallback if no runtime config is provided
-    baseURL: "http://murex-backend.dvconsulting.org/api/", // local
+    baseURL: "https://murexpartners.com/api/", // Used as fallback if no runtime config is provided
+    // baseURL: "http://murex-backend.dvconsulting.org/api/", // local
   },
 
   publicRuntimeConfig: {
