@@ -57,7 +57,7 @@
         <p class="designation">{{ sector }}</p> -->
         </div>
         <div class="team-desc-cont" v-else>
-          <p class="name">{{ aboveName }} <br />{{ engCompany }}</p>
+          
           <p class="designation">{{ engName }}</p>
           <!-- <p class="designation">{{ status }}</p>
         <p class="designation">{{ sector }}</p> -->
