@@ -94,7 +94,7 @@ export default {
   data() {
     return {
       menu: [
-        { label: "Our Founders", to: "/founders" },
+        { label: "Our Companies", to: "/founders" },
         { label: "Our Team", to: "/team" },
         { label: "Philosophy", to: "/philosophy" },
         { label: "Contents", to: "/contents" },
