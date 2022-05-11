@@ -11,7 +11,7 @@
       <TopHeading :heading="pageHeading2" />
     </div>
     <div class="fluidContainer">
-      <AdvisoryCards v-on:openModal="changeState($event)" />
+      <AdvisoryCards  />
     </div>
 
     <section v-if="selectedLang === 'kr'">
@@ -164,7 +164,7 @@
             <div class="below-details">
               <p v-html="modalData.DescEng.basicDesc"></p>
               <h3 v-if="modalData.DescEng.beforeMurex">
-                Prior to founding Murex
+                Prior to {{modalData.DescEng.isFounder? 'founding' : 'joining'}} Murex
               </h3>
               <p v-html="modalData.DescEng.beforeMurex"></p>
             </div>
@@ -214,7 +214,7 @@ export default {
   methods: {
     changeState(event) {
       this.TeamModal = true;
-      // console.log(event);
+      console.log("asdasdasd",event);
       this.modalData = event;
       console.log(this.modalData);
     },
