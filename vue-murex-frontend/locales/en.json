@@ -59,15 +59,25 @@
       "text2": "Our investment strategy is based on a",
       "text2Bold": "unique set of theses and thinking that extends beyond conventional limits.",
       "text2Part2": "",
-      "text3": "We invest in extraordinary entrepreneurs arising from Korea’s unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",
-      "mobileText3": "we invest in extraordinary entrepreneurs arising from Korea’s unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",
+      "text3": "We invest in extraordinary entrepreneurs arising from Korea's unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",
+      "mobileText3": "we invest in extraordinary entrepreneurs arising from Korea's unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",
+      "cardshead" : {
+        "first" : "",
+        "second" : "",
+        "third" : ""
+      },
       "cards" : {
-        "first" : "We invest in People",
-        "second" : "Curiosity, thoughtfulness and deep conviction, and relationships endure",
-        "third" : "We invest Differently",
+        "first" : "We invest in People Curiosity, thoughtfulness and deep conviction, and relationships endure",
+        "second" : "We invest Differently Thesis driven",
+        "third" : "We take deep-dive into challenges facing entrepreneurs and help them to get thorough",
         "fourth" : "Thesis driven",
         "fifth" : "We support with Integrity",
         "sixth" : "We take deep-dive into challenges facing entrepreneurs and help them to get thorough"
+      },
+      "bottomtext": {
+        "line1" : "We invest in extraordinary entrepreneurs arising from Korea's unique market advantages and some of the most successful entrepreneurs that we previously line3 backed have become our venture partners who work closely with us.",
+        "line2" : "",
+        "line3" : ""
       }
     }
   }
