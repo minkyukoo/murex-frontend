@@ -72,21 +72,21 @@ export default {
             designation: "Venture Partner / Yanolja CEO",
           },
         },
-        {
-          id: 4,
-          name: "송치형",
-          designation: "벤처파트너 / 두나무 의장",
-          image: "Advisory/4.png",
-          imgOnHover: "Advisory/4.png",
-          sns_links: {
-            fb: "",
-            ln: "",
-          },
-          DescEng: {
-            name: "Chihyung Song",
-            designation: "Venture Partner / Dunamu Chairman",
-          },
-        },
+        // {
+        //   id: 4,
+        //   name: "송치형",
+        //   designation: "벤처파트너 / 두나무 의장",
+        //   image: "Advisory/4.png",
+        //   imgOnHover: "Advisory/4.png",
+        //   sns_links: {
+        //     fb: "",
+        //     ln: "",
+        //   },
+        //   DescEng: {
+        //     name: "Chihyung Song",
+        //     designation: "Venture Partner / Dunamu Chairman",
+        //   },
+        // },
         {
           id: 5,
           name: "하용호",

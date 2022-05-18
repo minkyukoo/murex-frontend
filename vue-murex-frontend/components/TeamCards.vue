@@ -53,10 +53,11 @@ export default {
           DescEng: {
             name: "Bumsuk Lee",
             designation: "Managing Partner",
+            isFounder: true,
             catchPhrase:
               "I invest in extraordinary entrepreneurs and think beyond the conventional limits.",
             basicDesc:
-              "I am a managing partner in Murex Partners to prepare for the future of VC.",
+              "When I started this company, my main goal was to create a place where I and the people that I work with will be happy. We want to do something meaningful for us and the people that we work with.",
             beforeMurex:
               "Before joined to VC industry, I started first career at LG electronics and played a product management role in LG Electronics America. Afterward, I moved to Samsung Display where I was in charge of strategic investment.<br/><br/> I have more than 10 years of experiences as VC and initiated the growth of Yanolja from a start-up company into a company with $10B valuation. <br/><br/>I majored in mechanical engineering at Busan University and completed MBA at Dartmouth College. ",
           },
@@ -85,6 +86,7 @@ export default {
           DescEng: {
             name: "Dongmin Kang",
             designation: "Founding Partner",
+            isFounder: true,
             catchPhrase:
               "I have confidence about the innovative future, demonstrate an open attitude to explore compatible ways, and respect entrepreneurs and colleagues.",
             basicDesc:
@@ -117,6 +119,7 @@ export default {
           DescEng: {
             name: "Jiseong Oh",
             designation: "Founding Partner",
+            isFounder: true,
             catchPhrase:
               "My ultimate purpose in life is to multiply genuine happiness. I’m obsessed with finding the most effective and efficient ways to achieve this as VC.",
             basicDesc:
@@ -148,6 +151,7 @@ export default {
           DescEng: {
             name: "Jinyoung Park",
             designation: "Senior Associate",
+            isFounder: false,
             catchPhrase:
               "I am filled with the ambition to use technological development and meet people obsessed about technology and customers to reform products in line with changes in the society ",
             basicDesc:
@@ -166,9 +170,10 @@ export default {
           basicDesc:
             "의사 출신의 벤처캐피탈리스트로 세나클소프트, 제이앤피메디 등 유수의 헬스케어 기업에 투자하였습니다. 산부인과 전문의로서 병원 산업 특수성에 대한 깊은 이해도와 벤처에 대한 높은 관심도를 바탕으로 헬스케어 및 각종 트렌드 산업을 검토하고 있습니다.",
           EducationList: [
-            "서울대병원 산부인과, 전공의 및 전임의 ('16~'20)",
+            "서울대병원 산부인과 생식내분비학 전임의 ('20~'21)",
+            "서울대병원 산부인과 전공의 ('16~'20)",
             "Johns Hopkins University Hospital 소아정신과 연수 ('14)",
-            "영남대학교 의과대학 의학사",
+            "영남대학교 의과대학 의예과/의학과",
           ],
           investmentExp1: ["세나클소프트"],
           investmentExp2: ["제이앤피메디"],
@@ -179,12 +184,13 @@ export default {
           DescEng: {
             name: "Sejin Kim",
             designation: "Senior Associate",
+            isFounder: false,
             catchPhrase:
               "I willingly lead the way and take part in building values for the world.  ",
             basicDesc:
-              "My major investment field is focused on healthcare. <br/><br/>As a physician with clinical experiences, I promptly comprehend healthcare trends from a caregiver’s perspective and I take a step ahead to analyze and invest in the upcoming technology that changes market. <br/><br/> Here in Murex, I discovered the investment opportunities in healthcare infra industry like Cenacle Soft and JNPmedi, and I am willing to  build successful cases of theory-based investment despite the complicated healthcare industry.    ",
+              "My investment field is mainly focused on the healthcare. <br/><br/>As a physician with clinical experience, I comprehend healthcare trends from a caregiver’s perspective and I take a step ahead to analyze and invest in the upcoming technology that will change the market. <br/><br/> Here in Murex, I discovered the investment opportunities in the healthcare infrastructure industry like Cenacle Soft and JNPmedi, and I am ready to develop more successful cases of theory-based investment despite the complicated healthcare industry. ",
             beforeMurex:
-              "I was a research assistant of Child and Adolescent Psychiatry in Johns Hopkins University Hospital and I completed my residency and clinical fellowship in the Obstetrics and Gynecology of Seoul National University Hospital.<br/><br/>I received a Bachelor of Medicine from the College of Medicine at Yeongnam University, and acquired Medical Doctor and Obstetrician-Gynecologist specialist license.  ",
+              "I was a research assistant in the Child and Adolescent Psychiatry Department of Johns Hopkins University Hospital and published a SCI paper. I received my Obstetrician-Gynecologist specialist license and Medical doctor license from the Korean Ministry of health and welfare. I completed both my OBGYn residency and Reproductive endocrinology clinical fellowship program in the Seoul National University Hospital.<br/><br/> I received my MD degree from the College of Medicine at Yeungnam University. ",
           },
         },
         {
@@ -214,6 +220,7 @@ export default {
           DescEng: {
             name: "Seho Kim",
             designation: "Principal",
+            isFounder: false,
             catchPhrase:
               "I am filled with full excitement whenever I think of the new path that Murex Partners solely discovers. ",
             basicDesc:
@@ -241,6 +248,7 @@ export default {
           DescEng: {
             name: "Eunyoung Lee",
             designation: "Senior Manager",
+            isFounder: false,
             catchPhrase:
               "I am always willing to offer prompt and stable cooperation to the partners of the venture investment ecosystem created by Murex Partners ",
             basicDesc:

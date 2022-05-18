@@ -25,6 +25,7 @@
         :companyLink="team.link"
         :status="team.status"
         :sector="team.sector"
+        :aboveName="team.aboveName"
         :engCompany="team.DescEng.company"
         :engName="team.DescEng.name"
         type="founder"
@@ -285,7 +286,7 @@ export default {
         },
         {
           id: 18,
-          company: "라우드커뮤니케이션즈",
+          company: "라우드코퍼레이션",
           name: "서경종",
           status: "Current",
           sector: "Consumer",
@@ -293,7 +294,7 @@ export default {
           image: "com_ceo_18.png",
           imgOnHover: "com_18.png",
           DescEng: {
-            company: "Loud Communications",
+            company: "LOUD CORPORATION",
             name: "Kyungjong Seo",
           },
         },
@@ -441,6 +442,7 @@ export default {
           id: 7,
           company: "펫프렌즈",
           name: "김창원",
+          aboveName: "M&A",
           status: "Alumni",
           sector: "Consumer",
           link: "https://www.pet-friends.co.kr/main/tab/2",
