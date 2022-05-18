@@ -1,6 +1,6 @@
 <template>
   <div class="philosophy">
-    <div class="container philoHolder">
+    <div class="container15 philoHolder lrp-0">
       <TopHeading :heading="pageHeading" padbottom="bottom-50" />
       <div class="slash-violet">
         <img src="../assets/icons/slash-violet.svg" alt="img" />
@@ -16,44 +16,36 @@
           <span>{{ $t(`phylosophy.text2Bold`) }}</span
           >{{ $t(`phylosophy.text2Part2`) }}
         </p>
-        <p class="desktop-third" v-html="$t(`phylosophy.text3`)"></p>
-        <p class="mobile-third" v-html="$t(`phylosophy.mobileText3`)"></p>
+        <!-- <p class="desktop-third" v-html="$t(`phylosophy.text3`)"></p>
+        <p class="mobile-third" v-html="$t(`phylosophy.mobileText3`)"></p> -->
       </div>
     </div>
-    <div class="philBody">
+    <div class="container15 philBody lrp-0">
       <ul>
         <li>
           <div>
-            <h4>People</h4>
-            <h2>{{ $t(`phylosophy.cards.first`) }}</h2>
+            <h4>{{ $t(`phylosophy.cardshead.first`) }}</h4>
+            <h3>{{ $t(`phylosophy.cards.first`) }}</h3>
           </div>
         </li>
         <li>
+          <h4>{{ $t(`phylosophy.cardshead.second`) }}</h4>
           <h3 v-html="$t(`phylosophy.cards.second`)">
           </h3>
         </li>
         <li>
-          <h4>Differently</h4>
-          <h2>{{ $t(`phylosophy.cards.third`) }}</h2>
-        </li>
-        <li>
-          <div>
-            <h5 v-html="$t(`phylosophy.cards.fourth`)"></h5>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h4>Integrity</h4>
-            <h2>{{ $t(`phylosophy.cards.fifth`) }}</h2>
-          </div>
-        </li>
-        <li>
-          <h3 v-html="$t(`phylosophy.cards.sixth`)">
-          </h3>
+          <h4>{{ $t(`phylosophy.cardshead.third`) }}</h4>
+          <h3>{{ $t(`phylosophy.cards.third`) }}</h3>
         </li>
       </ul>
+      <div class="btmText">
+       <p>{{ $t(`phylosophy.bottomtext.line1`) }}</p>
+       <p>{{ $t(`phylosophy.bottomtext.line2`) }}</p>
+       <p>{{ $t(`phylosophy.bottomtext.line3`) }}</p>
+      </div>
     </div>
     <!-- <h1>philosophy -- {{$route.path}}</h1> -->
+   
   </div>
 </template>
 
@@ -69,35 +61,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ @media screen and (max-width: 768px) {
+  .lrp-0{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+ }
+.container15{
+  max-width: 1516px;
+  margin: 0 auto;
+  @media screen and (max-width: 1515px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 16px ;
+    padding-right: 16px;
+  }
+}
 .philosophy {
   @media screen and (max-width: 767px) {
     padding: 0 16px;
   }
 }
 .philoHolder {
-  border-bottom: 1px solid #828282;
-  padding-bottom: 100px;
-  margin-bottom: 90px;
+  // border-bottom: 1px solid #828282;
+  // padding: 0;
+  margin-bottom: 60px;
   @media screen and (max-width: 768px) {
-    padding: 0 12px 40px;
-    margin-bottom: 40px;
+    padding: 0px 0 40px;
+    margin-bottom: 0px;
   }
 }
 .philCont {
-  max-width: 840px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 27px;
+  border-top: 1px solid #828282;
+  padding: 60px 0 0 0;
+  font-size: 40px;
   line-height: 150%;
   font-weight: 300;
   color: $black-2;
   @media screen and (max-width: 768px) {
-    font-size: 13px;
+    font-size: 18px;
+    border-top: 0;
+    border-bottom: 1px solid #828282;
+    padding: 0 0 24px;
   }
   p {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
+    }
+    @media screen and (max-width: 768px) {
+      margin-bottom: 16px;
     }
   }
   span {
@@ -119,32 +134,34 @@ export default {
 }
 .slash-violet {
   padding-bottom: 50px;
+  // padding-top: 10px;
   @media screen and (max-width: 767px) {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
   img {
     margin: 0 auto;
   }
 }
 .philBody {
-  padding: 0 48px 100px;
+  // padding: 0 0px 100px;
   @media screen and (max-width: 768px) {
-    padding: 0 0px 30px;
+    padding: 0 0px 0px;
   }
   ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 -10px;
+    margin: 0 0px 60px;
     @media screen and (max-width: 768px) {
       flex-direction: column;
-      margin: 0px;
+      margin: 0px 0 24px;
+      border-bottom: 1px solid #828282;
     }
     li {
       margin: 10px 10px 10px;
-      width: calc(50% - 20px);
-      height: 902px;
+      width: calc(33.3% - 20px);
+      height: 492px;
       background: #ccc;
       padding: 24px;
       display: flex;
@@ -153,16 +170,16 @@ export default {
       color: #fff;
       flex-direction: column;
       text-align: center;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         width: 100%;
-        margin: 0 0 16px 0;
+        margin: 0 0 20px 0;
         height: 343px;
         padding: 10px;
       }
       div {
         width: 100%;
         height: 100%;
-        border: 1px solid #fff;
+        // border: 1px solid #fff;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -170,34 +187,30 @@ export default {
         text-align: center;
       }
       &:nth-child(1) {
-        background: #7835e7;
-      }
-      &:nth-child(4) {
-        background: #f59033;
-      }
-      &:nth-child(5) {
-        background: #28a6ce;
-      }
-      &:nth-child(2) {
         background: url("~/assets/images/phil1.png") no-repeat center center;
         background-size: cover;
       }
-      &:nth-child(3) {
+      &:nth-child(2) {
         background: url("~/assets/images/phil2.png") no-repeat center center;
         background-size: cover;
       }
-      &:nth-child(6) {
+      &:nth-child(3) {
         background: url("~/assets/images/phil3.png") no-repeat center center;
         background-size: cover;
+        @media screen and (max-width: 768px) {
+          margin-bottom: 40px;
+        }
       }
       h4 {
-        font-size: 30px;
-        line-height: 150%;
+        font-size: 40px;
+        line-height: 48px;
         font-weight: 700;
         font-family: $secondery-font;
-        opacity: 0.6;
+        opacity: 1;
+        margin-bottom: 20px;
         @media screen and (max-width: 768px) {
-          font-size: 15px;
+          font-size: 28px;
+          line-height: 34px;
         }
       }
       h2 {
@@ -211,9 +224,9 @@ export default {
         }
       }
       h3 {
-        font-size: 38px;
-        line-height: 150%;
-        max-width: 600px;
+        font-size: 28px;
+        line-height: 48px;
+        // max-width: 600px;
         font-weight: 500;
         @media screen and (max-width: 768px) {
           font-size: 18px;
@@ -230,6 +243,17 @@ export default {
           max-width: 303px;
         }
       }
+    }
+  }
+  .btmText{
+    font-size: 40px;
+    line-height: 72px;
+    font-weight: 300;
+    margin-bottom: 150px;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 80px;
     }
   }
 }
