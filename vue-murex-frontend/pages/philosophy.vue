@@ -1,11 +1,11 @@
 <template>
   <div class="philosophy">
-    <div class="container philoHolder">
+    <div class="container15 philoHolder lrp-0">
       <TopHeading :heading="pageHeading" padbottom="bottom-50" />
       <div class="slash-violet">
         <img src="../assets/icons/slash-violet.svg" alt="img" />
       </div>
-      <div class="container philCont">
+      <div class="philCont">
         <p>
           {{ $t(`phylosophy.text1`) }}
           <span>{{ $t(`phylosophy.text1Bold`) }}</span
@@ -20,7 +20,7 @@
         <p class="mobile-third" v-html="$t(`phylosophy.mobileText3`)"></p> -->
       </div>
     </div>
-    <div class="container philBody">
+    <div class="container15 philBody lrp-0">
       <ul>
         <li>
           <div>
@@ -61,6 +61,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ @media screen and (max-width: 768px) {
+  .lrp-0{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+ }
+.container15{
+  max-width: 1516px;
+  margin: 0 auto;
+  @media screen and (max-width: 1515px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 16px ;
+    padding-right: 16px;
+  }
+}
 .philosophy {
   @media screen and (max-width: 767px) {
     padding: 0 16px;
@@ -68,8 +86,8 @@ export default {
 }
 .philoHolder {
   // border-bottom: 1px solid #828282;
-  padding: 0;
-  margin-bottom: 90px;
+  // padding: 0;
+  margin-bottom: 60px;
   @media screen and (max-width: 768px) {
     padding: 0px 0 40px;
     margin-bottom: 0px;
@@ -89,9 +107,12 @@ export default {
     padding: 0 0 24px;
   }
   p {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
+    }
+    @media screen and (max-width: 768px) {
+      margin-bottom: 16px;
     }
   }
   span {
@@ -113,15 +134,16 @@ export default {
 }
 .slash-violet {
   padding-bottom: 50px;
+  // padding-top: 10px;
   @media screen and (max-width: 767px) {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
   img {
     margin: 0 auto;
   }
 }
 .philBody {
-  padding: 0 0px 100px;
+  // padding: 0 0px 100px;
   @media screen and (max-width: 768px) {
     padding: 0 0px 0px;
   }
@@ -130,7 +152,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 -10px 60px;
+    margin: 0 0px 60px;
     @media screen and (max-width: 768px) {
       flex-direction: column;
       margin: 0px 0 24px;
@@ -148,9 +170,9 @@ export default {
       color: #fff;
       flex-direction: column;
       text-align: center;
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 1024px) {
         width: 100%;
-        margin: 0 0 16px 0;
+        margin: 0 0 20px 0;
         height: 343px;
         padding: 10px;
       }
@@ -168,12 +190,6 @@ export default {
         background: url("~/assets/images/phil1.png") no-repeat center center;
         background-size: cover;
       }
-      // &:nth-child(4) {
-      //   background: #f59033;
-      // }
-      // &:nth-child(5) {
-      //   background: #28a6ce;
-      // }
       &:nth-child(2) {
         background: url("~/assets/images/phil2.png") no-repeat center center;
         background-size: cover;
@@ -185,19 +201,16 @@ export default {
           margin-bottom: 40px;
         }
       }
-      // &:nth-child(6) {
-      //   background: url("~/assets/images/phil3.png") no-repeat center center;
-      //   background-size: cover;
-      // }
       h4 {
         font-size: 40px;
-        line-height: 150%;
+        line-height: 48px;
         font-weight: 700;
         font-family: $secondery-font;
         opacity: 1;
         margin-bottom: 20px;
         @media screen and (max-width: 768px) {
           font-size: 28px;
+          line-height: 34px;
         }
       }
       h2 {
@@ -212,7 +225,7 @@ export default {
       }
       h3 {
         font-size: 28px;
-        line-height: 150%;
+        line-height: 48px;
         // max-width: 600px;
         font-weight: 500;
         @media screen and (max-width: 768px) {
@@ -236,7 +249,7 @@ export default {
     font-size: 40px;
     line-height: 72px;
     font-weight: 300;
-    margin-bottom: 130px;
+    margin-bottom: 150px;
     @media screen and (max-width: 768px) {
       font-size: 18px;
       line-height: 28px;
