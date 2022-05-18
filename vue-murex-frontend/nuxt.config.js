@@ -3,7 +3,7 @@ import webpack from "webpack";
 export default {
   target: "server",
   server: {
-    // host: '0',
+    host: '0',
     // port: 3002,
   },
   loading: "~/components/LoadingBar.vue",
