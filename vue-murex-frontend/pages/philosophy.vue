@@ -57,7 +57,20 @@ export default {
   data() {
     return {
       pageHeading: "Philosophy",
+      lang: this.$i18n.locale,
     };
+  },
+  mounted() {
+    this.switchLocalePath(this.lang);
+  },
+  updated() {
+    this.switchLocalePath(this.lang);
+  },
+  methods: {
+    switchLocalePath(lang) {
+      let element = document.querySelector(".philBody");
+      element.classList.add(lang);
+    },
   },
 };
 </script>
