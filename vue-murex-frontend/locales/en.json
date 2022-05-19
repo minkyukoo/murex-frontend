@@ -67,12 +67,9 @@
         "third" : ""
       },
       "cards" : {
-        "first" : "We invest in People Curiosity, thoughtfulness and deep conviction, and relationships endure",
-        "second" : "We invest Differently Thesis driven",
-        "third" : "We take deep-dive into challenges facing entrepreneurs and help them to get thorough",
-        "fourth" : "Thesis driven",
-        "fifth" : "We support with Integrity",
-        "sixth" : "We take deep-dive into challenges facing entrepreneurs and help them to get thorough"
+        "first" : "We invest in People <br> Curiosity, thoughtfulness and <br> deep conviction, and <br> relationships endure",
+        "second" : "We invest Differently <br> Thesis driven",
+        "third" : "We take deep-dive into <br> challenges facing <br> entrepreneurs and help them to <br> get thorough"
       },
       "bottomtext": {
         "line1" : "We invest in extraordinary entrepreneurs arising from Korea's unique market advantages and some of the most successful entrepreneurs that we previously backed have become our venture partners who work closely with us.",

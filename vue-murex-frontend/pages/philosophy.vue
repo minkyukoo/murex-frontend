@@ -8,7 +8,7 @@
       <div class="philCont">
         <p>
           {{ $t(`phylosophy.text1`) }}
-          <span>{{ $t(`phylosophy.text1Bold`) }}</span>{{ $t(`phylosophy.text1Part2`) }}
+          <span>{{ $t(`phylosophy.text1Bold`) }}</span>
         </p>
         <p>
           {{ $t(`phylosophy.text2`) }}
@@ -23,20 +23,19 @@
         <li>
           <div>
             <h4>{{ $t(`phylosophy.cardshead.first`) }}</h4>
-            <h3>{{ $t(`phylosophy.cards.first`) }}</h3>
+            <h3 v-html="$t(`phylosophy.cards.first`)"></h3>
           </div>
         </li>
         <li>
           <div>
             <h4>{{ $t(`phylosophy.cardshead.second`) }}</h4>
-            <h3 v-html="$t(`phylosophy.cards.second`)">
-            </h3>
+            <h3 v-html="$t(`phylosophy.cards.second`)"></h3>
           </div>
         </li>
         <li>
           <div>
             <h4>{{ $t(`phylosophy.cardshead.third`) }}</h4>
-            <h3>{{ $t(`phylosophy.cards.third`) }}</h3>
+            <h3 v-html="$t(`phylosophy.cards.third`)"></h3>
           </div>
         </li>
       </ul>
@@ -171,7 +170,7 @@ export default {
   @media screen and (max-width: 768px) {
     padding: 0 0px 0px;
   }
-
+  
   ul {
     display: flex;
     align-items: center;
@@ -193,7 +192,7 @@ export default {
       width: calc(33.3% - 20px);
       height: 492px;
       background: #ccc;
-      padding: 24px;
+      padding: 24px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -248,7 +247,7 @@ export default {
         font-size: 40px;
         line-height: 48px;
         font-weight: 700;
-        font-family: $secondery-font;
+        font-family: $default-font;
         opacity: 1;
         margin-bottom: 20px;
         text-shadow: 1px -1px 13px rgba(60, 60, 60, 0.6);
@@ -308,6 +307,35 @@ export default {
       font-size: 18px;
       line-height: 28px;
       margin-bottom: 80px;
+    }
+  }
+
+  &.en{
+    h3{
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 30px;
+      }
+      
+    }
+  }
+  &.kr{
+    h3{
+      font-size: 22px;
+      line-height: 38px;
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+    h4{
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 600;
+      @media screen and (max-width: 768px) {
+        font-size: 28px;
+        line-height: 34px;
+      }
     }
   }
 }
