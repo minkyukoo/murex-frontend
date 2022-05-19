@@ -8,7 +8,7 @@
       <div class="philCont">
         <p>
           {{ $t(`phylosophy.text1`) }}
-          <span>{{ $t(`phylosophy.text1Bold`) }}</span>{{ $t(`phylosophy.text1Part2`) }}
+          <span>{{ $t(`phylosophy.text1Bold`) }}</span>
         </p>
         <p>
           {{ $t(`phylosophy.text2`) }}
