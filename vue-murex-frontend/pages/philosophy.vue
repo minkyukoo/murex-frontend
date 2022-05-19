@@ -1,6 +1,6 @@
 <template>
   <div class="philosophy">
-    <div class="container15 philoHolder lrp-0">
+    <div class="container15 philoHolder">
       <TopHeading :heading="pageHeading" padbottom="bottom-50" />
       <div class="slash-violet">
         <img src="../assets/icons/slash-violet.svg" alt="img" />
@@ -20,7 +20,7 @@
         <p class="mobile-third" v-html="$t(`phylosophy.mobileText3`)"></p> -->
       </div>
     </div>
-    <div class="container15 philBody lrp-0">
+    <div class="container15 philBody">
       <ul>
         <li>
           <div>
@@ -61,26 +61,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
- @media screen and (max-width: 768px) {
-  .lrp-0{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
- }
+
 .container15{
   max-width: 1516px;
   margin: 0 auto;
-  @media screen and (max-width: 1515px) {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-  @media screen and (max-width: 768px) {
-    padding-left: 16px ;
-    padding-right: 16px;
-  }
 }
+
+ 
 .philosophy {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1516px) {
+    padding: 0 48px;
+  }
+  @media screen and (max-width: 640px) {
     padding: 0 16px;
   }
 }
@@ -152,10 +144,12 @@ export default {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 0px 60px;
+    margin: 0 -10px 60px;
+    @media screen and (max-width: 1024px) {
+      margin: 0px 0 24px;
+    }
     @media screen and (max-width: 768px) {
       flex-direction: column;
-      margin: 0px 0 24px;
       border-bottom: 1px solid #828282;
     }
     li {
@@ -208,6 +202,7 @@ export default {
         font-family: $secondery-font;
         opacity: 1;
         margin-bottom: 20px;
+        text-shadow: 1px -1px 13px rgba(60,60,60,0.6);
         @media screen and (max-width: 768px) {
           font-size: 28px;
           line-height: 34px;
@@ -228,6 +223,7 @@ export default {
         line-height: 48px;
         // max-width: 600px;
         font-weight: 500;
+        text-shadow: 1px -1px 13px rgba(60,60,60,0.6);
         @media screen and (max-width: 768px) {
           font-size: 18px;
           max-width: 303px;
