@@ -199,7 +199,9 @@ export default {
       color: #fff;
       flex-direction: column;
       text-align: center;
-
+      // @media screen and (max-width: 1199px) {
+      //   height: auto;
+      // }
       @media screen and (max-width: 1024px) {
         width: 100%;
         margin: 0 0 20px 0;
@@ -218,6 +220,9 @@ export default {
         justify-content: flex-start;
         flex-direction: column;
         text-align: center;
+        @media screen and (max-width: 1199px) {
+          height: auto;
+        }
         @media screen and (max-width: 1024px) {
           height: 100%;
           justify-content: center;
