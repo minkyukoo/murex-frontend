@@ -65,23 +65,13 @@ export default {
 .container15{
   max-width: 1516px;
   margin: 0 auto;
-  @media screen and (max-width: 1515px) {
-    padding-left: 48px;
-    padding-right: 48px;
-  }
-  @media screen and (max-width: 640px) {
-    padding-left: 0px ;
-    padding-right: 0px;
-  }
 }
-
-// .lrp-0{
-//   padding-left: 0 !important;
-//   padding-right: 0 !important;
-// }
 
  
 .philosophy {
+  @media screen and (max-width: 1516px) {
+    padding: 0 48px;
+  }
   @media screen and (max-width: 640px) {
     padding: 0 16px;
   }
@@ -212,6 +202,7 @@ export default {
         font-family: $secondery-font;
         opacity: 1;
         margin-bottom: 20px;
+        text-shadow: 1px -1px 13px rgba(60,60,60,0.6);
         @media screen and (max-width: 768px) {
           font-size: 28px;
           line-height: 34px;
@@ -232,6 +223,7 @@ export default {
         line-height: 48px;
         // max-width: 600px;
         font-weight: 500;
+        text-shadow: 1px -1px 13px rgba(60,60,60,0.6);
         @media screen and (max-width: 768px) {
           font-size: 18px;
           max-width: 303px;
