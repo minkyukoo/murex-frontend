@@ -199,7 +199,7 @@ export default {
         font-size: 40px;
         line-height: 48px;
         font-weight: 700;
-        font-family: $secondery-font;
+        font-family: $default-font;
         opacity: 1;
         margin-bottom: 20px;
         text-shadow: 1px -1px 13px rgba(60,60,60,0.6);
@@ -219,7 +219,7 @@ export default {
         }
       }
       h3 {
-        font-size: 28px;
+        font-size: 22px;
         line-height: 48px;
         // max-width: 600px;
         font-weight: 500;
