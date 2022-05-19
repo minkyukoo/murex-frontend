@@ -206,6 +206,10 @@ export default {
         justify-content: flex-start;
         flex-direction: column;
         text-align: center;
+        @media screen and (max-width: 1024px) {
+          height: 100%;
+          justify-content: center;
+        }
       }
 
       &:nth-child(1) {
