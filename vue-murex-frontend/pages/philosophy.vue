@@ -302,7 +302,7 @@ export default {
     line-height: 72px;
     font-weight: 300;
     margin-bottom: 150px;
-
+    color: #333;
     @media screen and (max-width: 768px) {
       font-size: 18px;
       line-height: 28px;
