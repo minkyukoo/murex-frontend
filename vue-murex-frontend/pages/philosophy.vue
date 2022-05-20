@@ -8,7 +8,7 @@
       <div class="philCont">
         <p>
           {{ $t(`phylosophy.text1`) }}
-          <span>{{ $t(`phylosophy.text1Bold`) }}</span>
+          <span>{{ $t(`phylosophy.text1Bold`) }}</span>{{ $t(`phylosophy.text1-1`) }}
         </p>
         <p>
           {{ $t(`phylosophy.text2`) }}
@@ -105,7 +105,7 @@ export default {
 .philCont {
   border-top: 1px solid #828282;
   padding: 60px 0 0 0;
-  font-size: 40px;
+  font-size: 36px;
   line-height: 150%;
   font-weight: 300;
   color: $black-2;
@@ -303,7 +303,7 @@ export default {
   }
 
   .btmText {
-    font-size: 40px;
+    font-size: 36px;
     line-height: 72px;
     font-weight: 300;
     margin-bottom: 150px;
@@ -325,6 +325,13 @@ export default {
     }
   }
   &.kr{
+    ul {
+        li {
+          div{
+            height: 145px;
+          }
+        }
+      }
     h3{
       font-size: 22px;
       line-height: 38px;
